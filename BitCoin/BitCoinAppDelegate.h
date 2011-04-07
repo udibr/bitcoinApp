@@ -6,14 +6,9 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Three20/Three20.h>
 
-@interface BitCoinAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
-
+@interface BitCoinAppDelegate : NSObject <UIApplicationDelegate> {
+	dispatch_queue_t serialQueue, logQueue;
 }
-
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-
-@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
-
 @end

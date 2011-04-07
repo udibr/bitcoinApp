@@ -7,59 +7,357 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3201088596B4756681693705 /* libThree20UICommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3201088596B4756681693704 /* libThree20UICommon.a */; };
+		3206A0F794A6D7A3F259DBF5 /* libextThree20JSON+SBJSON.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3206A0F794A6D7A3F259DBF4 /* libextThree20JSON+SBJSON.a */; };
+		320A2827FEC940B25BC42C65 /* libThree20Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320A2827FEC940B25BC42C64 /* libThree20Core.a */; };
+		320A5A189C235877202780D5 /* libThree20Network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320A5A189C235877202780D4 /* libThree20Network.a */; };
+		320A737074758E53BA54BE95 /* libThree20UINavigator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320A737074758E53BA54BE94 /* libThree20UINavigator.a */; };
+		320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320AF8492C47A4D819F7C450 /* QuartzCore.framework */; };
+		320B6C86F11D9990244A9731 /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 320B6C86F11D9990244A9730 /* Three20.bundle */; };
+		320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320CC833B8AF0ACFD35E6224 /* libThree20Style.a */; };
+		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
+		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
+		5474AEB8134A903F007A5ACB /* json_spirit_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5474AEAD134A903F007A5ACB /* json_spirit_reader.cpp */; };
+		5474AEB9134A903F007A5ACB /* json_spirit_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5474AEB2134A903F007A5ACB /* json_spirit_value.cpp */; };
+		5474AEBA134A903F007A5ACB /* json_spirit_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5474AEB4134A903F007A5ACB /* json_spirit_writer.cpp */; };
+		5474AEF1134AAF5C007A5ACB /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AEF0134AAF5B007A5ACB /* boost.framework */; };
+		5474AFA7134B5AF3007A5ACB /* libdb_cxx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA6134B5AF3007A5ACB /* libdb_cxx.a */; };
+		5474AFAA134B5CB0007A5ACB /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA8134B5CAF007A5ACB /* libcrypto.a */; };
+		5474AFAB134B5CB0007A5ACB /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA9134B5CAF007A5ACB /* libssl.a */; };
+		5474D278134BC748007A5ACB /* bitcoin.conf in Resources */ = {isa = PBXBuildFile; fileRef = 5474D277134BC748007A5ACB /* bitcoin.conf */; };
+		54ABD3C9134A798900650408 /* cpu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD32E134A798800650408 /* cpu.cpp */; };
+		54ABD3CD134A798900650408 /* sha.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD339134A798800650408 /* sha.cpp */; };
+		54ABD3CE134A798900650408 /* db.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD33E134A798800650408 /* db.cpp */; };
+		54ABD3CF134A798900650408 /* init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD341134A798800650408 /* init.cpp */; };
+		54ABD3D0134A798900650408 /* irc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD343134A798800650408 /* irc.cpp */; };
+		54ABD3E5134A798900650408 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD373134A798900650408 /* main.cpp */; };
+		54ABD3EA134A798900650408 /* net.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD379134A798900650408 /* net.cpp */; };
+		54ABD3FB134A798900650408 /* rpc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD38F134A798900650408 /* rpc.cpp */; };
+		54ABD3FC134A798900650408 /* script.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD391134A798900650408 /* script.cpp */; };
+		54ABD403134A798900650408 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD39E134A798900650408 /* util.cpp */; };
+		54C1FC80134CF8A200D9830E /* RPCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C1FC7F134CF8A200D9830E /* RPCDataSource.m */; };
+		54C1FC83134CFE9600D9830E /* RPCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C1FC82134CFE9500D9830E /* RPCModel.m */; };
+		54C1FCF0134D149000D9830E /* LauncherViewTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C1FCEF134D149000D9830E /* LauncherViewTestController.m */; };
+		54C1FCF8134D1BA700D9830E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C1FCF7134D1BA600D9830E /* Icon.png */; };
+		54C1FCFA134D1BB600D9830E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C1FCF9134D1BB500D9830E /* Icon@2x.png */; };
 		54F3C5331305E86500E6C3BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5321305E86500E6C3BA /* UIKit.framework */; };
 		54F3C5351305E86500E6C3BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5341305E86500E6C3BA /* Foundation.framework */; };
 		54F3C5371305E86500E6C3BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5361305E86500E6C3BA /* CoreGraphics.framework */; };
 		54F3C53D1305E86500E6C3BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54F3C53B1305E86500E6C3BA /* InfoPlist.strings */; };
 		54F3C5401305E86500E6C3BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F3C53F1305E86500E6C3BA /* main.m */; };
 		54F3C5431305E86500E6C3BA /* BitCoinAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F3C5421305E86500E6C3BA /* BitCoinAppDelegate.m */; };
-		54F3C5461305E86500E6C3BA /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F3C5441305E86500E6C3BA /* MainWindow.xib */; };
-		54F3C5491305E86500E6C3BA /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F3C5481305E86500E6C3BA /* FirstViewController.m */; };
-		54F3C54C1305E86500E6C3BA /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F3C54B1305E86500E6C3BA /* SecondViewController.m */; };
-		54F3C54F1305E86500E6C3BA /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F3C54D1305E86500E6C3BA /* FirstView.xib */; };
-		54F3C5521305E86500E6C3BA /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F3C5501305E86500E6C3BA /* SecondView.xib */; };
-		54F3C5591305E86500E6C3BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5321305E86500E6C3BA /* UIKit.framework */; };
-		54F3C55A1305E86500E6C3BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5341305E86500E6C3BA /* Foundation.framework */; };
-		54F3C55B1305E86500E6C3BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5361305E86500E6C3BA /* CoreGraphics.framework */; };
-		54F3C5631305E86500E6C3BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54F3C5611305E86500E6C3BA /* InfoPlist.strings */; };
-		54F3C5661305E86500E6C3BA /* BitCoinTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 54F3C5651305E86500E6C3BA /* BitCoinTests.h */; };
-		54F3C5681305E86500E6C3BA /* BitCoinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F3C5671305E86500E6C3BA /* BitCoinTests.m */; };
+		54F3C5491305E86500E6C3BA /* RPCCommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F3C5481305E86500E6C3BA /* RPCCommandViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		54F3C55C1305E86500E6C3BA /* PBXContainerItemProxy */ = {
+		3201088596B4756681693702 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 54F3C5251305E86500E6C3BA /* Project object */;
+			containerPortal = 3201088596B4756681693700 /* Three20UICommon.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 54F3C52D1305E86500E6C3BA;
-			remoteInfo = BitCoin;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20UICommon;
+		};
+		3201088596B4756681693706 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3201088596B4756681693700 /* Three20UICommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20UICommon;
+		};
+		3206A0F794A6D7A3F259DBF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3206A0F794A6D7A3F259DBF0 /* extThree20JSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = extThree20JSON;
+		};
+		3206A0F794A6D7A3F259DBF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3206A0F794A6D7A3F259DBF0 /* extThree20JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = extThree20JSON;
+		};
+		320A2827FEC940B25BC42C62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A2827FEC940B25BC42C60 /* Three20Core.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20Core;
+		};
+		320A2827FEC940B25BC42C66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A2827FEC940B25BC42C60 /* Three20Core.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20Core;
+		};
+		320A5A189C235877202780D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A5A189C235877202780D0 /* Three20Network.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20Network;
+		};
+		320A5A189C235877202780D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A5A189C235877202780D0 /* Three20Network.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20Network;
+		};
+		320A737074758E53BA54BE92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20UINavigator;
+		};
+		320A737074758E53BA54BE96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20UINavigator;
+		};
+		320CC833B8AF0ACFD35E6222 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20Style;
+		};
+		320CC833B8AF0ACFD35E6226 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20Style;
+		};
+		320D7DCCE32703ACAB9A45E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20;
+		};
+		320D7DCCE32703ACAB9A45E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20;
+		};
+		320F2C48872C2E2C4DF86202 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20UI;
+		};
+		320F2C48872C2E2C4DF86206 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20UI;
+		};
+		5435BE5A134C936800E52D30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20UnitTests;
+		};
+		5435BE5D134C936800E52D30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A2827FEC940B25BC42C60 /* Three20Core.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20CoreUnitTests;
+		};
+		5435BE60134C936800E52D30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A5A189C235877202780D0 /* Three20Network.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20NetworkUnitTests;
+		};
+		5435BE63134C936800E52D30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20StyleUnitTests;
+		};
+		5435BE66134C936800E52D30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20UIUnitTests;
+		};
+		5435BE69134C936800E52D30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3201088596B4756681693700 /* Three20UICommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20UICommonUnitTests;
+		};
+		5435BE6C134C936800E52D30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20UINavigatorUnitTests;
+		};
+		54C1FB9B134CB98B00D9830E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3206A0F794A6D7A3F259DBF0 /* extThree20JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6E645BD91187751200F08CB1;
+			remoteInfo = "extThree20JSON+YAJL";
+		};
+		54C1FB9D134CB98B00D9830E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3206A0F794A6D7A3F259DBF0 /* extThree20JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = "extThree20JSONUnitTests+SBJSON";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3201088596B4756681693700 /* Three20UICommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UICommon.xcodeproj; path = three20/src/Three20UICommon/Three20UICommon.xcodeproj; sourceTree = SOURCE_ROOT; };
+		3206A0F794A6D7A3F259DBF0 /* extThree20JSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = extThree20JSON.xcodeproj; path = three20/src/extThree20JSON/extThree20JSON.xcodeproj; sourceTree = SOURCE_ROOT; };
+		320A2827FEC940B25BC42C60 /* Three20Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Core.xcodeproj; path = three20/src/Three20Core/Three20Core.xcodeproj; sourceTree = SOURCE_ROOT; };
+		320A5A189C235877202780D0 /* Three20Network.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Network.xcodeproj; path = three20/src/Three20Network/Three20Network.xcodeproj; sourceTree = SOURCE_ROOT; };
+		320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UINavigator.xcodeproj; path = three20/src/Three20UINavigator/Three20UINavigator.xcodeproj; sourceTree = SOURCE_ROOT; };
+		320AF8492C47A4D819F7C450 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		320B6C86F11D9990244A9730 /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = three20/src/Three20.bundle; sourceTree = SOURCE_ROOT; };
+		320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Style.xcodeproj; path = three20/src/Three20Style/Three20Style.xcodeproj; sourceTree = SOURCE_ROOT; };
+		320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
+		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
+		5474AE85134A7D90007A5ACB /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		5474AE90134A7F8B007A5ACB /* bitcoinScreenShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoinScreenShot.png; sourceTree = "<group>"; };
+		5474AE91134A7F8B007A5ACB /* bitcoin512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoin512.png; sourceTree = "<group>"; };
+		5474AE92134A7F8B007A5ACB /* bitcoin530.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoin530.png; sourceTree = "<group>"; };
+		5474AEAB134A903F007A5ACB /* json_spirit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_spirit.h; sourceTree = "<group>"; };
+		5474AEAC134A903F007A5ACB /* json_spirit_error_position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_spirit_error_position.h; sourceTree = "<group>"; };
+		5474AEAD134A903F007A5ACB /* json_spirit_reader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_spirit_reader.cpp; sourceTree = "<group>"; };
+		5474AEAE134A903F007A5ACB /* json_spirit_reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_spirit_reader.h; sourceTree = "<group>"; };
+		5474AEAF134A903F007A5ACB /* json_spirit_reader_template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_spirit_reader_template.h; sourceTree = "<group>"; };
+		5474AEB0134A903F007A5ACB /* json_spirit_stream_reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_spirit_stream_reader.h; sourceTree = "<group>"; };
+		5474AEB1134A903F007A5ACB /* json_spirit_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_spirit_utils.h; sourceTree = "<group>"; };
+		5474AEB2134A903F007A5ACB /* json_spirit_value.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_spirit_value.cpp; sourceTree = "<group>"; };
+		5474AEB3134A903F007A5ACB /* json_spirit_value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_spirit_value.h; sourceTree = "<group>"; };
+		5474AEB4134A903F007A5ACB /* json_spirit_writer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_spirit_writer.cpp; sourceTree = "<group>"; };
+		5474AEB5134A903F007A5ACB /* json_spirit_writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_spirit_writer.h; sourceTree = "<group>"; };
+		5474AEB6134A903F007A5ACB /* json_spirit_writer_template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_spirit_writer_template.h; sourceTree = "<group>"; };
+		5474AEB7134A903F007A5ACB /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		5474AEF0134AAF5B007A5ACB /* boost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = boost.framework; path = ../../../../Downloads/boostoniphone/framework/boost.framework; sourceTree = "<group>"; };
+		5474AFA6134B5AF3007A5ACB /* libdb_cxx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdb_cxx.a; path = ../db/lib/libdb_cxx.a; sourceTree = "<group>"; };
+		5474AFA8134B5CAF007A5ACB /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../openssl/lib/libcrypto.a; sourceTree = "<group>"; };
+		5474AFA9134B5CAF007A5ACB /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../openssl/lib/libssl.a; sourceTree = "<group>"; };
+		5474D277134BC748007A5ACB /* bitcoin.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bitcoin.conf; sourceTree = "<group>"; };
+		54ABD324134A798800650408 /* base58.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base58.h; sourceTree = "<group>"; };
+		54ABD325134A798800650408 /* bignum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bignum.h; sourceTree = "<group>"; };
+		54ABD326134A798800650408 /* build-msw.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "build-msw.txt"; sourceTree = "<group>"; };
+		54ABD327134A798800650408 /* build-osx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "build-osx.txt"; sourceTree = "<group>"; };
+		54ABD328134A798800650408 /* build-unix.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "build-unix.txt"; sourceTree = "<group>"; };
+		54ABD329134A798800650408 /* coding.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = coding.txt; sourceTree = "<group>"; };
+		54ABD32B134A798800650408 /* gitian.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gitian.yml; sourceTree = "<group>"; };
+		54ABD32D134A798800650408 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		54ABD32E134A798800650408 /* cpu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpu.cpp; sourceTree = "<group>"; };
+		54ABD32F134A798800650408 /* cpu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpu.h; sourceTree = "<group>"; };
+		54ABD330134A798800650408 /* cryptlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cryptlib.h; sourceTree = "<group>"; };
+		54ABD331134A798800650408 /* iterhash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iterhash.h; sourceTree = "<group>"; };
+		54ABD332134A798800650408 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
+		54ABD333134A798800650408 /* misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = misc.h; sourceTree = "<group>"; };
+		54ABD336134A798800650408 /* pch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pch.h; sourceTree = "<group>"; };
+		54ABD337134A798800650408 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
+		54ABD338134A798800650408 /* secblock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secblock.h; sourceTree = "<group>"; };
+		54ABD339134A798800650408 /* sha.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sha.cpp; sourceTree = "<group>"; };
+		54ABD33A134A798800650408 /* sha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha.h; sourceTree = "<group>"; };
+		54ABD33B134A798800650408 /* simple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = simple.h; sourceTree = "<group>"; };
+		54ABD33C134A798800650408 /* smartptr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smartptr.h; sourceTree = "<group>"; };
+		54ABD33D134A798800650408 /* stdcpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdcpp.h; sourceTree = "<group>"; };
+		54ABD33E134A798800650408 /* db.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = db.cpp; sourceTree = "<group>"; };
+		54ABD33F134A798800650408 /* db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = db.h; sourceTree = "<group>"; };
+		54ABD340134A798800650408 /* headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headers.h; sourceTree = "<group>"; };
+		54ABD341134A798800650408 /* init.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = init.cpp; sourceTree = "<group>"; };
+		54ABD342134A798800650408 /* init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = init.h; sourceTree = "<group>"; };
+		54ABD343134A798800650408 /* irc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = irc.cpp; sourceTree = "<group>"; };
+		54ABD344134A798800650408 /* irc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = irc.h; sourceTree = "<group>"; };
+		54ABD353134A798800650408 /* key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = key.h; sourceTree = "<group>"; };
+		54ABD354134A798800650408 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		54ABD358134A798800650408 /* bitcoin.mo */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitcoin.mo; sourceTree = "<group>"; };
+		54ABD359134A798800650408 /* bitcoin.po */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bitcoin.po; sourceTree = "<group>"; };
+		54ABD35C134A798800650408 /* bitcoin.mo */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitcoin.mo; sourceTree = "<group>"; };
+		54ABD35D134A798800650408 /* bitcoin.po */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bitcoin.po; sourceTree = "<group>"; };
+		54ABD360134A798800650408 /* bitcoin.mo */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitcoin.mo; sourceTree = "<group>"; };
+		54ABD361134A798800650408 /* bitcoin.po */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bitcoin.po; sourceTree = "<group>"; };
+		54ABD364134A798800650408 /* bitcoin.mo */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitcoin.mo; sourceTree = "<group>"; };
+		54ABD365134A798800650408 /* bitcoin.po */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bitcoin.po; sourceTree = "<group>"; };
+		54ABD368134A798900650408 /* bitcoin.mo */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitcoin.mo; sourceTree = "<group>"; };
+		54ABD369134A798900650408 /* bitcoin.po */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bitcoin.po; sourceTree = "<group>"; };
+		54ABD36C134A798900650408 /* bitcoin.mo */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitcoin.mo; sourceTree = "<group>"; };
+		54ABD36D134A798900650408 /* bitcoin.po */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bitcoin.po; sourceTree = "<group>"; };
+		54ABD36E134A798900650408 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		54ABD371134A798900650408 /* bitcoin.mo */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitcoin.mo; sourceTree = "<group>"; };
+		54ABD372134A798900650408 /* bitcoin.po */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bitcoin.po; sourceTree = "<group>"; };
+		54ABD373134A798900650408 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		54ABD374134A798900650408 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		54ABD375134A798900650408 /* makefile.mingw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = makefile.mingw; sourceTree = "<group>"; };
+		54ABD376134A798900650408 /* makefile.osx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = makefile.osx; sourceTree = "<group>"; };
+		54ABD377134A798900650408 /* makefile.unix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = makefile.unix; sourceTree = "<group>"; };
+		54ABD378134A798900650408 /* makefile.vc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = makefile.vc; sourceTree = "<group>"; };
+		54ABD379134A798900650408 /* net.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = net.cpp; sourceTree = "<group>"; };
+		54ABD37A134A798900650408 /* net.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = net.h; sourceTree = "<group>"; };
+		54ABD37B134A798900650408 /* noui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noui.h; sourceTree = "<group>"; };
+		54ABD381134A798900650408 /* addressbook16.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = addressbook16.bmp; sourceTree = "<group>"; };
+		54ABD382134A798900650408 /* addressbook16mask.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = addressbook16mask.bmp; sourceTree = "<group>"; };
+		54ABD383134A798900650408 /* addressbook20.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = addressbook20.bmp; sourceTree = "<group>"; };
+		54ABD384134A798900650408 /* addressbook20mask.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = addressbook20mask.bmp; sourceTree = "<group>"; };
+		54ABD385134A798900650408 /* bitcoin-bc.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "bitcoin-bc.ico"; sourceTree = "<group>"; };
+		54ABD386134A798900650408 /* bitcoin.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = bitcoin.ico; sourceTree = "<group>"; };
+		54ABD387134A798900650408 /* check.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = check.ico; sourceTree = "<group>"; };
+		54ABD388134A798900650408 /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
+		54ABD389134A798900650408 /* send16.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = send16.bmp; sourceTree = "<group>"; };
+		54ABD38A134A798900650408 /* send16mask.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = send16mask.bmp; sourceTree = "<group>"; };
+		54ABD38B134A798900650408 /* send16masknoshadow.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = send16masknoshadow.bmp; sourceTree = "<group>"; };
+		54ABD38C134A798900650408 /* send20.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = send20.bmp; sourceTree = "<group>"; };
+		54ABD38D134A798900650408 /* send20mask.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = send20mask.bmp; sourceTree = "<group>"; };
+		54ABD38E134A798900650408 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		54ABD38F134A798900650408 /* rpc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rpc.cpp; sourceTree = "<group>"; };
+		54ABD390134A798900650408 /* rpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpc.h; sourceTree = "<group>"; };
+		54ABD391134A798900650408 /* script.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = script.cpp; sourceTree = "<group>"; };
+		54ABD392134A798900650408 /* script.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = script.h; sourceTree = "<group>"; };
+		54ABD393134A798900650408 /* serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serialize.h; sourceTree = "<group>"; };
+		54ABD396134A798900650408 /* strlcpy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = strlcpy.h; sourceTree = "<group>"; };
+		54ABD39C134A798900650408 /* uint256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uint256.h; sourceTree = "<group>"; };
+		54ABD39E134A798900650408 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
+		54ABD39F134A798900650408 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		54C1FC7E134CF8A200D9830E /* RPCDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPCDataSource.h; sourceTree = "<group>"; };
+		54C1FC7F134CF8A200D9830E /* RPCDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPCDataSource.m; sourceTree = "<group>"; };
+		54C1FC81134CFE9500D9830E /* RPCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPCModel.h; sourceTree = "<group>"; };
+		54C1FC82134CFE9500D9830E /* RPCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPCModel.m; sourceTree = "<group>"; };
+		54C1FCEE134D149000D9830E /* LauncherViewTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherViewTestController.h; sourceTree = "<group>"; };
+		54C1FCEF134D149000D9830E /* LauncherViewTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherViewTestController.m; sourceTree = "<group>"; };
+		54C1FCF7134D1BA600D9830E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		54C1FCF9134D1BB500D9830E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		54F3C52E1305E86500E6C3BA /* BitCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F3C5321305E86500E6C3BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		54F3C5341305E86500E6C3BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		54F3C5361305E86500E6C3BA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		54F3C53A1305E86500E6C3BA /* BitCoin-Info.plist */ = {isa = PBXFileReference; path = "BitCoin-Info.plist"; sourceTree = "<group>"; };
+		54F3C53A1305E86500E6C3BA /* BitCoin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BitCoin-Info.plist"; sourceTree = "<group>"; };
 		54F3C53C1305E86500E6C3BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		54F3C53E1305E86500E6C3BA /* BitCoin-Prefix.pch */ = {isa = PBXFileReference; path = "BitCoin-Prefix.pch"; sourceTree = "<group>"; };
+		54F3C53E1305E86500E6C3BA /* BitCoin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BitCoin-Prefix.pch"; sourceTree = "<group>"; };
 		54F3C53F1305E86500E6C3BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		54F3C5411305E86500E6C3BA /* BitCoinAppDelegate.h */ = {isa = PBXFileReference; path = BitCoinAppDelegate.h; sourceTree = "<group>"; };
+		54F3C5411305E86500E6C3BA /* BitCoinAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitCoinAppDelegate.h; sourceTree = "<group>"; };
 		54F3C5421305E86500E6C3BA /* BitCoinAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitCoinAppDelegate.m; sourceTree = "<group>"; };
-		54F3C5451305E86500E6C3BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		54F3C5471305E86500E6C3BA /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
-		54F3C5481305E86500E6C3BA /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		54F3C54A1305E86500E6C3BA /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
-		54F3C54B1305E86500E6C3BA /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		54F3C54E1305E86500E6C3BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
-		54F3C5511305E86500E6C3BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
-		54F3C5581305E86500E6C3BA /* BitCoinTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitCoinTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		54F3C5601305E86500E6C3BA /* BitCoinTests-Info.plist */ = {isa = PBXFileReference; path = "BitCoinTests-Info.plist"; sourceTree = "<group>"; };
-		54F3C5621305E86500E6C3BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		54F3C5641305E86500E6C3BA /* BitCoinTests-Prefix.pch */ = {isa = PBXFileReference; path = "BitCoinTests-Prefix.pch"; sourceTree = "<group>"; };
-		54F3C5651305E86500E6C3BA /* BitCoinTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitCoinTests.h; sourceTree = "<group>"; };
-		54F3C5671305E86500E6C3BA /* BitCoinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitCoinTests.m; sourceTree = "<group>"; };
+		54F3C5471305E86500E6C3BA /* RPCCommandViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPCCommandViewController.h; sourceTree = "<group>"; };
+		54F3C5481305E86500E6C3BA /* RPCCommandViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPCCommandViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,30 +365,360 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3206A0F794A6D7A3F259DBF5 /* libextThree20JSON+SBJSON.a in Frameworks */,
+				3201088596B4756681693705 /* libThree20UICommon.a in Frameworks */,
+				320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */,
+				320A737074758E53BA54BE95 /* libThree20UINavigator.a in Frameworks */,
+				320A2827FEC940B25BC42C65 /* libThree20Core.a in Frameworks */,
+				320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */,
+				320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */,
+				320A5A189C235877202780D5 /* libThree20Network.a in Frameworks */,
+				320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */,
+				5474AFAA134B5CB0007A5ACB /* libcrypto.a in Frameworks */,
+				5474AFAB134B5CB0007A5ACB /* libssl.a in Frameworks */,
+				5474AFA7134B5AF3007A5ACB /* libdb_cxx.a in Frameworks */,
 				54F3C5331305E86500E6C3BA /* UIKit.framework in Frameworks */,
 				54F3C5351305E86500E6C3BA /* Foundation.framework in Frameworks */,
 				54F3C5371305E86500E6C3BA /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		54F3C5541305E86500E6C3BA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				54F3C5591305E86500E6C3BA /* UIKit.framework in Frameworks */,
-				54F3C55A1305E86500E6C3BA /* Foundation.framework in Frameworks */,
-				54F3C55B1305E86500E6C3BA /* CoreGraphics.framework in Frameworks */,
+				5474AEF1134AAF5C007A5ACB /* boost.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3201088596B4756681693703 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3201088596B4756681693704 /* libThree20UICommon.a */,
+				5435BE6A134C936800E52D30 /* UICommonUnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3206A0F794A6D7A3F259DBF3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3206A0F794A6D7A3F259DBF4 /* libextThree20JSON+SBJSON.a */,
+				54C1FB9C134CB98B00D9830E /* libextThree20JSON+YAJL.a */,
+				54C1FB9E134CB98B00D9830E /* extJSONUnitTests+SBJSON.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		320A2827FEC940B25BC42C63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				320A2827FEC940B25BC42C64 /* libThree20Core.a */,
+				5435BE5E134C936800E52D30 /* CoreUnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		320A5A189C235877202780D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				320A5A189C235877202780D4 /* libThree20Network.a */,
+				5435BE61134C936800E52D30 /* NetworkUnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		320A737074758E53BA54BE93 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				320A737074758E53BA54BE94 /* libThree20UINavigator.a */,
+				5435BE6D134C936800E52D30 /* UINavigatorUnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		320CC833B8AF0ACFD35E6223 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				320CC833B8AF0ACFD35E6224 /* libThree20Style.a */,
+				5435BE64134C936800E52D30 /* StyleUnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		320D7DCCE32703ACAB9A45E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				320D7DCCE32703ACAB9A45E4 /* libThree20.a */,
+				5435BE5B134C936800E52D30 /* Three20UnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		320F2C48872C2E2C4DF86203 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				320F2C48872C2E2C4DF86204 /* libThree20UI.a */,
+				5435BE67134C936800E52D30 /* UIUnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5474AEAA134A903F007A5ACB /* json */ = {
+			isa = PBXGroup;
+			children = (
+				5474AEAB134A903F007A5ACB /* json_spirit.h */,
+				5474AEAC134A903F007A5ACB /* json_spirit_error_position.h */,
+				5474AEAD134A903F007A5ACB /* json_spirit_reader.cpp */,
+				5474AEAE134A903F007A5ACB /* json_spirit_reader.h */,
+				5474AEAF134A903F007A5ACB /* json_spirit_reader_template.h */,
+				5474AEB0134A903F007A5ACB /* json_spirit_stream_reader.h */,
+				5474AEB1134A903F007A5ACB /* json_spirit_utils.h */,
+				5474AEB2134A903F007A5ACB /* json_spirit_value.cpp */,
+				5474AEB3134A903F007A5ACB /* json_spirit_value.h */,
+				5474AEB4134A903F007A5ACB /* json_spirit_writer.cpp */,
+				5474AEB5134A903F007A5ACB /* json_spirit_writer.h */,
+				5474AEB6134A903F007A5ACB /* json_spirit_writer_template.h */,
+				5474AEB7134A903F007A5ACB /* LICENSE.txt */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		54ABD2FE134A798800650408 /* bitcoin.org */ = {
+			isa = PBXGroup;
+			children = (
+				5474AEAA134A903F007A5ACB /* json */,
+				54ABD324134A798800650408 /* base58.h */,
+				54ABD325134A798800650408 /* bignum.h */,
+				54ABD326134A798800650408 /* build-msw.txt */,
+				54ABD327134A798800650408 /* build-osx.txt */,
+				54ABD328134A798800650408 /* build-unix.txt */,
+				54ABD329134A798800650408 /* coding.txt */,
+				54ABD32A134A798800650408 /* contrib */,
+				54ABD32C134A798800650408 /* cryptopp */,
+				54ABD33E134A798800650408 /* db.cpp */,
+				54ABD33F134A798800650408 /* db.h */,
+				54ABD340134A798800650408 /* headers.h */,
+				54ABD341134A798800650408 /* init.cpp */,
+				54ABD342134A798800650408 /* init.h */,
+				54ABD343134A798800650408 /* irc.cpp */,
+				54ABD344134A798800650408 /* irc.h */,
+				54ABD353134A798800650408 /* key.h */,
+				54ABD354134A798800650408 /* license.txt */,
+				54ABD355134A798800650408 /* locale */,
+				54ABD373134A798900650408 /* main.cpp */,
+				54ABD374134A798900650408 /* main.h */,
+				54ABD375134A798900650408 /* makefile.mingw */,
+				54ABD376134A798900650408 /* makefile.osx */,
+				54ABD377134A798900650408 /* makefile.unix */,
+				54ABD378134A798900650408 /* makefile.vc */,
+				54ABD379134A798900650408 /* net.cpp */,
+				54ABD37A134A798900650408 /* net.h */,
+				54ABD37B134A798900650408 /* noui.h */,
+				54ABD380134A798900650408 /* rc */,
+				54ABD38E134A798900650408 /* README.md */,
+				54ABD38F134A798900650408 /* rpc.cpp */,
+				54ABD390134A798900650408 /* rpc.h */,
+				54ABD391134A798900650408 /* script.cpp */,
+				54ABD392134A798900650408 /* script.h */,
+				54ABD393134A798900650408 /* serialize.h */,
+				54ABD396134A798900650408 /* strlcpy.h */,
+				54ABD39C134A798900650408 /* uint256.h */,
+				54ABD39E134A798900650408 /* util.cpp */,
+				54ABD39F134A798900650408 /* util.h */,
+			);
+			path = bitcoin.org;
+			sourceTree = "<group>";
+		};
+		54ABD32A134A798800650408 /* contrib */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD32B134A798800650408 /* gitian.yml */,
+			);
+			path = contrib;
+			sourceTree = "<group>";
+		};
+		54ABD32C134A798800650408 /* cryptopp */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD32D134A798800650408 /* config.h */,
+				54ABD32E134A798800650408 /* cpu.cpp */,
+				54ABD32F134A798800650408 /* cpu.h */,
+				54ABD330134A798800650408 /* cryptlib.h */,
+				54ABD331134A798800650408 /* iterhash.h */,
+				54ABD332134A798800650408 /* License.txt */,
+				54ABD333134A798800650408 /* misc.h */,
+				54ABD336134A798800650408 /* pch.h */,
+				54ABD337134A798800650408 /* Readme.txt */,
+				54ABD338134A798800650408 /* secblock.h */,
+				54ABD339134A798800650408 /* sha.cpp */,
+				54ABD33A134A798800650408 /* sha.h */,
+				54ABD33B134A798800650408 /* simple.h */,
+				54ABD33C134A798800650408 /* smartptr.h */,
+				54ABD33D134A798800650408 /* stdcpp.h */,
+			);
+			path = cryptopp;
+			sourceTree = "<group>";
+		};
+		54ABD355134A798800650408 /* locale */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD356134A798800650408 /* de */,
+				54ABD35A134A798800650408 /* es */,
+				54ABD35E134A798800650408 /* fr */,
+				54ABD362134A798800650408 /* it */,
+				54ABD366134A798800650408 /* nl */,
+				54ABD36A134A798900650408 /* pt */,
+				54ABD36E134A798900650408 /* readme.txt */,
+				54ABD36F134A798900650408 /* ru */,
+			);
+			path = locale;
+			sourceTree = "<group>";
+		};
+		54ABD356134A798800650408 /* de */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD357134A798800650408 /* LC_MESSAGES */,
+			);
+			path = de;
+			sourceTree = "<group>";
+		};
+		54ABD357134A798800650408 /* LC_MESSAGES */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD358134A798800650408 /* bitcoin.mo */,
+				54ABD359134A798800650408 /* bitcoin.po */,
+			);
+			path = LC_MESSAGES;
+			sourceTree = "<group>";
+		};
+		54ABD35A134A798800650408 /* es */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD35B134A798800650408 /* LC_MESSAGES */,
+			);
+			path = es;
+			sourceTree = "<group>";
+		};
+		54ABD35B134A798800650408 /* LC_MESSAGES */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD35C134A798800650408 /* bitcoin.mo */,
+				54ABD35D134A798800650408 /* bitcoin.po */,
+			);
+			path = LC_MESSAGES;
+			sourceTree = "<group>";
+		};
+		54ABD35E134A798800650408 /* fr */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD35F134A798800650408 /* LC_MESSAGES */,
+			);
+			path = fr;
+			sourceTree = "<group>";
+		};
+		54ABD35F134A798800650408 /* LC_MESSAGES */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD360134A798800650408 /* bitcoin.mo */,
+				54ABD361134A798800650408 /* bitcoin.po */,
+			);
+			path = LC_MESSAGES;
+			sourceTree = "<group>";
+		};
+		54ABD362134A798800650408 /* it */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD363134A798800650408 /* LC_MESSAGES */,
+			);
+			path = it;
+			sourceTree = "<group>";
+		};
+		54ABD363134A798800650408 /* LC_MESSAGES */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD364134A798800650408 /* bitcoin.mo */,
+				54ABD365134A798800650408 /* bitcoin.po */,
+			);
+			path = LC_MESSAGES;
+			sourceTree = "<group>";
+		};
+		54ABD366134A798800650408 /* nl */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD367134A798900650408 /* LC_MESSAGES */,
+			);
+			path = nl;
+			sourceTree = "<group>";
+		};
+		54ABD367134A798900650408 /* LC_MESSAGES */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD368134A798900650408 /* bitcoin.mo */,
+				54ABD369134A798900650408 /* bitcoin.po */,
+			);
+			path = LC_MESSAGES;
+			sourceTree = "<group>";
+		};
+		54ABD36A134A798900650408 /* pt */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD36B134A798900650408 /* LC_MESSAGES */,
+			);
+			path = pt;
+			sourceTree = "<group>";
+		};
+		54ABD36B134A798900650408 /* LC_MESSAGES */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD36C134A798900650408 /* bitcoin.mo */,
+				54ABD36D134A798900650408 /* bitcoin.po */,
+			);
+			path = LC_MESSAGES;
+			sourceTree = "<group>";
+		};
+		54ABD36F134A798900650408 /* ru */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD370134A798900650408 /* LC_MESSAGES */,
+			);
+			path = ru;
+			sourceTree = "<group>";
+		};
+		54ABD370134A798900650408 /* LC_MESSAGES */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD371134A798900650408 /* bitcoin.mo */,
+				54ABD372134A798900650408 /* bitcoin.po */,
+			);
+			path = LC_MESSAGES;
+			sourceTree = "<group>";
+		};
+		54ABD380134A798900650408 /* rc */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD381134A798900650408 /* addressbook16.bmp */,
+				54ABD382134A798900650408 /* addressbook16mask.bmp */,
+				54ABD383134A798900650408 /* addressbook20.bmp */,
+				54ABD384134A798900650408 /* addressbook20mask.bmp */,
+				54ABD385134A798900650408 /* bitcoin-bc.ico */,
+				54ABD386134A798900650408 /* bitcoin.ico */,
+				54ABD387134A798900650408 /* check.ico */,
+				54ABD388134A798900650408 /* favicon.ico */,
+				54ABD389134A798900650408 /* send16.bmp */,
+				54ABD38A134A798900650408 /* send16mask.bmp */,
+				54ABD38B134A798900650408 /* send16masknoshadow.bmp */,
+				54ABD38C134A798900650408 /* send20.bmp */,
+				54ABD38D134A798900650408 /* send20mask.bmp */,
+			);
+			path = rc;
+			sourceTree = "<group>";
+		};
 		54F3C5231305E86500E6C3BA = {
 			isa = PBXGroup;
 			children = (
+				5474AFA8134B5CAF007A5ACB /* libcrypto.a */,
+				5474AFA9134B5CAF007A5ACB /* libssl.a */,
+				5474AFA6134B5AF3007A5ACB /* libdb_cxx.a */,
+				5474AE85134A7D90007A5ACB /* README.txt */,
+				54ABD2FE134A798800650408 /* bitcoin.org */,
 				54F3C5381305E86500E6C3BA /* BitCoin */,
-				54F3C55E1305E86500E6C3BA /* BitCoinTests */,
 				54F3C5311305E86500E6C3BA /* Frameworks */,
 				54F3C52F1305E86500E6C3BA /* Products */,
 			);
@@ -100,7 +728,6 @@
 			isa = PBXGroup;
 			children = (
 				54F3C52E1305E86500E6C3BA /* BitCoin.app */,
-				54F3C5581305E86500E6C3BA /* BitCoinTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +735,16 @@
 		54F3C5311305E86500E6C3BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3206A0F794A6D7A3F259DBF0 /* extThree20JSON.xcodeproj */,
+				3201088596B4756681693700 /* Three20UICommon.xcodeproj */,
+				320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */,
+				320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */,
+				320A2827FEC940B25BC42C60 /* Three20Core.xcodeproj */,
+				320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */,
+				320AF8492C47A4D819F7C450 /* QuartzCore.framework */,
+				320A5A189C235877202780D0 /* Three20Network.xcodeproj */,
+				320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */,
+				5474AEF0134AAF5B007A5ACB /* boost.framework */,
 				54F3C5321305E86500E6C3BA /* UIKit.framework */,
 				54F3C5341305E86500E6C3BA /* Foundation.framework */,
 				54F3C5361305E86500E6C3BA /* CoreGraphics.framework */,
@@ -120,13 +757,14 @@
 			children = (
 				54F3C5411305E86500E6C3BA /* BitCoinAppDelegate.h */,
 				54F3C5421305E86500E6C3BA /* BitCoinAppDelegate.m */,
-				54F3C5441305E86500E6C3BA /* MainWindow.xib */,
-				54F3C5471305E86500E6C3BA /* FirstViewController.h */,
-				54F3C5481305E86500E6C3BA /* FirstViewController.m */,
-				54F3C54A1305E86500E6C3BA /* SecondViewController.h */,
-				54F3C54B1305E86500E6C3BA /* SecondViewController.m */,
-				54F3C54D1305E86500E6C3BA /* FirstView.xib */,
-				54F3C5501305E86500E6C3BA /* SecondView.xib */,
+				54C1FCEE134D149000D9830E /* LauncherViewTestController.h */,
+				54C1FCEF134D149000D9830E /* LauncherViewTestController.m */,
+				54F3C5471305E86500E6C3BA /* RPCCommandViewController.h */,
+				54F3C5481305E86500E6C3BA /* RPCCommandViewController.m */,
+				54C1FC7E134CF8A200D9830E /* RPCDataSource.h */,
+				54C1FC7F134CF8A200D9830E /* RPCDataSource.m */,
+				54C1FC81134CFE9500D9830E /* RPCModel.h */,
+				54C1FC82134CFE9500D9830E /* RPCModel.m */,
 				54F3C5391305E86500E6C3BA /* Supporting Files */,
 			);
 			path = BitCoin;
@@ -135,30 +773,17 @@
 		54F3C5391305E86500E6C3BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				54C1FCF9134D1BB500D9830E /* Icon@2x.png */,
+				54C1FCF7134D1BA600D9830E /* Icon.png */,
+				320B6C86F11D9990244A9730 /* Three20.bundle */,
+				5474AE90134A7F8B007A5ACB /* bitcoinScreenShot.png */,
+				5474AE91134A7F8B007A5ACB /* bitcoin512.png */,
+				5474AE92134A7F8B007A5ACB /* bitcoin530.png */,
 				54F3C53A1305E86500E6C3BA /* BitCoin-Info.plist */,
 				54F3C53B1305E86500E6C3BA /* InfoPlist.strings */,
 				54F3C53E1305E86500E6C3BA /* BitCoin-Prefix.pch */,
 				54F3C53F1305E86500E6C3BA /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		54F3C55E1305E86500E6C3BA /* BitCoinTests */ = {
-			isa = PBXGroup;
-			children = (
-				54F3C5651305E86500E6C3BA /* BitCoinTests.h */,
-				54F3C5671305E86500E6C3BA /* BitCoinTests.m */,
-				54F3C55F1305E86500E6C3BA /* Supporting Files */,
-			);
-			path = BitCoinTests;
-			sourceTree = "<group>";
-		};
-		54F3C55F1305E86500E6C3BA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				54F3C5601305E86500E6C3BA /* BitCoinTests-Info.plist */,
-				54F3C5611305E86500E6C3BA /* InfoPlist.strings */,
-				54F3C5641305E86500E6C3BA /* BitCoinTests-Prefix.pch */,
+				5474D277134BC748007A5ACB /* bitcoin.conf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -177,30 +802,19 @@
 			buildRules = (
 			);
 			dependencies = (
+				3206A0F794A6D7A3F259DBF1 /* PBXTargetDependency */,
+				3201088596B4756681693701 /* PBXTargetDependency */,
+				320D7DCCE32703ACAB9A45E1 /* PBXTargetDependency */,
+				320A737074758E53BA54BE91 /* PBXTargetDependency */,
+				320A2827FEC940B25BC42C61 /* PBXTargetDependency */,
+				320F2C48872C2E2C4DF86201 /* PBXTargetDependency */,
+				320A5A189C235877202780D1 /* PBXTargetDependency */,
+				320CC833B8AF0ACFD35E6221 /* PBXTargetDependency */,
 			);
 			name = BitCoin;
 			productName = BitCoin;
 			productReference = 54F3C52E1305E86500E6C3BA /* BitCoin.app */;
 			productType = "com.apple.product-type.application";
-		};
-		54F3C5571305E86500E6C3BA /* BitCoinTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 54F3C56E1305E86500E6C3BA /* Build configuration list for PBXNativeTarget "BitCoinTests" */;
-			buildPhases = (
-				54F3C5531305E86500E6C3BA /* Sources */,
-				54F3C5541305E86500E6C3BA /* Frameworks */,
-				54F3C5551305E86500E6C3BA /* Resources */,
-				54F3C5561305E86500E6C3BA /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				54F3C55D1305E86500E6C3BA /* PBXTargetDependency */,
-			);
-			name = BitCoinTests;
-			productName = BitCoinTests;
-			productReference = 54F3C5581305E86500E6C3BA /* BitCoinTests.octest */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -217,52 +831,183 @@
 			mainGroup = 54F3C5231305E86500E6C3BA;
 			productRefGroup = 54F3C52F1305E86500E6C3BA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3206A0F794A6D7A3F259DBF3 /* Products */;
+					ProjectRef = 3206A0F794A6D7A3F259DBF0 /* extThree20JSON.xcodeproj */;
+				},
+				{
+					ProductGroup = 320D7DCCE32703ACAB9A45E3 /* Products */;
+					ProjectRef = 320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */;
+				},
+				{
+					ProductGroup = 320A2827FEC940B25BC42C63 /* Products */;
+					ProjectRef = 320A2827FEC940B25BC42C60 /* Three20Core.xcodeproj */;
+				},
+				{
+					ProductGroup = 320A5A189C235877202780D3 /* Products */;
+					ProjectRef = 320A5A189C235877202780D0 /* Three20Network.xcodeproj */;
+				},
+				{
+					ProductGroup = 320CC833B8AF0ACFD35E6223 /* Products */;
+					ProjectRef = 320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */;
+				},
+				{
+					ProductGroup = 320F2C48872C2E2C4DF86203 /* Products */;
+					ProjectRef = 320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */;
+				},
+				{
+					ProductGroup = 3201088596B4756681693703 /* Products */;
+					ProjectRef = 3201088596B4756681693700 /* Three20UICommon.xcodeproj */;
+				},
+				{
+					ProductGroup = 320A737074758E53BA54BE93 /* Products */;
+					ProjectRef = 320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				54F3C52D1305E86500E6C3BA /* BitCoin */,
-				54F3C5571305E86500E6C3BA /* BitCoinTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3201088596B4756681693704 /* libThree20UICommon.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20UICommon.a;
+			remoteRef = 3201088596B4756681693706 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3206A0F794A6D7A3F259DBF4 /* libextThree20JSON+SBJSON.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libextThree20JSON+SBJSON.a";
+			remoteRef = 3206A0F794A6D7A3F259DBF6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		320A2827FEC940B25BC42C64 /* libThree20Core.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20Core.a;
+			remoteRef = 320A2827FEC940B25BC42C66 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		320A5A189C235877202780D4 /* libThree20Network.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20Network.a;
+			remoteRef = 320A5A189C235877202780D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		320A737074758E53BA54BE94 /* libThree20UINavigator.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20UINavigator.a;
+			remoteRef = 320A737074758E53BA54BE96 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		320CC833B8AF0ACFD35E6224 /* libThree20Style.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20Style.a;
+			remoteRef = 320CC833B8AF0ACFD35E6226 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		320D7DCCE32703ACAB9A45E4 /* libThree20.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20.a;
+			remoteRef = 320D7DCCE32703ACAB9A45E6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		320F2C48872C2E2C4DF86204 /* libThree20UI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20UI.a;
+			remoteRef = 320F2C48872C2E2C4DF86206 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5435BE5B134C936800E52D30 /* Three20UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Three20UnitTests.octest;
+			remoteRef = 5435BE5A134C936800E52D30 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5435BE5E134C936800E52D30 /* CoreUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CoreUnitTests.octest;
+			remoteRef = 5435BE5D134C936800E52D30 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5435BE61134C936800E52D30 /* NetworkUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NetworkUnitTests.octest;
+			remoteRef = 5435BE60134C936800E52D30 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5435BE64134C936800E52D30 /* StyleUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = StyleUnitTests.octest;
+			remoteRef = 5435BE63134C936800E52D30 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5435BE67134C936800E52D30 /* UIUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UIUnitTests.octest;
+			remoteRef = 5435BE66134C936800E52D30 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5435BE6A134C936800E52D30 /* UICommonUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UICommonUnitTests.octest;
+			remoteRef = 5435BE69134C936800E52D30 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5435BE6D134C936800E52D30 /* UINavigatorUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UINavigatorUnitTests.octest;
+			remoteRef = 5435BE6C134C936800E52D30 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		54C1FB9C134CB98B00D9830E /* libextThree20JSON+YAJL.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libextThree20JSON+YAJL.a";
+			remoteRef = 54C1FB9B134CB98B00D9830E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		54C1FB9E134CB98B00D9830E /* extJSONUnitTests+SBJSON.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "extJSONUnitTests+SBJSON.octest";
+			remoteRef = 54C1FB9D134CB98B00D9830E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		54F3C52C1305E86500E6C3BA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				320B6C86F11D9990244A9731 /* Three20.bundle in Resources */,
 				54F3C53D1305E86500E6C3BA /* InfoPlist.strings in Resources */,
-				54F3C5461305E86500E6C3BA /* MainWindow.xib in Resources */,
-				54F3C54F1305E86500E6C3BA /* FirstView.xib in Resources */,
-				54F3C5521305E86500E6C3BA /* SecondView.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		54F3C5551305E86500E6C3BA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				54F3C5631305E86500E6C3BA /* InfoPlist.strings in Resources */,
-				54F3C5661305E86500E6C3BA /* BitCoinTests.h in Resources */,
+				5474D278134BC748007A5ACB /* bitcoin.conf in Resources */,
+				54C1FCF8134D1BA700D9830E /* Icon.png in Resources */,
+				54C1FCFA134D1BB600D9830E /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		54F3C5561305E86500E6C3BA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		54F3C52A1305E86500E6C3BA /* Sources */ = {
@@ -271,26 +1016,68 @@
 			files = (
 				54F3C5401305E86500E6C3BA /* main.m in Sources */,
 				54F3C5431305E86500E6C3BA /* BitCoinAppDelegate.m in Sources */,
-				54F3C5491305E86500E6C3BA /* FirstViewController.m in Sources */,
-				54F3C54C1305E86500E6C3BA /* SecondViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		54F3C5531305E86500E6C3BA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				54F3C5681305E86500E6C3BA /* BitCoinTests.m in Sources */,
+				54F3C5491305E86500E6C3BA /* RPCCommandViewController.m in Sources */,
+				54ABD3C9134A798900650408 /* cpu.cpp in Sources */,
+				54ABD3CD134A798900650408 /* sha.cpp in Sources */,
+				54ABD3CE134A798900650408 /* db.cpp in Sources */,
+				54ABD3CF134A798900650408 /* init.cpp in Sources */,
+				54ABD3D0134A798900650408 /* irc.cpp in Sources */,
+				54ABD3E5134A798900650408 /* main.cpp in Sources */,
+				54ABD3EA134A798900650408 /* net.cpp in Sources */,
+				54ABD3FB134A798900650408 /* rpc.cpp in Sources */,
+				54ABD3FC134A798900650408 /* script.cpp in Sources */,
+				54ABD403134A798900650408 /* util.cpp in Sources */,
+				5474AEB8134A903F007A5ACB /* json_spirit_reader.cpp in Sources */,
+				5474AEB9134A903F007A5ACB /* json_spirit_value.cpp in Sources */,
+				5474AEBA134A903F007A5ACB /* json_spirit_writer.cpp in Sources */,
+				54C1FC80134CF8A200D9830E /* RPCDataSource.m in Sources */,
+				54C1FC83134CFE9600D9830E /* RPCModel.m in Sources */,
+				54C1FCF0134D149000D9830E /* LauncherViewTestController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		54F3C55D1305E86500E6C3BA /* PBXTargetDependency */ = {
+		3201088596B4756681693701 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 54F3C52D1305E86500E6C3BA /* BitCoin */;
-			targetProxy = 54F3C55C1305E86500E6C3BA /* PBXContainerItemProxy */;
+			name = Three20UICommon;
+			targetProxy = 3201088596B4756681693702 /* PBXContainerItemProxy */;
+		};
+		3206A0F794A6D7A3F259DBF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = extThree20JSON;
+			targetProxy = 3206A0F794A6D7A3F259DBF2 /* PBXContainerItemProxy */;
+		};
+		320A2827FEC940B25BC42C61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20Core;
+			targetProxy = 320A2827FEC940B25BC42C62 /* PBXContainerItemProxy */;
+		};
+		320A5A189C235877202780D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20Network;
+			targetProxy = 320A5A189C235877202780D2 /* PBXContainerItemProxy */;
+		};
+		320A737074758E53BA54BE91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20UINavigator;
+			targetProxy = 320A737074758E53BA54BE92 /* PBXContainerItemProxy */;
+		};
+		320CC833B8AF0ACFD35E6221 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20Style;
+			targetProxy = 320CC833B8AF0ACFD35E6222 /* PBXContainerItemProxy */;
+		};
+		320D7DCCE32703ACAB9A45E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20;
+			targetProxy = 320D7DCCE32703ACAB9A45E2 /* PBXContainerItemProxy */;
+		};
+		320F2C48872C2E2C4DF86201 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20UI;
+			targetProxy = 320F2C48872C2E2C4DF86202 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -299,38 +1086,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				54F3C53C1305E86500E6C3BA /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		54F3C5441305E86500E6C3BA /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				54F3C5451305E86500E6C3BA /* en */,
-			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		54F3C54D1305E86500E6C3BA /* FirstView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				54F3C54E1305E86500E6C3BA /* en */,
-			);
-			name = FirstView.xib;
-			sourceTree = "<group>";
-		};
-		54F3C5501305E86500E6C3BA /* SecondView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				54F3C5511305E86500E6C3BA /* en */,
-			);
-			name = SecondView.xib;
-			sourceTree = "<group>";
-		};
-		54F3C5611305E86500E6C3BA /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				54F3C5621305E86500E6C3BA /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -345,12 +1100,26 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					DEBUG,
+					CRYPTOPP_DISABLE_ASM,
+					"MSG_NOSIGNAL=0",
+					HAVE_CXX_STDHEADERS,
+				);
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				HEADER_SEARCH_PATHS = (
+					"$(BUILT_PRODUCTS_DIR)/../three20",
+					"$(BUILT_PRODUCTS_DIR)/../../three20",
+					three20/Build/Products/three20,
+					/Users/udi/Documents/MyProjects/iPhone/openssl/include,
+					/Users/udi/Documents/MyProjects/iPhone/db/include,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -360,12 +1129,25 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					CRYPTOPP_DISABLE_ASM,
+					"MSG_NOSIGNAL=0",
+				);
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				HEADER_SEARCH_PATHS = (
+					"$(BUILT_PRODUCTS_DIR)/../three20",
+					"$(BUILT_PRODUCTS_DIR)/../../three20",
+					three20/Build/Products/three20,
+					/Users/udi/Documents/MyProjects/iPhone/openssl/include,
+					/Users/udi/Documents/MyProjects/iPhone/db/include,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
@@ -374,11 +1156,20 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Downloads/boostoniphone/framework\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BitCoin/BitCoin-Prefix.pch";
 				INFOPLIST_FILE = "BitCoin/BitCoin-Info.plist";
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../db/lib\"",
+					"\"$(SRCROOT)/../openssl/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -389,57 +1180,22 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Downloads/boostoniphone/framework\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BitCoin/BitCoin-Prefix.pch";
 				INFOPLIST_FILE = "BitCoin/BitCoin-Info.plist";
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../db/lib\"",
+					"\"$(SRCROOT)/../openssl/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		54F3C56F1305E86500E6C3BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BitCoin.app/BitCoin";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BitCoinTests/BitCoinTests-Prefix.pch";
-				INFOPLIST_FILE = "BitCoinTests/BitCoinTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-framework",
-					SenTestingKit,
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		54F3C5701305E86500E6C3BA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BitCoin.app/BitCoin";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BitCoinTests/BitCoinTests-Prefix.pch";
-				INFOPLIST_FILE = "BitCoinTests/BitCoinTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-framework",
-					SenTestingKit,
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -462,14 +1218,7 @@
 				54F3C56D1305E86500E6C3BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		54F3C56E1305E86500E6C3BA /* Build configuration list for PBXNativeTarget "BitCoinTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				54F3C56F1305E86500E6C3BA /* Debug */,
-				54F3C5701305E86500E6C3BA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

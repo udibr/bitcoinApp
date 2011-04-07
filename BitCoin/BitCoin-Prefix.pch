@@ -12,3 +12,4 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+#import "TargetConditionals.h" // needed for using TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR on C++ files

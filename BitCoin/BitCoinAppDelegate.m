@@ -5,22 +5,90 @@
 //  Created by Ehud Ben-Reuven on 2/11/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
-
 #import "BitCoinAppDelegate.h"
 
+#import "LauncherViewTestController.h"
+#import "RPCCommandViewController.h"
+
+extern int bitcoinmain(int argc, char* argv[]);
+
 @implementation BitCoinAppDelegate
+/**
+ Returns the path to the application's documents directory.
+ */
+//http://stackoverflow.com/questions/2094376/create-subfolder-in-nsdocumentdirectory
+//NSDocumentDirectory - Analogous to you own Documents folder, the contents of this folder is backed up when you synch the device.
+//NSCachesDirectory - This one resides in /Library/Caches/ and is not backed up when synching the device.
+- (NSString *)applicationDocumentsDirectory {
+	
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    return basePath;
+}
 
-
-@synthesize window=_window;
-
-@synthesize tabBarController=_tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    // Add the tab bar controller's current view as a subview of the window
-    self.window.rootViewController = self.tabBarController;
-    [self.window makeKeyAndVisible];
+    //int fd[2];
+    //pipe(fd);
+    //int fd0=fd[0];
+    //int fd1=fd[1];
+    
+    NSString *confPath = [[NSBundle mainBundle] pathForResource:@"bitcoin" ofType:@"conf"]; // resourcePath];
+    serialQueue = dispatch_queue_create("BITCOIND",NULL);
+    dispatch_async(serialQueue,^{
+        //dup2(fd1, stderr);
+#define MAXARGC    30
+        int argc=0;
+        char *argv[MAXARGC];
+        argv[0] = "bitcoind";
+        argc++;
+        argv[1] = (char*)[[NSString stringWithFormat:@"-datadir=%@",[self applicationDocumentsDirectory]] cString];
+        argc++;
+        argv[2] = (char*)[[NSString stringWithFormat:@"-conf=%@",confPath] cString];
+        argc++;
+        argv[3] = "-printtoconsole";
+        argc++;
+        TTDPRINT(@"starting bitcoin thread");
+
+        bitcoinmain(argc,argv);
+    });
+#if 0
+    logQueue = dispatch_queue_create("LOGD",NULL);
+    dispatch_async(logQueue,^{
+        NSLog(@"starting log thread");
+        
+        char buffer[1024];
+        while (read(fd0, buffer, 1024) >= 0) {
+         //   NSLog(@"%s", buffer); 
+        }
+    });
+#endif
+    
+    
+	// configure ttnavigator
+	TTNavigator* navigator = [TTNavigator navigator];
+	navigator.supportsShakeToReload = YES;
+	navigator.persistenceMode = TTNavigatorPersistenceModeAll;
+    navigator.window = [[[UIWindow alloc] initWithFrame:TTScreenBounds()] autorelease];
+    
+	// !!! IMPORTANT: create urlmaps !!!
+	TTURLMap* map = navigator.URLMap;
+    
+    // Any URL that doesn't match will fall back on this one, and open in the web browser
+    [map from:@"*" toViewController:[TTWebController class]];
+	[map from:@"bitcoin://rpccommand/(initWithCommand:)" toViewController:[RPCCommandViewController class]];
+    [map from:@"bitcoin://launcher" toSharedViewController: [LauncherViewTestController class]];
+
+    
+    if (![navigator restoreViewControllers])
+        [navigator openURLAction:[TTURLAction actionWithURLPath:@"bitcoin://launcher"]];
+
+    return YES;
+}
+
+- (BOOL)application:(UIApplication*)application handleOpenURL:(NSURL*)URL {
+    [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:URL.absoluteString]];
     return YES;
 }
 
@@ -65,8 +133,11 @@
 
 - (void)dealloc
 {
-    [_window release];
-    [_tabBarController release];
+    if (serialQueue) {
+		dispatch_release(serialQueue);
+		serialQueue=NULL;
+	}
+
     [super dealloc];
 }
 
