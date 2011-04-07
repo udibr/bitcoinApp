@@ -254,6 +254,8 @@ open BitCoin.xcodeproj
 # Make sure scheme "BitCoin | iPhone 4.3 Simulator" is selected" (but the code also runs on a device)
 # Build & Run
 
+# to build a release version dont forget to fix the identifier to your company (BitCoin->TARGETS/BitCoin->Summary/Identifier)
+
 ======================
 = Usage instructions =
 ======================
