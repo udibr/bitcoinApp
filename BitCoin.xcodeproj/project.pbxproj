@@ -17,6 +17,7 @@
 		320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320CC833B8AF0ACFD35E6224 /* libThree20Style.a */; };
 		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
+		5464D443134E6523003059DE /* build-iOS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5464D442134E6523003059DE /* build-iOS.txt */; };
 		5474AEF1134AAF5C007A5ACB /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AEF0134AAF5B007A5ACB /* boost.framework */; };
 		5474AFA7134B5AF3007A5ACB /* libdb_cxx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA6134B5AF3007A5ACB /* libdb_cxx.a */; };
 		5474AFAA134B5CB0007A5ACB /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA8134B5CAF007A5ACB /* libcrypto.a */; };
@@ -238,11 +239,11 @@
 		320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Style.xcodeproj; path = ../three20/src/Three20Style/Three20Style.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
-		5474AE85134A7D90007A5ACB /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		5464D442134E6523003059DE /* build-iOS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "build-iOS.txt"; sourceTree = "<group>"; };
 		5474AE90134A7F8B007A5ACB /* bitcoinScreenShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoinScreenShot.png; sourceTree = "<group>"; };
 		5474AE91134A7F8B007A5ACB /* bitcoin512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoin512.png; sourceTree = "<group>"; };
 		5474AE92134A7F8B007A5ACB /* bitcoin530.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoin530.png; sourceTree = "<group>"; };
-		5474AEF0134AAF5B007A5ACB /* boost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = boost.framework; path = ../../../../../Downloads/boostoniphone/framework/boost.framework; sourceTree = "<group>"; };
+		5474AEF0134AAF5B007A5ACB /* boost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = boost.framework; path = ../boostoniphone/framework/boost.framework; sourceTree = "<group>"; };
 		5474AFA6134B5AF3007A5ACB /* libdb_cxx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdb_cxx.a; path = ../db/lib/libdb_cxx.a; sourceTree = "<group>"; };
 		5474AFA8134B5CAF007A5ACB /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../openssl/lib/libcrypto.a; sourceTree = "<group>"; };
 		5474AFA9134B5CAF007A5ACB /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../openssl/lib/libssl.a; sourceTree = "<group>"; };
@@ -750,7 +751,7 @@
 		54F3C5231305E86500E6C3BA = {
 			isa = PBXGroup;
 			children = (
-				5474AE85134A7D90007A5ACB /* README.txt */,
+				5464D442134E6523003059DE /* build-iOS.txt */,
 				54B9E8D1134E5A9A00C02E09 /* bitcoin.org */,
 				54F3C5381305E86500E6C3BA /* BitCoin */,
 				54F3C5311305E86500E6C3BA /* Frameworks */,
@@ -1041,6 +1042,7 @@
 				5474D278134BC748007A5ACB /* bitcoin.conf in Resources */,
 				54C1FCF8134D1BA700D9830E /* Icon.png in Resources */,
 				54C1FCFA134D1BB600D9830E /* Icon@2x.png in Resources */,
+				5464D443134E6523003059DE /* build-iOS.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1195,7 +1197,7 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../Downloads/boostoniphone/framework\"",
+					"\"$(SRCROOT)/../boostoniphone/framework\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1219,7 +1221,7 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../Downloads/boostoniphone/framework\"",
+					"\"$(SRCROOT)/../boostoniphone/framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BitCoin/BitCoin-Prefix.pch";
