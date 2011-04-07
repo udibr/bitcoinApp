@@ -17,7 +17,6 @@
 		320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320CC833B8AF0ACFD35E6224 /* libThree20Style.a */; };
 		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
-		5464D443134E6523003059DE /* build-iOS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5464D442134E6523003059DE /* build-iOS.txt */; };
 		5474AEF1134AAF5C007A5ACB /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AEF0134AAF5B007A5ACB /* boost.framework */; };
 		5474AFA7134B5AF3007A5ACB /* libdb_cxx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA6134B5AF3007A5ACB /* libdb_cxx.a */; };
 		5474AFAA134B5CB0007A5ACB /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA8134B5CAF007A5ACB /* libcrypto.a */; };
@@ -361,6 +360,7 @@
 		54C1FCEF134D149000D9830E /* LauncherViewTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherViewTestController.m; sourceTree = "<group>"; };
 		54C1FCF7134D1BA600D9830E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		54C1FCF9134D1BB500D9830E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		54EC00DC134E7ACB00FB5100 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		54F3C52E1305E86500E6C3BA /* BitCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F3C5321305E86500E6C3BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		54F3C5341305E86500E6C3BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -751,6 +751,7 @@
 		54F3C5231305E86500E6C3BA = {
 			isa = PBXGroup;
 			children = (
+				54EC00DC134E7ACB00FB5100 /* README */,
 				5464D442134E6523003059DE /* build-iOS.txt */,
 				54B9E8D1134E5A9A00C02E09 /* bitcoin.org */,
 				54F3C5381305E86500E6C3BA /* BitCoin */,
@@ -1042,7 +1043,6 @@
 				5474D278134BC748007A5ACB /* bitcoin.conf in Resources */,
 				54C1FCF8134D1BA700D9830E /* Icon.png in Resources */,
 				54C1FCFA134D1BB600D9830E /* Icon@2x.png in Resources */,
-				5464D443134E6523003059DE /* build-iOS.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
