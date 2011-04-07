@@ -6,21 +6,31 @@ the OpenSSL Toolkit (http://www.openssl.org/).  This product includes
 cryptographic software written by Eric Young (eay@cryptsoft.com).
 
 
-iOS (iPhone) build instructions
+BitCoin iOS (iPhone) build instructions
 Ehud Ben-Reuven (udi@benreuven.com)
 
-=====================
-= Project directory =
-=====================
+* Create project directory
+* Add bitcoin.org project
+* Add openssl
+* Add boost
+* Add Berkley db
+* Add Three20
+* Add BitCoin App project
+* Usage instructions
+* Credits/Please Help
+
+
+============================
+= Create project directory =
+============================
 # create a tmp directory
 mkdir ~/tmp
-cd tmp
+cd ~/tmp
 export TMP=`pwd`
-cd ..
 
 # create a project directory. For example:
 mkdir ~/BitCoinProj
-cd BitCoinProj
+cd ~/BitCoinProj
 export PROJ=`pwd`
 
 ===========================
@@ -244,8 +254,17 @@ open BitCoin.xcodeproj
 # Make sure scheme "BitCoin | iPhone 4.3 Simulator" is selected" (but the code also runs on a device)
 # Build & Run
 
-# Usage instructions:
+======================
+= Usage instructions =
+======================
 # It takes a while for the bitcoin daemon to start so wait before pressing any of the buttons (just one "info" for now)
 # Once you enter the info screen you can refresh it by dragging it all the way down
 
+===========
+= Credits =
+===========
+* Most of the work is done by daemon which is identical to the regular bitcoind developed by bitcoin team
+* The bitcoin icon was manipulated from https://www.bitcoin.org/smf/index.php?topic=64.0
+* Please help! there are a million things that needs to be added/fixed
+* Thanks!
 
