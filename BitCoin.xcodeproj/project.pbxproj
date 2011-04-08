@@ -40,6 +40,7 @@
 		54C1FCF0134D149000D9830E /* LauncherViewTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C1FCEF134D149000D9830E /* LauncherViewTestController.m */; };
 		54C1FCF8134D1BA700D9830E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C1FCF7134D1BA600D9830E /* Icon.png */; };
 		54C1FCFA134D1BB600D9830E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C1FCF9134D1BB500D9830E /* Icon@2x.png */; };
+		54EC01E7134E9CE400FB5100 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54EC01E6134E9CE400FB5100 /* Entitlements.plist */; };
 		54F3C5331305E86500E6C3BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5321305E86500E6C3BA /* UIKit.framework */; };
 		54F3C5351305E86500E6C3BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5341305E86500E6C3BA /* Foundation.framework */; };
 		54F3C5371305E86500E6C3BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5361305E86500E6C3BA /* CoreGraphics.framework */; };
@@ -361,6 +362,7 @@
 		54C1FCF7134D1BA600D9830E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		54C1FCF9134D1BB500D9830E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		54EC00DC134E7ACB00FB5100 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		54EC01E6134E9CE400FB5100 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = SOURCE_ROOT; };
 		54F3C52E1305E86500E6C3BA /* BitCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F3C5321305E86500E6C3BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		54F3C5341305E86500E6C3BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -823,6 +825,7 @@
 				54F3C53E1305E86500E6C3BA /* BitCoin-Prefix.pch */,
 				54F3C53F1305E86500E6C3BA /* main.m */,
 				5474D277134BC748007A5ACB /* bitcoin.conf */,
+				54EC01E6134E9CE400FB5100 /* Entitlements.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1043,6 +1046,7 @@
 				5474D278134BC748007A5ACB /* bitcoin.conf in Resources */,
 				54C1FCF8134D1BA700D9830E /* Icon.png in Resources */,
 				54C1FCFA134D1BB600D9830E /* Icon@2x.png in Resources */,
+				54EC01E7134E9CE400FB5100 /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1132,6 +1136,60 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		54EC01E4134E99FF00FB5100 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yael Ben-Reuven";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					CRYPTOPP_DISABLE_ASM,
+					"MSG_NOSIGNAL=0",
+				);
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(BUILT_PRODUCTS_DIR)/../three20",
+					"$(BUILT_PRODUCTS_DIR)/../../three20",
+					../three20/Build/Products/three20,
+					/Users/udi/Documents/MyProjects/iPhone/openssl/include,
+					/Users/udi/Documents/MyProjects/iPhone/db/include,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "773EB9CA-3DB2-4C4F-8F08-6099B072E3EC";
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = "Ad Hoc";
+		};
+		54EC01E5134E99FF00FB5100 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../boostoniphone/framework\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BitCoin/BitCoin-Prefix.pch";
+				INFOPLIST_FILE = "BitCoin/BitCoin-Info.plist";
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../db/lib\"",
+					"\"$(SRCROOT)/../openssl/lib\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Ad Hoc";
+		};
 		54F3C5691305E86500E6C3BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1246,6 +1304,7 @@
 			buildConfigurations = (
 				54F3C5691305E86500E6C3BA /* Debug */,
 				54F3C56A1305E86500E6C3BA /* Release */,
+				54EC01E4134E99FF00FB5100 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1255,6 +1314,7 @@
 			buildConfigurations = (
 				54F3C56C1305E86500E6C3BA /* Debug */,
 				54F3C56D1305E86500E6C3BA /* Release */,
+				54EC01E5134E99FF00FB5100 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
