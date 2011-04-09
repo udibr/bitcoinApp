@@ -7,8 +7,10 @@
 //
 
 #import <Three20/Three20.h>
-
+@class RPCModel;
 @interface BitCoinAppDelegate : NSObject <UIApplicationDelegate> {
 	dispatch_queue_t serialQueue, logQueue;
+    RPCModel *model;
 }
+@property (nonatomic, retain) RPCModel* model;
 @end

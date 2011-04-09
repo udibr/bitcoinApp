@@ -10,7 +10,14 @@
 #import "RPCModel.h"
 #import "BCTableTextItemCell.h"
 
+@interface RPCDataSource ()
+@property (nonatomic, assign) NSTimer *reloadTimer;
+@end
+
+
 @implementation RPCDataSource
+@synthesize reloadTimer;
+
 - (id)initWithItemCommand:(NSString*)command params:(NSArray*)params
 {
     self = [super init];
@@ -24,9 +31,26 @@
 }
 
 - (void)dealloc {
+    self.reloadTimer = nil;
+    
     self.items = nil;
 	TT_RELEASE_SAFELY(_model);
 	[super dealloc];
+}
+
+-(void)reloadModel
+{
+    [self.model load:TTURLRequestCachePolicyDefault more:NO];
+}
+
+- (void)setReloadTimer:(NSTimer *)newTimer {
+    [reloadTimer invalidate];
+    reloadTimer = newTimer;
+}
+
+- (void)startReload:(NSTimeInterval)animationInterval
+{
+	self.reloadTimer = [NSTimer scheduledTimerWithTimeInterval:animationInterval target:self selector:@selector(reloadModel) userInfo:nil repeats:YES];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -35,6 +59,7 @@
 }
 
 - (void)cancel {
+    self.reloadTimer = nil;
     [super cancel];
     [_model cancel];
 }
@@ -70,4 +95,32 @@
 	     cellClassForObject:object];
 }
 
+- (NSString*)titleForError:(NSError*)error
+{
+    if ([error.domain isEqual:@"NSURLErrorDomain"] && error.code == -1004) {
+        return @"BitCoin starting";
+    } else
+        return @"Error";
+}
+
+- (NSString*)subtitleForError:(NSError*)error
+{
+    if ([error.domain isEqual:@"NSURLErrorDomain"] && error.code == -1004) {
+       return @"Please wait...";
+    } else {
+        return [error localizedDescription];
+    }
+}
+
+- (void)model:(id<TTModel>)model didFailLoadWithError:(NSError*)error
+{
+    TTDPRINT(@"error domain %@ code %d", error.domain, error.code);
+    if ([error.domain isEqual:@"NSURLErrorDomain"] && error.code == -1004) {
+        [self startReload:1.];
+    }
+}
+- (void)modelDidFinishLoad:(id<TTModel>)model
+{
+    [self startReload:2.];
+}
 @end

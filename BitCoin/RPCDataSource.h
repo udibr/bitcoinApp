@@ -9,7 +9,7 @@
 #import "Three20/Three20.h"
 
 @interface RPCDataSource : TTListDataSource {
-
+	NSTimer *reloadTimer;
 }
 - (id)initWithItemCommand:(NSString*)command params:(NSArray*)params;
 @end

@@ -11,9 +11,11 @@
 #import "RPCCommandViewController.h"
 #import "SendViewController.h"
 #import "AboutViewController.h"
+#import "RPCModel.h"
 extern int bitcoinmain(int argc, char* argv[]);
 
 @implementation BitCoinAppDelegate
+@synthesize model;
 /**
  Returns the path to the application's documents directory.
  */
@@ -27,16 +29,9 @@ extern int bitcoinmain(int argc, char* argv[]);
     return basePath;
 }
 
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+-(void)startDaemon
 {
-    //int fd[2];
-    //pipe(fd);
-    //int fd0=fd[0];
-    //int fd1=fd[1];
-    
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"bitcoin" ofType:@"conf"]; // resourcePath];
-    serialQueue = dispatch_queue_create("BITCOIND",NULL);
     dispatch_async(serialQueue,^{
         //dup2(fd1, stderr);
 #define MAXARGC    30
@@ -51,21 +46,15 @@ extern int bitcoinmain(int argc, char* argv[]);
         argv[3] = "-printtoconsole";
         argc++;
         TTDPRINT(@"starting bitcoin thread");
-
-        bitcoinmain(argc,argv);
-    });
-#if 0
-    logQueue = dispatch_queue_create("LOGD",NULL);
-    dispatch_async(logQueue,^{
-        NSLog(@"starting log thread");
         
-        char buffer[1024];
-        while (read(fd0, buffer, 1024) >= 0) {
-         //   NSLog(@"%s", buffer); 
-        }
-    });
-#endif
-    
+        bitcoinmain(argc,argv);
+    });    
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{    
+    serialQueue = dispatch_queue_create("BITCOIND",NULL);
+    [self startDaemon]; // will be called in didBecomeActive   
     
 	// configure ttnavigator
 	TTNavigator* navigator = [TTNavigator navigator];
@@ -83,6 +72,11 @@ extern int bitcoinmain(int argc, char* argv[]);
 	[map from:@"bitcoin://sendto" toModalViewController:[SendViewController class]];
 	[map from:@"bitcoin://about" toViewController:[AboutViewController class]];
     [map from:@"bitcoin://launcher" toSharedViewController: [LauncherViewTestController class]];
+
+    
+    
+    self.model = [[RPCModel alloc] initWithCommand:@"stop" params:nil];
+    [self.model.delegates addObject:self];
 
     
     if (![navigator restoreViewControllers])
@@ -110,6 +104,7 @@ extern int bitcoinmain(int argc, char* argv[]);
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
+   // [self.model load:TTURLRequestCachePolicyDefault more:NO];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -124,6 +119,7 @@ extern int bitcoinmain(int argc, char* argv[]);
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+  //  [self startDaemon];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -133,6 +129,7 @@ extern int bitcoinmain(int argc, char* argv[]);
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+   // [self.model load:TTURLRequestCachePolicyDefault more:NO];
 }
 
 - (void)dealloc
@@ -142,6 +139,7 @@ extern int bitcoinmain(int argc, char* argv[]);
 		serialQueue=NULL;
 	}
 
+    self.model = nil;
     [super dealloc];
 }
 

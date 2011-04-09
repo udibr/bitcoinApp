@@ -4,6 +4,11 @@ bitcoin is a peer-to-peer currency. To learn more go to http://bitcoin.org
 
 To build your own App read build-iOS.txt
 
+0.0.7
+* when bitcoin is starting change message from Error to wait
+** perform an automatic refresh every 1 sec
+* when bitcoin is answering (in info,address,balance) do an auto refresh every 2 sec.
+
 0.0.6
 * fix crash in iPhone 3G
 
