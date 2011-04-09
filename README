@@ -4,13 +4,18 @@ bitcoin is a peer-to-peer currency. To learn more go to http://bitcoin.org
 
 To build your own App read build-iOS.txt
 
+0.0.5
+* support iOS 4.0 and higher
+
 0.0.4
 * About
 ** version #
 ** link to www.symfi.mobi
 * Send To
+** to address
+** amount
 * Balance
-* Info: bugfix
+* Info: bugfix, restore title of each line
 
 0.0.3
 * Address command, shows the current address of the "" account.

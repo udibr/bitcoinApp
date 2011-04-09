@@ -250,7 +250,7 @@
 		5452D9AD134FF4720004206C /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		5452D9AE134FF4730004206C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		5452D9B2135000580004206C /* SendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendViewController.m; sourceTree = "<group>"; };
-		5452D9B3135000590004206C /* SendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = SendViewController.h; sourceTree = "<group>"; };
+		5452D9B3135000590004206C /* SendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendViewController.h; sourceTree = "<group>"; };
 		5464D442134E6523003059DE /* build-iOS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "build-iOS.txt"; sourceTree = "<group>"; };
 		5474AE90134A7F8B007A5ACB /* bitcoinScreenShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoinScreenShot.png; sourceTree = "<group>"; };
 		5474AE91134A7F8B007A5ACB /* bitcoin512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoin512.png; sourceTree = "<group>"; };
@@ -1180,7 +1180,7 @@
 					/Users/udi/Documents/MyProjects/iPhone/openssl/include,
 					/Users/udi/Documents/MyProjects/iPhone/db/include,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1203,6 +1203,7 @@
 				GCC_PREFIX_HEADER = "BitCoin/BitCoin-Prefix.pch";
 				INFOPLIST_FILE = "BitCoin/BitCoin-Info.plist";
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../db/lib\"",
@@ -1237,7 +1238,7 @@
 					/Users/udi/Documents/MyProjects/iPhone/openssl/include,
 					/Users/udi/Documents/MyProjects/iPhone/db/include,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-ObjC";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -1265,7 +1266,7 @@
 					/Users/udi/Documents/MyProjects/iPhone/openssl/include,
 					/Users/udi/Documents/MyProjects/iPhone/db/include,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1288,6 +1289,7 @@
 				GCC_PREFIX_HEADER = "BitCoin/BitCoin-Prefix.pch";
 				INFOPLIST_FILE = "BitCoin/BitCoin-Info.plist";
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../db/lib\"",
@@ -1311,6 +1313,7 @@
 				GCC_PREFIX_HEADER = "BitCoin/BitCoin-Prefix.pch";
 				INFOPLIST_FILE = "BitCoin/BitCoin-Info.plist";
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../db/lib\"",
