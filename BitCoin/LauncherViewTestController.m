@@ -36,19 +36,25 @@
     //                                    URL:@"bitcoin://rpccommand/listaccounts" canDelete:NO] autorelease],
      [[[TTLauncherItem alloc] initWithTitle:@"My Address"
                                       image:@"bundle://Icon.png"
-                                        URL:@"bitcoin://rpccommand/getaccountaddress/%20" canDelete:NO] autorelease], //getaddressesbyaccount 
+                                        URL:@"bitcoin://rpccommand/getaccountaddress/%20" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Balance"
                                       image:@"bundle://Icon.png"
-                                        URL:@"bitcoin://rpccommand/getbalance" canDelete:NO] autorelease], //getaddressesbyaccount 
+                                        URL:@"bitcoin://rpccommand/getbalance" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Send"
                                       image:@"bundle://Icon.png"
-                                        URL:@"bitcoin://sendto" canDelete:NO] autorelease], //getaddressesbyaccount 
+                                        URL:@"bitcoin://sendto" canDelete:NO] autorelease], 
+     [[[TTLauncherItem alloc] initWithTitle:@"Transactions"
+                                      image:@"bundle://Icon.png"
+                                        URL:@"bitcoin://rpccommand/listtransactions" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Status"
                                       image:@"bundle://Icon.png"
                                         URL:@"bitcoin://rpccommand/getinfo" canDelete:NO] autorelease],
      [[[TTLauncherItem alloc] initWithTitle:@"About"
                                       image:@"bundle://Icon.png"
                                         URL:@"bitcoin://about" canDelete:YES] autorelease], 
+     [[[TTLauncherItem alloc] initWithTitle:@"License"
+                                      image:@"bundle://Icon.png"
+                                        URL:@"bitcoin://license" canDelete:YES] autorelease], 
       nil],
       nil
     ];
