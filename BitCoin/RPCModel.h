@@ -14,11 +14,13 @@
 	BOOL _isLoading;
 	BOOL _isLoaded;
     NSString* _command;
+    NSArray* _params;
     TTURLRequest* _request;
     NSDictionary* _results;
 }
 @property (nonatomic, retain) NSString* command;
+@property (nonatomic, retain) NSArray* params;
 @property (nonatomic, retain) NSDictionary* results;
-- (id)initWithCommand:(NSString*)command;
+- (id)initWithCommand:(NSString*)command params:(NSArray*)params;
 @property (nonatomic, retain) TTURLRequest* request;
 @end

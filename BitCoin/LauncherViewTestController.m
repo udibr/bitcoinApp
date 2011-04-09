@@ -34,6 +34,12 @@
       [[[TTLauncherItem alloc] initWithTitle:@"Info"
                                image:@"bundle://Icon.png"
                                URL:@"bitcoin://rpccommand/getinfo" canDelete:NO] autorelease],
+    // [[[TTLauncherItem alloc] initWithTitle:@"Accounts"
+    //                                  image:@"bundle://Icon.png"
+    //                                    URL:@"bitcoin://rpccommand/listaccounts" canDelete:NO] autorelease],
+     [[[TTLauncherItem alloc] initWithTitle:@"My Address"
+                                      image:@"bundle://Icon.png"
+                                        URL:@"bitcoin://rpccommand/getaccountaddress/%20" canDelete:NO] autorelease], //getaddressesbyaccount 
       nil],
       nil
     ];

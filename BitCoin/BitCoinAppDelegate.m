@@ -78,6 +78,7 @@ extern int bitcoinmain(int argc, char* argv[]);
     // Any URL that doesn't match will fall back on this one, and open in the web browser
     [map from:@"*" toViewController:[TTWebController class]];
 	[map from:@"bitcoin://rpccommand/(initWithCommand:)" toViewController:[RPCCommandViewController class]];
+	[map from:@"bitcoin://rpccommand/(initWithCommand:)/(param1:)" toViewController:[RPCCommandViewController class]];
     [map from:@"bitcoin://launcher" toSharedViewController: [LauncherViewTestController class]];
 
     

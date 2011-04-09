@@ -11,5 +11,5 @@
 @interface RPCDataSource : TTListDataSource {
 
 }
-- (id)initWithItemCommand:(NSString*)command;
+- (id)initWithItemCommand:(NSString*)command params:(NSArray*)params;
 @end

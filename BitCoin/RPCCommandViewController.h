@@ -10,8 +10,11 @@
 
 @interface RPCCommandViewController : TTTableViewController {
     NSString *_command;
+    NSArray *_params;
     BOOL alreadyAppeared;
 }
 @property (nonatomic, retain) NSString* command;
+@property (nonatomic, retain) NSArray* params;
 -(id)initWithCommand:(NSString*)command;
+-(id)initWithCommand:(NSString*)command param1:(NSString*)param1;
 @end

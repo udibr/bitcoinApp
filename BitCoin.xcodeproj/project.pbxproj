@@ -17,6 +17,8 @@
 		320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320CC833B8AF0ACFD35E6224 /* libThree20Style.a */; };
 		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
+		5452D913134FE5280004206C /* UILabel+Clipboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5452D912134FE5270004206C /* UILabel+Clipboard.m */; };
+		5452D9AC134FE90C0004206C /* BCTableTextItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5452D9AB134FE90C0004206C /* BCTableTextItemCell.m */; };
 		5474AEF1134AAF5C007A5ACB /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AEF0134AAF5B007A5ACB /* boost.framework */; };
 		5474AFA7134B5AF3007A5ACB /* libdb_cxx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA6134B5AF3007A5ACB /* libdb_cxx.a */; };
 		5474AFAA134B5CB0007A5ACB /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA8134B5CAF007A5ACB /* libcrypto.a */; };
@@ -239,6 +241,10 @@
 		320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Style.xcodeproj; path = ../three20/src/Three20Style/Three20Style.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
+		5452D911134FE5270004206C /* UILabel+Clipboard.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "UILabel+Clipboard.h"; sourceTree = "<group>"; };
+		5452D912134FE5270004206C /* UILabel+Clipboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Clipboard.m"; sourceTree = "<group>"; };
+		5452D9AA134FE90C0004206C /* BCTableTextItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTableTextItemCell.h; sourceTree = "<group>"; };
+		5452D9AB134FE90C0004206C /* BCTableTextItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTableTextItemCell.m; sourceTree = "<group>"; };
 		5464D442134E6523003059DE /* build-iOS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "build-iOS.txt"; sourceTree = "<group>"; };
 		5474AE90134A7F8B007A5ACB /* bitcoinScreenShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoinScreenShot.png; sourceTree = "<group>"; };
 		5474AE91134A7F8B007A5ACB /* bitcoin512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoin512.png; sourceTree = "<group>"; };
@@ -806,6 +812,10 @@
 				54C1FC7F134CF8A200D9830E /* RPCDataSource.m */,
 				54C1FC81134CFE9500D9830E /* RPCModel.h */,
 				54C1FC82134CFE9500D9830E /* RPCModel.m */,
+				5452D9AA134FE90C0004206C /* BCTableTextItemCell.h */,
+				5452D9AB134FE90C0004206C /* BCTableTextItemCell.m */,
+				5452D911134FE5270004206C /* UILabel+Clipboard.h */,
+				5452D912134FE5270004206C /* UILabel+Clipboard.m */,
 				54F3C5391305E86500E6C3BA /* Supporting Files */,
 			);
 			path = BitCoin;
@@ -1076,6 +1086,8 @@
 				54B9E9DC134E5A9A00C02E09 /* rpc.cpp in Sources */,
 				54B9E9DD134E5A9A00C02E09 /* script.cpp in Sources */,
 				54B9E9E4134E5A9A00C02E09 /* util.cpp in Sources */,
+				5452D913134FE5280004206C /* UILabel+Clipboard.m in Sources */,
+				5452D9AC134FE90C0004206C /* BCTableTextItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1136,11 +1148,11 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		54EC01E4134E99FF00FB5100 /* Ad Hoc */ = {
+		54722765134F72A300EE7207 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yael Ben-Reuven";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					CRYPTOPP_DISABLE_ASM,
@@ -1159,13 +1171,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "773EB9CA-3DB2-4C4F-8F08-6099B072E3EC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
-			name = "Ad Hoc";
+			name = AdHoc;
 		};
-		54EC01E5134E99FF00FB5100 /* Ad Hoc */ = {
+		54722766134F72A300EE7207 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1188,7 +1200,7 @@
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
-			name = "Ad Hoc";
+			name = AdHoc;
 		};
 		54F3C5691305E86500E6C3BA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1215,6 +1227,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-ObjC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -1224,7 +1237,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					CRYPTOPP_DISABLE_ASM,
@@ -1243,6 +1256,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -1304,7 +1318,7 @@
 			buildConfigurations = (
 				54F3C5691305E86500E6C3BA /* Debug */,
 				54F3C56A1305E86500E6C3BA /* Release */,
-				54EC01E4134E99FF00FB5100 /* Ad Hoc */,
+				54722765134F72A300EE7207 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1314,7 +1328,7 @@
 			buildConfigurations = (
 				54F3C56C1305E86500E6C3BA /* Debug */,
 				54F3C56D1305E86500E6C3BA /* Release */,
-				54EC01E5134E99FF00FB5100 /* Ad Hoc */,
+				54722766134F72A300EE7207 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

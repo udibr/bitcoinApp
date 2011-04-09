@@ -4,4 +4,17 @@ bitcoin is a peer-to-peer currency. To learn more go to http://bitcoin.org
 
 To build your own App read build-iOS.txt
 
-Enjoy
+0.0.3
+* Address command, shows the current address of the "" account.
+** you can copy-paste the address
+
+0.0.2
+* 1st testflight verison
+
+0.0.1
+* entire bitcoind runs on a separate thread inside an App.
+* The App acts as a client and communicates using the regular RPC-JSON with the bitcoind.
+* client implemented using Three20:
+** on the info page if you drag the table all the way down you can force it to refresh its content
+** every bitcoind command appears as an icon on the launcher screen
+*** For now the only command on the client side is "getinfo".

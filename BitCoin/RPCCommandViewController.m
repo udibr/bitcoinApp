@@ -11,6 +11,7 @@ extern int bitcoinmain(int argc, char* argv[]);
 
 @implementation RPCCommandViewController
 @synthesize command = _command;
+@synthesize params = _params;
 -(id)initWithCommand:(NSString*)command
 {
     self = [self init];
@@ -18,14 +19,26 @@ extern int bitcoinmain(int argc, char* argv[]);
         self.command = command;
     return  self;
 }
+-(id)initWithCommand:(NSString*)command param1:(NSString*)param1
+{
+    self = [self initWithCommand:command];
+    if (self) {
+        if ([param1 isEqualToString:@" "])
+            param1 = @"";
+        self.params = [NSArray arrayWithObject:param1];
+    }
+    return self; 
+}
 -(void)dealloc
 {
+    [self.dataSource cancel];
+    self.params = nil;
     self.command = nil;
     [super dealloc];
 }
 
 - (void)createModel {
-	self.dataSource = [[[RPCDataSource alloc] initWithItemCommand:self.command] autorelease];
+	self.dataSource = [[[RPCDataSource alloc] initWithItemCommand:self.command params:self.params] autorelease];
 }
 - (id<UITableViewDelegate>)createDelegate {
 	return [[[TTTableViewDragRefreshDelegate alloc] initWithController:self] autorelease];
@@ -35,7 +48,7 @@ extern int bitcoinmain(int argc, char* argv[]);
     [super viewWillAppear:animated];
     // force reload of list every time the VC appears (but not on first time)
     //if (alreadyAppeared)
-        [self reload];
+    //    [self reload];
     alreadyAppeared=YES;
 }
 -(void)viewWillDisappear:(BOOL)animated

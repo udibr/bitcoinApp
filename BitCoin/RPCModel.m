@@ -12,13 +12,15 @@
 
 @implementation RPCModel
 @synthesize command = _command;
+@synthesize params = _params;
 @synthesize request = _request;
 @synthesize results = _results;
-- (id)initWithCommand:(NSString*)command
+- (id)initWithCommand:(NSString*)command params:(NSArray*)params
 {
     self = [super init];
 	if (self) {
         self.command = command;
+        self.params = params;
 	}
 	
 	return self;
@@ -26,6 +28,7 @@
 
 - (void)dealloc {
     self.command = nil;
+    self.params = nil;
     self.request = nil;
     self.results = nil;
 	[super dealloc];
@@ -70,7 +73,14 @@
 
     self.request = [TTURLRequest requestWithURL:@"http://get:smart@127.0.0.1:8332" delegate:self];
     
-    NSString *request_body = [NSString stringWithFormat:@"{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", \"method\": \"%@\", \"params\": [] }",self.command];
+    NSString *params = @"";
+    for (int i = 0; i < [self.params count]; i++) {
+        if (i < [self.params count]-1)
+            params = [params stringByAppendingFormat:@"\"%@\",",[self.params objectAtIndex:i]];
+        else
+            params = [params stringByAppendingFormat:@"\"%@\"",[self.params objectAtIndex:i]];
+    }
+    NSString *request_body = [NSString stringWithFormat:@"{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", \"method\": \"%@\", \"params\": [%@] }",self.command,params];
     _request.httpBody = [request_body dataUsingEncoding:NSUTF8StringEncoding]; // NSASCIIStringEncoding]; //
     
     _request.httpMethod = @"POST";
