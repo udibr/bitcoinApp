@@ -90,6 +90,23 @@ int main(int argc, char* argv[])
 # and   #endif
 # arround the  #include "xpm/..." lines
 
+# In the file db.cpp
+# Place #if !(TARGET_OS_IPHONE  || TARGET_IPHONE_SIMULATOR)
+# and   #endif
+# arround
+<<<
+                             DB_INIT_LOCK  |
+>>>
+
+#In init.cpp at void Shutdown(void* parg)
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+        ExitThread(0);
+#else
+        exit(0);
+#endif
+
+
+
 ===============
 = Add openssl =
 ===============
