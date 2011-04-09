@@ -4,6 +4,9 @@ bitcoin is a peer-to-peer currency. To learn more go to http://bitcoin.org
 
 To build your own App read build-iOS.txt
 
+0.0.6
+* fix crash in iPhone 3G
+
 0.0.5
 * support iOS 4.0 and higher
 

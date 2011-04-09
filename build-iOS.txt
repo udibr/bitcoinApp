@@ -185,7 +185,7 @@ export AR=${COMPILER_iSimulator}/ar
 export AS=${COMPILER_iSimulator}/as
 export NM=${COMPILER_iSimulator}/nm
 export RANLIB=${COMPILER_iSimulator}/ranlib
-../dist/configure --prefix=$TMP/db-5.1.19/build_i386 --host=i386-apple-darwin10 --enable-cxx
+../dist/configure --prefix=$TMP/db-5.1.19/build_i386 --host=i386-apple-darwin10 --enable-cxx --with-mutex=Darwin/_spin_lock_try
 make
 make install
 
@@ -206,9 +206,12 @@ export AR=${COMPILER_iOS}/ar
 export AS=${COMPILER_iOS}/as
 export NM=${COMPILER_iOS}/nm
 export RANLIB=${COMPILER_iOS}/ranlib
-../dist/configure --prefix=$TMP/db-5.1.19/build_armv6 --host=arm-apple-darwin10 --enable-cxx
+../dist/configure --prefix=$TMP/db-5.1.19/build_armv6 --host=arm-apple-darwin10 --enable-cxx --with-mutex=Darwin/_spin_lock_try
 make
 make install
+
+make clean
+make realclean
 
 export DEV_iOS=/Developer/Platforms/iPhoneOS.platform/Developer 
 export SDK_iOS=${DEV_iOS}/SDKs/iPhoneOS4.3.sdk 
@@ -224,7 +227,7 @@ export AR=${COMPILER_iOS}/ar
 export AS=${COMPILER_iOS}/as
 export NM=${COMPILER_iOS}/nm
 export RANLIB=${COMPILER_iOS}/ranlib
-../dist/configure --prefix=$TMP/db-5.1.19/build_armv7 --host=arm-apple-darwin10 --enable-cxx
+../dist/configure --prefix=$TMP/db-5.1.19/build_armv7 --host=arm-apple-darwin10 --enable-cxx --with-mutex=Darwin/_spin_lock_try
 make
 make install
 
