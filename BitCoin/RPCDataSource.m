@@ -49,8 +49,8 @@
             
             [items addObject:r];
         }
-    } else if ([results isKindOfClass:[NSString class]]) {
-        TTTableTextItem *r = [TTTableTextItem itemWithText:results];
+    } else {
+        TTTableTextItem *r = [TTTableTextItem itemWithText:[results description]];
         [items addObject:r];
     }
     
@@ -61,7 +61,8 @@
 
 - (Class)tableView:(UITableView*)tableView cellClassForObject:(id) object {
 	
-	if ([object isKindOfClass:[TTTableTextItem class]]) {
+    if ([object isKindOfClass:[TTTableCaptionItem class]]) {
+	} else if ([object isKindOfClass:[TTTableTextItem class]]) {
         return [BCTableTextItemCell class];
 	}
 	

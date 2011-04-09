@@ -9,6 +9,7 @@
 
 #import "LauncherViewTestController.h"
 #import "RPCCommandViewController.h"
+#import "SendViewController.h"
 #import "AboutViewController.h"
 extern int bitcoinmain(int argc, char* argv[]);
 
@@ -79,6 +80,7 @@ extern int bitcoinmain(int argc, char* argv[]);
     [map from:@"*" toViewController:[TTWebController class]];
 	[map from:@"bitcoin://rpccommand/(initWithCommand:)" toViewController:[RPCCommandViewController class]];
 	[map from:@"bitcoin://rpccommand/(initWithCommand:)/(param1:)" toViewController:[RPCCommandViewController class]];
+	[map from:@"bitcoin://sendto" toModalViewController:[SendViewController class]];
 	[map from:@"bitcoin://about" toViewController:[AboutViewController class]];
     [map from:@"bitcoin://launcher" toSharedViewController: [LauncherViewTestController class]];
 

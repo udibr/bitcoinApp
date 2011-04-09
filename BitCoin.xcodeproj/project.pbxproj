@@ -19,6 +19,8 @@
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
 		5452D913134FE5280004206C /* UILabel+Clipboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5452D912134FE5270004206C /* UILabel+Clipboard.m */; };
 		5452D9AC134FE90C0004206C /* BCTableTextItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5452D9AB134FE90C0004206C /* BCTableTextItemCell.m */; };
+		5452D9AF134FF4730004206C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5452D9AE134FF4730004206C /* AboutViewController.m */; };
+		5452D9B4135000590004206C /* SendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5452D9B2135000580004206C /* SendViewController.m */; };
 		5474AEF1134AAF5C007A5ACB /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AEF0134AAF5B007A5ACB /* boost.framework */; };
 		5474AFA7134B5AF3007A5ACB /* libdb_cxx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA6134B5AF3007A5ACB /* libdb_cxx.a */; };
 		5474AFAA134B5CB0007A5ACB /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA8134B5CAF007A5ACB /* libcrypto.a */; };
@@ -241,10 +243,14 @@
 		320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Style.xcodeproj; path = ../three20/src/Three20Style/Three20Style.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
-		5452D911134FE5270004206C /* UILabel+Clipboard.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "UILabel+Clipboard.h"; sourceTree = "<group>"; };
+		5452D911134FE5270004206C /* UILabel+Clipboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Clipboard.h"; sourceTree = "<group>"; };
 		5452D912134FE5270004206C /* UILabel+Clipboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Clipboard.m"; sourceTree = "<group>"; };
 		5452D9AA134FE90C0004206C /* BCTableTextItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTableTextItemCell.h; sourceTree = "<group>"; };
 		5452D9AB134FE90C0004206C /* BCTableTextItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTableTextItemCell.m; sourceTree = "<group>"; };
+		5452D9AD134FF4720004206C /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		5452D9AE134FF4730004206C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		5452D9B2135000580004206C /* SendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendViewController.m; sourceTree = "<group>"; };
+		5452D9B3135000590004206C /* SendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = SendViewController.h; sourceTree = "<group>"; };
 		5464D442134E6523003059DE /* build-iOS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "build-iOS.txt"; sourceTree = "<group>"; };
 		5474AE90134A7F8B007A5ACB /* bitcoinScreenShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoinScreenShot.png; sourceTree = "<group>"; };
 		5474AE91134A7F8B007A5ACB /* bitcoin512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoin512.png; sourceTree = "<group>"; };
@@ -802,6 +808,8 @@
 		54F3C5381305E86500E6C3BA /* BitCoin */ = {
 			isa = PBXGroup;
 			children = (
+				5452D9AD134FF4720004206C /* AboutViewController.h */,
+				5452D9AE134FF4730004206C /* AboutViewController.m */,
 				54F3C5411305E86500E6C3BA /* BitCoinAppDelegate.h */,
 				54F3C5421305E86500E6C3BA /* BitCoinAppDelegate.m */,
 				54C1FCEE134D149000D9830E /* LauncherViewTestController.h */,
@@ -816,6 +824,8 @@
 				5452D9AB134FE90C0004206C /* BCTableTextItemCell.m */,
 				5452D911134FE5270004206C /* UILabel+Clipboard.h */,
 				5452D912134FE5270004206C /* UILabel+Clipboard.m */,
+				5452D9B2135000580004206C /* SendViewController.m */,
+				5452D9B3135000590004206C /* SendViewController.h */,
 				54F3C5391305E86500E6C3BA /* Supporting Files */,
 			);
 			path = BitCoin;
@@ -1088,6 +1098,8 @@
 				54B9E9E4134E5A9A00C02E09 /* util.cpp in Sources */,
 				5452D913134FE5280004206C /* UILabel+Clipboard.m in Sources */,
 				5452D9AC134FE90C0004206C /* BCTableTextItemCell.m in Sources */,
+				5452D9AF134FF4730004206C /* AboutViewController.m in Sources */,
+				5452D9B4135000590004206C /* SendViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
