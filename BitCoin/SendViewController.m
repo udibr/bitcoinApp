@@ -99,9 +99,11 @@
 {
     [self dismissModalViewControllerAnimated:YES];    
 }
--(void)failed
+-(void)failed:(NSString*)message
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"  message:@"Try again or cancel" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    if (!message)
+        message = @"Try again or cancel";
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"  message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
     [alert release];
 }
@@ -121,7 +123,7 @@
 	NSNumber *d = [results objectForKey:@"d"];
     
     if (![d isKindOfClass:[NSNumber class]] || ![d boolValue]) {
-     	[self failed];   
+     	[self failed:nil];   
     } else {
         [self succeeded];
 	}
@@ -129,7 +131,10 @@
 
 - (void)request:(TTURLRequest *)request didFailLoadWithError:(NSError *)error {
     TTDPRINT(@"%@", [error localizedDescription]);
-    [self failed];   
+	TTURLJSONResponse* response = request.response;
+    NSDictionary *results = response.rootObject;    
+    NSString* message = [[results objectForKey:@"error"] objectForKey:@"message"];
+    [self failed:message];   
 }
 #pragma mark -
 #pragma mark UIAlertViewDelegate
