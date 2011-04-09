@@ -25,12 +25,23 @@
         self.items =  [[NSMutableArray alloc] init];
         _model = [[RPCModel alloc] initWithCommand:command params:params];
         [_model.delegates addObject:self];
+        
+        [[NSNotificationCenter defaultCenter]
+         addObserver: self
+         selector: @selector(didEnterBackgroundNotification:)
+         name: UIApplicationDidEnterBackgroundNotification
+         object: nil];
 	}
 	
 	return self;
 }
-
+//UIApplicationWillEnterForegroundNotification
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter]
+     removeObserver: self
+     name: UIApplicationDidEnterBackgroundNotification
+     object: nil];
+
     self.reloadTimer = nil;
     
     self.items = nil;
@@ -51,6 +62,10 @@
 - (void)startReload:(NSTimeInterval)animationInterval
 {
 	self.reloadTimer = [NSTimer scheduledTimerWithTimeInterval:animationInterval target:self selector:@selector(reloadModel) userInfo:nil repeats:YES];
+}
+
+- (void)didEnterBackgroundNotification:(void*)object {
+    [self cancel];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
