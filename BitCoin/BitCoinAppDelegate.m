@@ -12,6 +12,7 @@
 #import "SendViewController.h"
 #import "AboutViewController.h"
 #import "RPCModel.h"
+#import "PageViewController.h"
 extern int bitcoinmain(int argc, char* argv[]);
 
 @implementation BitCoinAppDelegate
@@ -72,6 +73,7 @@ extern int bitcoinmain(int argc, char* argv[]);
 	[map from:@"bitcoin://sendto" toModalViewController:[SendViewController class]];
 	[map from:@"bitcoin://about" toViewController:[AboutViewController class]];
     [map from:@"bitcoin://launcher" toSharedViewController: [LauncherViewTestController class]];
+    [map from:@"bitcoin://page/(initWithPage:)" toViewController: [PageViewController class]];
 
     
     
@@ -81,6 +83,17 @@ extern int bitcoinmain(int argc, char* argv[]);
     
     if (![navigator restoreViewControllers])
         [navigator openURLAction:[TTURLAction actionWithURLPath:@"bitcoin://launcher"]];
+
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    NSNumber *showlicense = [prefs objectForKey:@"SHOWLICENSE"];
+#define LICENSE_VERSION 1
+    if (!showlicense || [showlicense intValue] < LICENSE_VERSION) {
+        [prefs setObject:[NSNumber numberWithInt:LICENSE_VERSION] forKey:@"SHOWLICENSE"];	
+        [prefs synchronize];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW,0.01*1000000000),dispatch_get_main_queue(),^{
+            [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:@"bitcoin://page/license"]];
+        });
+    }
 
     return YES;
 }
