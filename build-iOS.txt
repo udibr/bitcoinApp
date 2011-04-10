@@ -260,6 +260,7 @@ cp -R $TMP/db-5.1.19/build_i386/include $PROJ/db/include
 ===============
 cd $PROJ
 git clone git://github.com/facebook/three20.git
+# NOTE, I am using version 1.0.5 of Three20. I have "patched" it using category files in my project (look for file that starts with TT and end with +BC) If you are using a latter version you will have to check that the patch does not need an update (when using category your method replaces the original method so if the original was updated by git, you need to also update the patch.)
 open three20/samples/TTTwitter/TTTwitter.xcodeproj
 #select scheme "TTTwitter | iPhone 4.3 Simulator"
 #build (this is necessary to copy the header files into the correct place, dont have a better way)
