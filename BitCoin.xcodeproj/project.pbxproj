@@ -17,6 +17,11 @@
 		320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320CC833B8AF0ACFD35E6224 /* libThree20Style.a */; };
 		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
+		54517791135118850069E5A7 /* TTRequestLoader+BC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54517790135118840069E5A7 /* TTRequestLoader+BC.m */; };
+		545178CC135136780069E5A7 /* whatsnew.html in Resources */ = {isa = PBXBuildFile; fileRef = 545178CB135136780069E5A7 /* whatsnew.html */; };
+		545178D6135140750069E5A7 /* license.html in Resources */ = {isa = PBXBuildFile; fileRef = 545178D5135140740069E5A7 /* license.html */; };
+		545178D91351430E0069E5A7 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545178D81351430E0069E5A7 /* PageViewController.m */; };
+		54517978135156D10069E5A7 /* howto.html in Resources */ = {isa = PBXBuildFile; fileRef = 54517976135155D00069E5A7 /* howto.html */; };
 		5452D913134FE5280004206C /* UILabel+Clipboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5452D912134FE5270004206C /* UILabel+Clipboard.m */; };
 		5452D9AC134FE90C0004206C /* BCTableTextItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5452D9AB134FE90C0004206C /* BCTableTextItemCell.m */; };
 		5452D9AF134FF4730004206C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5452D9AE134FF4730004206C /* AboutViewController.m */; };
@@ -243,6 +248,12 @@
 		320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Style.xcodeproj; path = ../three20/src/Three20Style/Three20Style.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
+		54517790135118840069E5A7 /* TTRequestLoader+BC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TTRequestLoader+BC.m"; sourceTree = "<group>"; };
+		545178CB135136780069E5A7 /* whatsnew.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = whatsnew.html; sourceTree = "<group>"; };
+		545178D5135140740069E5A7 /* license.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = license.html; sourceTree = "<group>"; };
+		545178D71351430D0069E5A7 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		545178D81351430E0069E5A7 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		54517976135155D00069E5A7 /* howto.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = howto.html; sourceTree = "<group>"; };
 		5452D911134FE5270004206C /* UILabel+Clipboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Clipboard.h"; sourceTree = "<group>"; };
 		5452D912134FE5270004206C /* UILabel+Clipboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Clipboard.m"; sourceTree = "<group>"; };
 		5452D9AA134FE90C0004206C /* BCTableTextItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTableTextItemCell.h; sourceTree = "<group>"; };
@@ -826,6 +837,9 @@
 				5452D912134FE5270004206C /* UILabel+Clipboard.m */,
 				5452D9B2135000580004206C /* SendViewController.m */,
 				5452D9B3135000590004206C /* SendViewController.h */,
+				54517790135118840069E5A7 /* TTRequestLoader+BC.m */,
+				545178D71351430D0069E5A7 /* PageViewController.h */,
+				545178D81351430E0069E5A7 /* PageViewController.m */,
 				54F3C5391305E86500E6C3BA /* Supporting Files */,
 			);
 			path = BitCoin;
@@ -846,6 +860,9 @@
 				54F3C53F1305E86500E6C3BA /* main.m */,
 				5474D277134BC748007A5ACB /* bitcoin.conf */,
 				54EC01E6134E9CE400FB5100 /* Entitlements.plist */,
+				545178CB135136780069E5A7 /* whatsnew.html */,
+				545178D5135140740069E5A7 /* license.html */,
+				54517976135155D00069E5A7 /* howto.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1061,12 +1078,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54517978135156D10069E5A7 /* howto.html in Resources */,
 				320B6C86F11D9990244A9731 /* Three20.bundle in Resources */,
 				54F3C53D1305E86500E6C3BA /* InfoPlist.strings in Resources */,
 				5474D278134BC748007A5ACB /* bitcoin.conf in Resources */,
 				54C1FCF8134D1BA700D9830E /* Icon.png in Resources */,
 				54C1FCFA134D1BB600D9830E /* Icon@2x.png in Resources */,
 				54EC01E7134E9CE400FB5100 /* Entitlements.plist in Resources */,
+				545178CC135136780069E5A7 /* whatsnew.html in Resources */,
+				545178D6135140750069E5A7 /* license.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1100,6 +1120,8 @@
 				5452D9AC134FE90C0004206C /* BCTableTextItemCell.m in Sources */,
 				5452D9AF134FF4730004206C /* AboutViewController.m in Sources */,
 				5452D9B4135000590004206C /* SendViewController.m in Sources */,
+				54517791135118850069E5A7 /* TTRequestLoader+BC.m in Sources */,
+				545178D91351430E0069E5A7 /* PageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

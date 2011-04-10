@@ -52,6 +52,9 @@
      [[[TTLauncherItem alloc] initWithTitle:@"About"
                                       image:@"bundle://Icon.png"
                                         URL:@"bitcoin://about" canDelete:YES] autorelease], 
+     [[[TTLauncherItem alloc] initWithTitle:@"How to"
+                                      image:@"bundle://Icon.png"
+                                        URL:@"bitcoin://page/howto" canDelete:YES] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Whats New"
                                       image:@"bundle://Icon.png"
                                         URL:@"bitcoin://page/whatsnew" canDelete:YES] autorelease], 
