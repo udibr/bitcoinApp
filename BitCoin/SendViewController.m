@@ -119,14 +119,9 @@
 #pragma mark TTURLRequestDelegate
 - (void)requestDidFinishLoad:(TTURLRequest*)request {
 	TTURLJSONResponse* response = request.response;
-    NSDictionary *results = response.rootObject;    
-	NSNumber *d = [results objectForKey:@"d"];
-    
-    if (![d isKindOfClass:[NSNumber class]] || ![d boolValue]) {
-     	[self failed:nil];   
-    } else {
-        [self succeeded];
-	}
+    NSDictionary *results = response.rootObject;
+    TTDPRINT(@"result of send %@", results);
+    [self succeeded];
 }
 
 - (void)request:(TTURLRequest *)request didFailLoadWithError:(NSError *)error {
