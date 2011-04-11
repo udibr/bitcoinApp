@@ -35,13 +35,13 @@
     //                                  image:@"bundle://Icon.png"
     //                                    URL:@"bitcoin://rpccommand/listaccounts" canDelete:NO] autorelease],
      [[[TTLauncherItem alloc] initWithTitle:@"My Address"
-                                      image:@"bundle://Icon.png"
+                                      image:@"bundle://Address@2x.png"
                                         URL:@"bitcoin://rpccommand/getaccountaddress/%20" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Balance"
-                                      image:@"bundle://Icon.png"
+                                      image:@"bundle://Balance@2x.png"
                                         URL:@"bitcoin://rpccommand/getbalance" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Send"
-                                      image:@"bundle://Icon.png"
+                                      image:@"bundle://Send@2x.png"
                                         URL:@"bitcoin://sendto" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Transactions"
                                       image:@"bundle://Icon.png"
@@ -53,13 +53,13 @@
                                       image:@"bundle://Icon.png"
                                         URL:@"bitcoin://about" canDelete:YES] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"How to"
-                                      image:@"bundle://Icon.png"
+                                      image:@"bundle://HowTo@2x.png"
                                         URL:@"bitcoin://page/howto" canDelete:YES] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Whats New"
                                       image:@"bundle://Icon.png"
                                         URL:@"bitcoin://page/whatsnew" canDelete:YES] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"License"
-                                      image:@"bundle://Icon.png"
+                                      image:@"bundle://license@2x.png"
                                         URL:@"bitcoin://page/license" canDelete:NO] autorelease], 
       nil],
       nil

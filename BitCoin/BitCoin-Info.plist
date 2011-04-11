@@ -14,8 +14,8 @@
 	<string></string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>Icon.png</string>
-		<string>Icon@2x.png</string>
+		<string>IconB.png</string>
+		<string>IconB@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.symfi.bitcoin</string>
@@ -39,7 +39,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>0.0.8</string>
+	<string>0.0.9</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>

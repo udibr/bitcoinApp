@@ -31,6 +31,20 @@
 		5474AFAA134B5CB0007A5ACB /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA8134B5CAF007A5ACB /* libcrypto.a */; };
 		5474AFAB134B5CB0007A5ACB /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA9134B5CAF007A5ACB /* libssl.a */; };
 		5474D278134BC748007A5ACB /* bitcoin.conf in Resources */ = {isa = PBXBuildFile; fileRef = 5474D277134BC748007A5ACB /* bitcoin.conf */; };
+		548FB7851352AB5E004581B3 /* IconB.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7841352AB5E004581B3 /* IconB.png */; };
+		548FB7871352AB6B004581B3 /* IconB@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7861352AB6B004581B3 /* IconB@2x.png */; };
+		548FB7941352AB88004581B3 /* Send.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7881352AB88004581B3 /* Send.png */; };
+		548FB7951352AB88004581B3 /* Balance.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7891352AB88004581B3 /* Balance.png */; };
+		548FB7961352AB88004581B3 /* HowTo.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB78A1352AB88004581B3 /* HowTo.png */; };
+		548FB7971352AB88004581B3 /* license.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB78B1352AB88004581B3 /* license.png */; };
+		548FB7981352AB88004581B3 /* Address.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB78C1352AB88004581B3 /* Address.png */; };
+		548FB7991352AB88004581B3 /* license@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB78D1352AB88004581B3 /* license@2x.png */; };
+		548FB79A1352AB88004581B3 /* Send@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB78E1352AB88004581B3 /* Send@2x.png */; };
+		548FB79B1352AB88004581B3 /* Address@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB78F1352AB88004581B3 /* Address@2x.png */; };
+		548FB79C1352AB88004581B3 /* Balance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7901352AB88004581B3 /* Balance@2x.png */; };
+		548FB79D1352AB88004581B3 /* HowTo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7911352AB88004581B3 /* HowTo@2x.png */; };
+		548FB79E1352AB88004581B3 /* IconA.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7921352AB88004581B3 /* IconA.png */; };
+		548FB79F1352AB88004581B3 /* IconA@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7931352AB88004581B3 /* IconA@2x.png */; };
 		54B9E9AA134E5A9A00C02E09 /* cpu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54B9E90A134E5A9A00C02E09 /* cpu.cpp */; };
 		54B9E9AE134E5A9A00C02E09 /* sha.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54B9E915134E5A9A00C02E09 /* sha.cpp */; };
 		54B9E9AF134E5A9A00C02E09 /* db.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54B9E91A134E5A9A00C02E09 /* db.cpp */; };
@@ -271,6 +285,20 @@
 		5474AFA8134B5CAF007A5ACB /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../openssl/lib/libcrypto.a; sourceTree = "<group>"; };
 		5474AFA9134B5CAF007A5ACB /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../openssl/lib/libssl.a; sourceTree = "<group>"; };
 		5474D277134BC748007A5ACB /* bitcoin.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bitcoin.conf; sourceTree = "<group>"; };
+		548FB7841352AB5E004581B3 /* IconB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconB.png; sourceTree = "<group>"; };
+		548FB7861352AB6B004581B3 /* IconB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconB@2x.png"; sourceTree = "<group>"; };
+		548FB7881352AB88004581B3 /* Send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Send.png; sourceTree = "<group>"; };
+		548FB7891352AB88004581B3 /* Balance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Balance.png; sourceTree = "<group>"; };
+		548FB78A1352AB88004581B3 /* HowTo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HowTo.png; sourceTree = "<group>"; };
+		548FB78B1352AB88004581B3 /* license.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = license.png; sourceTree = "<group>"; };
+		548FB78C1352AB88004581B3 /* Address.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Address.png; sourceTree = "<group>"; };
+		548FB78D1352AB88004581B3 /* license@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "license@2x.png"; sourceTree = "<group>"; };
+		548FB78E1352AB88004581B3 /* Send@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Send@2x.png"; sourceTree = "<group>"; };
+		548FB78F1352AB88004581B3 /* Address@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Address@2x.png"; sourceTree = "<group>"; };
+		548FB7901352AB88004581B3 /* Balance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Balance@2x.png"; sourceTree = "<group>"; };
+		548FB7911352AB88004581B3 /* HowTo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HowTo@2x.png"; sourceTree = "<group>"; };
+		548FB7921352AB88004581B3 /* IconA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconA.png; sourceTree = "<group>"; };
+		548FB7931352AB88004581B3 /* IconA@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconA@2x.png"; sourceTree = "<group>"; };
 		54B9E900134E5A9A00C02E09 /* base58.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base58.h; sourceTree = "<group>"; };
 		54B9E901134E5A9A00C02E09 /* bignum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bignum.h; sourceTree = "<group>"; };
 		54B9E902134E5A9A00C02E09 /* build-msw.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "build-msw.txt"; sourceTree = "<group>"; };
@@ -776,6 +804,8 @@
 		54F3C5231305E86500E6C3BA = {
 			isa = PBXGroup;
 			children = (
+				548FB7861352AB6B004581B3 /* IconB@2x.png */,
+				548FB7841352AB5E004581B3 /* IconB.png */,
 				54EC00DC134E7ACB00FB5100 /* README */,
 				5464D442134E6523003059DE /* build-iOS.txt */,
 				54B9E8D1134E5A9A00C02E09 /* bitcoin.org */,
@@ -848,6 +878,18 @@
 		54F3C5391305E86500E6C3BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				548FB7881352AB88004581B3 /* Send.png */,
+				548FB7891352AB88004581B3 /* Balance.png */,
+				548FB78A1352AB88004581B3 /* HowTo.png */,
+				548FB78B1352AB88004581B3 /* license.png */,
+				548FB78C1352AB88004581B3 /* Address.png */,
+				548FB78D1352AB88004581B3 /* license@2x.png */,
+				548FB78E1352AB88004581B3 /* Send@2x.png */,
+				548FB78F1352AB88004581B3 /* Address@2x.png */,
+				548FB7901352AB88004581B3 /* Balance@2x.png */,
+				548FB7911352AB88004581B3 /* HowTo@2x.png */,
+				548FB7921352AB88004581B3 /* IconA.png */,
+				548FB7931352AB88004581B3 /* IconA@2x.png */,
 				54C1FCF9134D1BB500D9830E /* Icon@2x.png */,
 				54C1FCF7134D1BA600D9830E /* Icon.png */,
 				320B6C86F11D9990244A9730 /* Three20.bundle */,
@@ -1087,6 +1129,20 @@
 				54EC01E7134E9CE400FB5100 /* Entitlements.plist in Resources */,
 				545178CC135136780069E5A7 /* whatsnew.html in Resources */,
 				545178D6135140750069E5A7 /* license.html in Resources */,
+				548FB7851352AB5E004581B3 /* IconB.png in Resources */,
+				548FB7871352AB6B004581B3 /* IconB@2x.png in Resources */,
+				548FB7941352AB88004581B3 /* Send.png in Resources */,
+				548FB7951352AB88004581B3 /* Balance.png in Resources */,
+				548FB7961352AB88004581B3 /* HowTo.png in Resources */,
+				548FB7971352AB88004581B3 /* license.png in Resources */,
+				548FB7981352AB88004581B3 /* Address.png in Resources */,
+				548FB7991352AB88004581B3 /* license@2x.png in Resources */,
+				548FB79A1352AB88004581B3 /* Send@2x.png in Resources */,
+				548FB79B1352AB88004581B3 /* Address@2x.png in Resources */,
+				548FB79C1352AB88004581B3 /* Balance@2x.png in Resources */,
+				548FB79D1352AB88004581B3 /* HowTo@2x.png in Resources */,
+				548FB79E1352AB88004581B3 /* IconA.png in Resources */,
+				548FB79F1352AB88004581B3 /* IconA@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
