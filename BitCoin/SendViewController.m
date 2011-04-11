@@ -137,4 +137,17 @@
 {
     [self cancel:nil];
 }
+#pragma mark -
+#pragma mark UITextFieldDelegate methods
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {    
+    if (textField == _toField) {
+        [_amountField becomeFirstResponder];
+    }
+    else {
+        [_amountField resignFirstResponder];
+        [self send];
+    }
+    return YES;
+}
+
 @end
