@@ -26,7 +26,8 @@
   [super loadView];
 
   _launcherView = [[TTLauncherView alloc] initWithFrame:self.view.bounds];
-  _launcherView.backgroundColor = [UIColor blackColor];
+    _launcherView.backgroundColor = [UIColor colorWithRed:0x5d/256. green:0x5d/256. blue:0x5d/256. alpha:1.0
+];
   _launcherView.delegate = self;
   _launcherView.columnCount = 4;
   _launcherView.pages = [NSArray arrayWithObjects:
@@ -39,7 +40,7 @@
                                         URL:@"bitcoin://rpccommand/getaccountaddress/%20" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Balance"
                                       image:@"bundle://Balance@2x.png"
-                                        URL:@"bitcoin://rpccommand/getbalance" canDelete:NO] autorelease], 
+                                        URL:@"bitcoin://rpccommand/listaccounts" canDelete:NO] autorelease],//getbalance 
      [[[TTLauncherItem alloc] initWithTitle:@"Send"
                                       image:@"bundle://Send@2x.png"
                                         URL:@"bitcoin://sendto" canDelete:NO] autorelease], 
