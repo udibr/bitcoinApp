@@ -74,13 +74,19 @@
     self.request = [TTURLRequest requestWithURL:@"http://get:smart@127.0.0.1:8332" delegate:self];
     
     NSString *params = @"";
-    for (int i = 0; i < [self.params count]; i++) {
-        if (i < [self.params count]-1)
-            params = [params stringByAppendingFormat:@"\"%@\",",[self.params objectAtIndex:i]];
+    for (id v in self.params) {
+        NSString* sv=nil;
+        if ([v isKindOfClass:[NSString class]]) {
+            sv = [NSString stringWithFormat:@"\"%@\"",v];
+        } else {
+            sv = [v description];
+        }
+        if (![params length])
+            params = sv;
         else
-            params = [params stringByAppendingFormat:@"\"%@\"",[self.params objectAtIndex:i]];
+            params = [params stringByAppendingFormat:@", %@",sv];
     }
-    NSString *request_body = [NSString stringWithFormat:@"{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", \"method\": \"%@\", \"params\": [%@] }",self.command,params];
+    NSString *request_body = [NSString stringWithFormat:@"{\"jsonrpc\": \"1.0\", \"id\":\"rpc\", \"method\": \"%@\", \"params\": [%@] }",self.command,params];
     _request.httpBody = [request_body dataUsingEncoding:NSUTF8StringEncoding]; // NSASCIIStringEncoding]; //
     
     _request.httpMethod = @"POST";
@@ -91,7 +97,7 @@
     
     _request.response = [[[TTURLJSONResponse alloc] init] autorelease]; //TTURLDataResponse
     
-    //_request.userInfo = @"curltest";
+    //_request.userInfo = @"rpc";
     
     [_request send]; //sendSynchronously];
 }
