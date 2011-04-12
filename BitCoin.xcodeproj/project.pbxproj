@@ -17,6 +17,7 @@
 		320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320CC833B8AF0ACFD35E6224 /* libThree20Style.a */; };
 		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
+		5435560C1353B71C008BBB86 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435560B1353B71B008BBB86 /* ConsoleViewController.m */; };
 		54517791135118850069E5A7 /* TTRequestLoader+BC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54517790135118840069E5A7 /* TTRequestLoader+BC.m */; };
 		545178CC135136780069E5A7 /* whatsnew.html in Resources */ = {isa = PBXBuildFile; fileRef = 545178CB135136780069E5A7 /* whatsnew.html */; };
 		545178D6135140750069E5A7 /* license.html in Resources */ = {isa = PBXBuildFile; fileRef = 545178D5135140740069E5A7 /* license.html */; };
@@ -262,6 +263,8 @@
 		320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Style.xcodeproj; path = ../three20/src/Three20Style/Three20Style.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
+		5435560A1353B71B008BBB86 /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
+		5435560B1353B71B008BBB86 /* ConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleViewController.m; sourceTree = "<group>"; };
 		54517790135118840069E5A7 /* TTRequestLoader+BC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TTRequestLoader+BC.m"; sourceTree = "<group>"; };
 		545178CB135136780069E5A7 /* whatsnew.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = whatsnew.html; sourceTree = "<group>"; };
 		545178D5135140740069E5A7 /* license.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = license.html; sourceTree = "<group>"; };
@@ -285,8 +288,8 @@
 		5474AFA8134B5CAF007A5ACB /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../openssl/lib/libcrypto.a; sourceTree = "<group>"; };
 		5474AFA9134B5CAF007A5ACB /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../openssl/lib/libssl.a; sourceTree = "<group>"; };
 		5474D277134BC748007A5ACB /* bitcoin.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bitcoin.conf; sourceTree = "<group>"; };
-		548FB7841352AB5E004581B3 /* IconB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconB.png; sourceTree = "<group>"; };
-		548FB7861352AB6B004581B3 /* IconB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconB@2x.png"; sourceTree = "<group>"; };
+		548FB7841352AB5E004581B3 /* IconB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IconB.png; path = ../IconB.png; sourceTree = "<group>"; };
+		548FB7861352AB6B004581B3 /* IconB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IconB@2x.png"; path = "../IconB@2x.png"; sourceTree = "<group>"; };
 		548FB7881352AB88004581B3 /* Send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Send.png; sourceTree = "<group>"; };
 		548FB7891352AB88004581B3 /* Balance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Balance.png; sourceTree = "<group>"; };
 		548FB78A1352AB88004581B3 /* HowTo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HowTo.png; sourceTree = "<group>"; };
@@ -804,8 +807,6 @@
 		54F3C5231305E86500E6C3BA = {
 			isa = PBXGroup;
 			children = (
-				548FB7861352AB6B004581B3 /* IconB@2x.png */,
-				548FB7841352AB5E004581B3 /* IconB.png */,
 				54EC00DC134E7ACB00FB5100 /* README */,
 				5464D442134E6523003059DE /* build-iOS.txt */,
 				54B9E8D1134E5A9A00C02E09 /* bitcoin.org */,
@@ -865,8 +866,10 @@
 				5452D9AB134FE90C0004206C /* BCTableTextItemCell.m */,
 				5452D911134FE5270004206C /* UILabel+Clipboard.h */,
 				5452D912134FE5270004206C /* UILabel+Clipboard.m */,
-				5452D9B2135000580004206C /* SendViewController.m */,
 				5452D9B3135000590004206C /* SendViewController.h */,
+				5452D9B2135000580004206C /* SendViewController.m */,
+				5435560A1353B71B008BBB86 /* ConsoleViewController.h */,
+				5435560B1353B71B008BBB86 /* ConsoleViewController.m */,
 				54517790135118840069E5A7 /* TTRequestLoader+BC.m */,
 				545178D71351430D0069E5A7 /* PageViewController.h */,
 				545178D81351430E0069E5A7 /* PageViewController.m */,
@@ -878,6 +881,8 @@
 		54F3C5391305E86500E6C3BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				548FB7861352AB6B004581B3 /* IconB@2x.png */,
+				548FB7841352AB5E004581B3 /* IconB.png */,
 				548FB7881352AB88004581B3 /* Send.png */,
 				548FB7891352AB88004581B3 /* Balance.png */,
 				548FB78A1352AB88004581B3 /* HowTo.png */,
@@ -1178,6 +1183,7 @@
 				5452D9B4135000590004206C /* SendViewController.m in Sources */,
 				54517791135118850069E5A7 /* TTRequestLoader+BC.m in Sources */,
 				545178D91351430E0069E5A7 /* PageViewController.m in Sources */,
+				5435560C1353B71C008BBB86 /* ConsoleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
