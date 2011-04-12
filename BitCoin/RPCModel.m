@@ -76,7 +76,8 @@
     NSString *params = @"";
     for (id v in self.params) {
         NSString* sv=nil;
-        if ([v isKindOfClass:[NSString class]]) {
+        if ([v isKindOfClass:[NSString class]] &&
+            ![[[[NSNumberFormatter alloc] init] autorelease] numberFromString:v]) {
             sv = [NSString stringWithFormat:@"\"%@\"",v];
         } else {
             sv = [v description];
