@@ -71,6 +71,8 @@ extern int bitcoinmain(int argc, char* argv[]);
     [map from:@"*" toViewController:[TTWebController class]];
 	[map from:@"bitcoin://rpccommand/(initWithCommand:)" toViewController:[RPCCommandViewController class]];
 	[map from:@"bitcoin://rpccommand/(initWithCommand:)/(param1:)" toViewController:[RPCCommandViewController class]];
+	[map from:@"bitcoin://rpccommand/(initWithCommand:)/(param1:)/(param2:)" toViewController:[RPCCommandViewController class]];
+	[map from:@"bitcoin://rpccommand/(initWithCommand:)/(param1:)/(param2:)/(param3:)" toViewController:[RPCCommandViewController class]];
 	[map from:@"bitcoin://sendto" toModalViewController:[SendViewController class]];
 	[map from:@"bitcoin://about" toViewController:[AboutViewController class]];
 	[map from:@"bitcoin://console" toViewController:[ConsoleViewController class]];

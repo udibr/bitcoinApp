@@ -29,6 +29,33 @@ extern int bitcoinmain(int argc, char* argv[]);
     }
     return self; 
 }
+-(id)initWithCommand:(NSString*)command param1:(NSString*)param1 param2:(NSString*)param2
+{
+    self = [self initWithCommand:command];
+    if (self) {
+        if ([param1 isEqualToString:@" "])
+            param1 = @"";
+        if ([param2 isEqualToString:@" "])
+            param2 = @"";
+        self.params = [NSArray arrayWithObjects:param1,param2,nil];
+    }
+    return self; 
+}
+-(id)initWithCommand:(NSString*)command param1:(NSString*)param1 param2:(NSString*)param2 param3:(NSString*)param3
+{
+    self = [self initWithCommand:command];
+    if (self) {
+        if ([param1 isEqualToString:@" "])
+            param1 = @"";
+        if ([param2 isEqualToString:@" "])
+            param2 = @"";
+        if ([param3 isEqualToString:@" "])
+            param3 = @"";
+        self.params = [NSArray arrayWithObjects:param1,param2,param3,nil];
+    }
+    return self; 
+}
+
 -(void)dealloc
 {
     [self.dataSource cancel];
