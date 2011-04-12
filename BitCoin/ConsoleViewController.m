@@ -63,15 +63,18 @@
             url = [url stringByAppendingFormat:@"/%@",s];
     }
     TTDPRINT(@"Launching %@", url);
-	TTNavigator* navigator = [TTNavigator navigator];
-    [navigator openURLAction:[TTURLAction actionWithURLPath:url]];   
+    // give time for the keyboard to close
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW,0.01*1000000000),dispatch_get_main_queue(),^{
+        TTNavigator* navigator = [TTNavigator navigator];
+        [navigator openURLAction:[TTURLAction actionWithURLPath:url]];   
+    });
 }
 
 #pragma mark -
 #pragma mark UITextFieldDelegate methods
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {    
     if (textField == _cmdField) {
-        [_cmdField resignFirstResponder];
+        [_cmdField resignFirstResponder]; //close keyboard
         [self send];
     }
     return YES;
