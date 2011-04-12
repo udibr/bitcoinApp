@@ -13,6 +13,7 @@
 #import "AboutViewController.h"
 #import "RPCModel.h"
 #import "PageViewController.h"
+#import "ConsoleViewController.h"
 extern int bitcoinmain(int argc, char* argv[]);
 
 @implementation BitCoinAppDelegate
@@ -72,6 +73,7 @@ extern int bitcoinmain(int argc, char* argv[]);
 	[map from:@"bitcoin://rpccommand/(initWithCommand:)/(param1:)" toViewController:[RPCCommandViewController class]];
 	[map from:@"bitcoin://sendto" toModalViewController:[SendViewController class]];
 	[map from:@"bitcoin://about" toViewController:[AboutViewController class]];
+	[map from:@"bitcoin://console" toViewController:[ConsoleViewController class]];
     [map from:@"bitcoin://launcher" toSharedViewController: [LauncherViewTestController class]];
     [map from:@"bitcoin://page/(initWithPage:)" toViewController: [PageViewController class]];
 

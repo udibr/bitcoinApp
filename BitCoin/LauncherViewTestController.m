@@ -62,6 +62,9 @@
      [[[TTLauncherItem alloc] initWithTitle:@"License"
                                       image:@"bundle://license@2x.png"
                                         URL:@"bitcoin://page/license" canDelete:NO] autorelease], 
+     [[[TTLauncherItem alloc] initWithTitle:@"Console"
+                                      image:@"bundle://Icon.png"
+                                        URL:@"bitcoin://console" canDelete:NO] autorelease], 
       nil],
       nil
     ];
