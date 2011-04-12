@@ -21,11 +21,12 @@
         
         [[TTNavigator navigator].URLMap from:@"tt://send"
                                     toObject:self selector:@selector(send)];
-        
+#ifdef MODALSEND     
         // Configure the cancel button.
         UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
         self.navigationItem.leftBarButtonItem = cancelButton;
         [cancelButton release];
+#endif
         return self;
     }
     
@@ -97,13 +98,18 @@
 // left button
 - (IBAction)cancel:(id)sender
 {
-    [self dismissModalViewControllerAnimated:YES];    
+#ifdef MODALSEND
+    [self dismissModalViewControllerAnimated:YES];
+#else
+    //[[TTNavigator navigator].visibleViewController.navigationController popViewControllerAnimated:YES];
+    [[self navigationController] popViewControllerAnimated:YES];
+#endif
 }
 -(void)failed:(NSString*)message
 {
     if (!message)
         message = @"Try again or cancel";
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"  message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"  message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
     [alert release];
 }
