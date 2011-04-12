@@ -44,21 +44,15 @@
      [[[TTLauncherItem alloc] initWithTitle:@"Send"
                                       image:@"bundle://Send@2x.png"
                                         URL:@"bitcoin://sendto" canDelete:NO] autorelease], 
-     [[[TTLauncherItem alloc] initWithTitle:@"Transactions"
+     [[[TTLauncherItem alloc] initWithTitle:@"Console"
                                       image:@"bundle://Icon.png"
-                                        URL:@"bitcoin://rpccommand/listtransactions" canDelete:NO] autorelease], 
-     [[[TTLauncherItem alloc] initWithTitle:@"Status"
-                                      image:@"bundle://Icon.png"
-                                        URL:@"bitcoin://rpccommand/getinfo" canDelete:NO] autorelease],
+                                        URL:@"bitcoin://console" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"About"
                                       image:@"bundle://HowTo@2x.png"
                                         URL:@"bitcoin://about" canDelete:YES] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"License"
                                       image:@"bundle://license@2x.png"
                                         URL:@"bitcoin://page/license" canDelete:NO] autorelease], 
-     [[[TTLauncherItem alloc] initWithTitle:@"Console"
-                                      image:@"bundle://Icon.png"
-                                        URL:@"bitcoin://console" canDelete:NO] autorelease], 
       nil],
       nil
     ];

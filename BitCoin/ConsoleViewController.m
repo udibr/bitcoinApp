@@ -33,7 +33,7 @@
 
 - (void)createModel {
     self.cmdField = [[[UITextField alloc] init] autorelease];
-    _cmdField.placeholder = @"help";
+    _cmdField.placeholder = @"Enter command manually";
     _cmdField.keyboardType = UIKeyboardTypeDefault;
     _cmdField.returnKeyType = UIReturnKeyNext;
     _cmdField.autocorrectionType = UITextAutocorrectionTypeNo;
@@ -44,7 +44,12 @@
     
     self.dataSource = [TTSectionedDataSource dataSourceWithObjects:
                        @"",
-                       [TTTableGrayTextItem itemWithText:@"Enter RPC command"],
+                       //[TTTableGrayTextItem itemWithText:@"Enter command:"],
+                       [TTTableButton itemWithText:@"help" URL:@"bitcoin://rpccommand/help"],
+                       [TTTableButton itemWithText:@"getinfo" URL:@"bitcoin://rpccommand/getinfo"],
+                       [TTTableButton itemWithText:@"getaddressesbyaccount %20" URL:@"bitcoin://rpccommand/getaccountaddress/%20"],
+                       [TTTableButton itemWithText:@"listtransactions %20 5" URL:@"bitcoin://rpccommand/listtransactions/%20/5"],
+                       [TTTableButton itemWithText:@"stop" URL:@"bitcoin://rpccommand/stop"],
                        [TTTableControlItem itemWithCaption:@">"
                                                    control:_cmdField],
                        nil];

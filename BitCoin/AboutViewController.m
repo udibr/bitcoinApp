@@ -31,7 +31,7 @@
    // NSString* path = [(BitCoinAppDelegate*)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory];
     self.dataSource = [TTSectionedDataSource dataSourceWithObjects:
                        @"",
-                       [TTTableButton itemWithText:@"How to use BitCoin" URL:@"bitcoin://page/howto"],
+                       [TTTableButton itemWithText:@"How to use this App" URL:@"bitcoin://page/howto"],
                        [TTTableButton itemWithText:[NSString stringWithFormat:@"Whats new in %@",ver] URL:@"bitcoin://page/whatsnew"],
                       // [TTTableTextItem itemWithText:path],
                        [TTTableButton itemWithText:@"More on BitCoin" URL:@"http://www.bitcoin.org"],
