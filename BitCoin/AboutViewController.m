@@ -31,7 +31,8 @@
    // NSString* path = [(BitCoinAppDelegate*)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory];
     self.dataSource = [TTSectionedDataSource dataSourceWithObjects:
                        @"",
-                       [TTTableGrayTextItem itemWithText:[NSString stringWithFormat:@"Version %@",ver]],
+                       [TTTableButton itemWithText:@"How to use BitCoin" URL:@"bitcoin://page/howto"],
+                       [TTTableButton itemWithText:[NSString stringWithFormat:@"Whats new in %@",ver] URL:@"bitcoin://page/whatsnew"],
                       // [TTTableTextItem itemWithText:path],
                        [TTTableButton itemWithText:@"More on BitCoin" URL:@"http://www.bitcoin.org"],
                        [TTTableButton itemWithText:@"More from Symfi" URL:@"http://www.symfi.mobi"],
