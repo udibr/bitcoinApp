@@ -33,7 +33,7 @@
 
 - (void)createModel {
     self.cmdField = [[[UITextField alloc] init] autorelease];
-    _cmdField.placeholder = @"getinfo";
+    _cmdField.placeholder = @"help";
     _cmdField.keyboardType = UIKeyboardTypeDefault;
     _cmdField.returnKeyType = UIReturnKeyNext;
     _cmdField.autocorrectionType = UITextAutocorrectionTypeNo;
