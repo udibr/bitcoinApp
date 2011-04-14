@@ -16,7 +16,8 @@
 #import "ConsoleViewController.h"
 #import "Unzip.h"
 #import "StyleSheet.h"
-
+#import "BackupViewController.h"
+#import "BCFileSystem.h"
 extern int bitcoinmain(int argc, char* argv[]);
 
 @implementation BitCoinAppDelegate
@@ -27,15 +28,9 @@ extern int bitcoinmain(int argc, char* argv[]);
 //http://stackoverflow.com/questions/2094376/create-subfolder-in-nsdocumentdirectory
 //NSDocumentDirectory - Analogous to you own Documents folder, the contents of this folder is backed up when you synch the device.
 //NSCachesDirectory - This one resides in /Library/Caches/ and is not backed up when synching the device.
-- (NSString *)applicationDocumentsDirectory {
-	
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-    return basePath;
-}
 -(void)startDaemon
 {
-    NSString* documentsDir=[self applicationDocumentsDirectory];
+    NSString* documentsDir=applicationDocumentsDirectory();
     
     // On first run, copy blocks stored in the package
     NSString *storedBlkPath = [[NSBundle mainBundle] pathForResource:@"blkindex.dat" ofType:@"gz"];
@@ -111,6 +106,7 @@ extern int bitcoinmain(int argc, char* argv[]);
 #else
 	[map from:@"bitcoin://sendto" toViewController:[SendViewController class]];
 #endif
+	[map from:@"bitcoin://backup" toViewController:[BackupViewController class]];
 	[map from:@"bitcoin://about" toViewController:[AboutViewController class]];
 	[map from:@"bitcoin://console" toViewController:[ConsoleViewController class]];
     [map from:@"bitcoin://launcher" toSharedViewController: [LauncherViewTestController class]];

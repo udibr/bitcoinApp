@@ -13,5 +13,4 @@
     RPCModel *model;
 }
 @property (nonatomic, retain) RPCModel* model;
-- (NSString *)applicationDocumentsDirectory;
 @end

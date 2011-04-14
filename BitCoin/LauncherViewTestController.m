@@ -53,6 +53,9 @@
      [[[TTLauncherItem alloc] initWithTitle:@"Send"
                                       image:@"bundle://Send@2x.png"
                                         URL:@"bitcoin://sendto" canDelete:NO] autorelease], 
+     [[[TTLauncherItem alloc] initWithTitle:@"Backup"
+                                      image:@"bundle://Icon.png"
+                                        URL:@"bitcoin://backup" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Console"
                                       image:@"bundle://Icon.png"
                                         URL:@"bitcoin://console" canDelete:NO] autorelease], 
