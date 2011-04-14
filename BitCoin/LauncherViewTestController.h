@@ -2,6 +2,7 @@
 
 @interface LauncherViewTestController : TTViewController <TTLauncherViewDelegate> {
   TTLauncherView* _launcherView;
+    UIImageView* _background;
 }
 
 @end

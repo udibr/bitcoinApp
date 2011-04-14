@@ -16,6 +16,8 @@
 }
 
 - (void)dealloc {
+    TT_RELEASE_SAFELY(_background);
+    TT_RELEASE_SAFELY(_launcherView);
   [super dealloc];
 }
 
@@ -25,9 +27,16 @@
 - (void)loadView {
   [super loadView];
 
-  _launcherView = [[TTLauncherView alloc] initWithFrame:self.view.bounds];
-    _launcherView.backgroundColor = [UIColor colorWithRed:0x5d/256. green:0x5d/256. blue:0x5d/256. alpha:1.0
-];
+    
+    _background = [[UIImageView alloc] initWithFrame:self.view.bounds]; 
+    _background.image = [UIImage imageNamed: @"back@2x.png"];
+    [self.view addSubview:_background];
+
+    _launcherView = [[TTLauncherView alloc]   
+                     initWithFrame:self.view.bounds]; 
+    _launcherView.backgroundColor = [UIColor clearColor]; 
+    //_launcherView.backgroundColor = [UIColor colorWithRed:0x5d/256. green:0x5d/256. blue:0x5d/256. alpha:1.0];
+    
   _launcherView.delegate = self;
   _launcherView.columnCount = 4;
   _launcherView.pages = [NSArray arrayWithObjects:
