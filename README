@@ -1,3 +1,8 @@
+WARNING: bitcoins disappeared after restarting the App.
+Don’t keep more than few cents at a time in the App and try to empty it.
+Also for some unknown reason a fee of 0.01BC is introduced on every send.
+Working on fixing problems.
+
 This is an implementation of BitCoin for iOS devices (iPhone, iPad, iPodTouch)
 
 bitcoin is a peer-to-peer currency. To learn more go to http://bitcoin.org
