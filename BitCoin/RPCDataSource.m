@@ -51,6 +51,7 @@
 
 -(void)reloadModel
 {
+    [self.model cancel];
     [self.model load:TTURLRequestCachePolicyDefault more:NO];
 }
 
@@ -75,8 +76,8 @@
 
 - (void)cancel {
     self.reloadTimer = nil;
-    [super cancel];
     [_model cancel];
+    [super cancel];
 }
 
 - (void)tableViewDidLoadModel:(UITableView*)tableView {
