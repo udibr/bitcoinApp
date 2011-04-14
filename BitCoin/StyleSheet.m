@@ -26,5 +26,12 @@
 - (UIColor*)navigationBarTintColor {
     return [UIColor colorWithRed:0x76/255. green:0xa4/255. blue:0x80/255. alpha:1.];
 }
+- (TTStyle*)launcherButton:(UIControlState)state {
+    return
+    [TTPartStyle styleWithName:@"image" style:TTSTYLESTATE(launcherButtonImage:, state) next:
+     [TTTextStyle styleWithFont:[UIFont boldSystemFontOfSize:11] color:RGBCOLOR(255, 255, 255)
+                minimumFontSize:11 shadowColor:nil
+                   shadowOffset:CGSizeZero next:nil]];
+}
 
 @end

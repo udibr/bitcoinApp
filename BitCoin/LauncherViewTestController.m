@@ -29,7 +29,7 @@
 
     
     _background = [[UIImageView alloc] initWithFrame:self.view.bounds]; 
-    _background.image = [UIImage imageNamed: @"back@2x.png"];
+    _background.image = [UIImage imageNamed: @"back.png"];
     [self.view addSubview:_background];
 
     _launcherView = [[TTLauncherView alloc]   
