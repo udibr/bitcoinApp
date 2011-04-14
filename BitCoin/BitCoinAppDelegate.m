@@ -14,6 +14,9 @@
 #import "RPCModel.h"
 #import "PageViewController.h"
 #import "ConsoleViewController.h"
+#import "Unzip.h"
+#import "StyleSheet.h"
+
 extern int bitcoinmain(int argc, char* argv[]);
 
 @implementation BitCoinAppDelegate
@@ -30,9 +33,34 @@ extern int bitcoinmain(int argc, char* argv[]);
     NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
     return basePath;
 }
-
 -(void)startDaemon
 {
+    NSString* documentsDir=[self applicationDocumentsDirectory];
+    
+    // On first run, copy blocks stored in the package
+    NSString *storedBlkPath = [[NSBundle mainBundle] pathForResource:@"blkindex.dat" ofType:@"gz"];
+    NSString *storedBlk1Path = [[NSBundle mainBundle] pathForResource:@"blk0001.dat" ofType:@"gz"];
+    if (storedBlkPath && storedBlk1Path) {
+        NSString* blkPath = [documentsDir stringByAppendingPathComponent:@"blkindex.dat"];
+        NSString* blk1Path = [documentsDir stringByAppendingPathComponent:@"blk0001.dat"];
+        NSFileManager *fileMgr = [NSFileManager defaultManager];
+        if (![fileMgr fileExistsAtPath:blkPath] &&
+            ![fileMgr fileExistsAtPath:blk1Path]) {
+#if 0
+            NSError* error;
+            if ([fileMgr copyItemAtPath:storedBlkPath toPath:blkPath error:&error] != YES)
+                TTDPRINT(@"Unable to move blkindex: %@", [error localizedDescription]);
+            if ([fileMgr copyItemAtPath:storedBlk1Path toPath:blk1Path error:&error] != YES)
+                TTDPRINT(@"Unable to move blk1index: %@", [error localizedDescription]);
+#endif
+            dispatch_async(serialQueue,^{
+                Unzip(storedBlkPath, blkPath);
+                Unzip(storedBlk1Path, blk1Path);
+            });
+        }
+    }
+    
+    // run the bitcoin daemon
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"bitcoin" ofType:@"conf"]; // resourcePath];
     dispatch_async(serialQueue,^{
         //dup2(fd1, stderr);
@@ -41,7 +69,7 @@ extern int bitcoinmain(int argc, char* argv[]);
         char *argv[MAXARGC];
         argv[0] = "bitcoind";
         argc++;
-        argv[1] = (char*)[[NSString stringWithFormat:@"-datadir=%@",[self applicationDocumentsDirectory]] cString];
+        argv[1] = (char*)[[NSString stringWithFormat:@"-datadir=%@",documentsDir] cString];
         argc++;
         argv[2] = (char*)[[NSString stringWithFormat:@"-conf=%@",confPath] cString];
         argc++;
@@ -55,10 +83,15 @@ extern int bitcoinmain(int argc, char* argv[]);
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {    
+    // start bitcoin daemon on a different thread
     serialQueue = dispatch_queue_create("BITCOIND",NULL);
     [self startDaemon]; // will be called in didBecomeActive   
     
-	// configure ttnavigator
+	// set stylesheet
+	[TTStyleSheet setGlobalStyleSheet:[[[StyleSheet alloc] init] autorelease]];
+	[[TTURLRequestQueue mainQueue] setMaxContentLength:0];
+	
+    // configure ttnavigator
 	TTNavigator* navigator = [TTNavigator navigator];
 	navigator.supportsShakeToReload = YES;
 	navigator.persistenceMode = TTNavigatorPersistenceModeAll;
