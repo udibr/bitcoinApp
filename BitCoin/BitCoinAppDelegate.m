@@ -22,6 +22,7 @@ extern int bitcoinmain(int argc, char* argv[]);
 
 @implementation BitCoinAppDelegate
 @synthesize model;
+@synthesize backupURL;
 /**
  Returns the path to the application's documents directory.
  */
@@ -30,6 +31,13 @@ extern int bitcoinmain(int argc, char* argv[]);
 //NSCachesDirectory - This one resides in /Library/Caches/ and is not backed up when synching the device.
 -(void)startDaemon
 {
+    if (serialQueue) {
+        TTDPRINT(@"daemon already running");
+        return;
+    }
+    // start bitcoin daemon on a different thread
+    serialQueue = dispatch_queue_create("BITCOIND",NULL);
+
     NSString* documentsDir=applicationDocumentsDirectory();
     
     // On first run, copy blocks stored in the package
@@ -44,9 +52,9 @@ extern int bitcoinmain(int argc, char* argv[]);
 #if 0
             NSError* error;
             if ([fileMgr copyItemAtPath:storedBlkPath toPath:blkPath error:&error] != YES)
-                TTDPRINT(@"Unable to move blkindex: %@", [error localizedDescription]);
+                TTDPRINT(@"Unable to copy blkindex: %@", [error localizedDescription]);
             if ([fileMgr copyItemAtPath:storedBlk1Path toPath:blk1Path error:&error] != YES)
-                TTDPRINT(@"Unable to move blk1index: %@", [error localizedDescription]);
+                TTDPRINT(@"Unable to copy blk1index: %@", [error localizedDescription]);
 #endif
             dispatch_async(serialQueue,^{
                 Unzip(storedBlkPath, blkPath);
@@ -76,11 +84,41 @@ extern int bitcoinmain(int argc, char* argv[]);
     });    
 }
 
+//file://localhost/private/var/mobile/Applications/89BAB803-9B12-422E-A01D-C2C4707B169F/Documents/Inbox/wallet.dat
+-(BOOL)isBackupURL:(NSURL*)_backupURL
+{
+    if (![[_backupURL scheme] isEqualToString:@"file"])
+        return NO;
+    if (![[_backupURL pathExtension] isEqualToString:@"dat"])
+        return NO;
+    return YES;
+}
+
+- (void)restoreBackup
+{
+    NSFileManager *fileMgr = [NSFileManager defaultManager];
+    NSString* backupPath = [backupURL path];
+    NSError* error;
+    if (![fileMgr removeItemAtPath:walletPath() error:&error] ||
+        ![fileMgr copyItemAtPath:backupPath toPath:walletPath() error:&error]) {
+        NSString *msg = [NSString stringWithFormat:@"%@ %@ %@",[error localizedDescription],backupPath,walletPath()];
+        TTDPRINT(@"%@", msg);
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Restore was not performed"
+                                                        message:msg
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+		[alert show];
+		[alert release];
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{    
-    // start bitcoin daemon on a different thread
-    serialQueue = dispatch_queue_create("BITCOIND",NULL);
-    [self startDaemon]; // will be called in didBecomeActive   
+{
+    self.backupURL = [launchOptions objectForKey:UIApplicationLaunchOptionsURLKey];
+    if (self.backupURL && [self isBackupURL:backupURL]) {
+    } else
+        [self startDaemon]; // will be called in didBecomeActive   
     
 	// set stylesheet
 	[TTStyleSheet setGlobalStyleSheet:[[[StyleSheet alloc] init] autorelease]];
@@ -136,7 +174,17 @@ extern int bitcoinmain(int argc, char* argv[]);
 }
 
 - (BOOL)application:(UIApplication*)application handleOpenURL:(NSURL*)URL {
-    [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:URL.absoluteString]];
+    if ([self isBackupURL:URL]) {
+        UIAlertView *alert = nil;
+        if (serialQueue) {
+            alert = [[UIAlertView alloc] initWithTitle:@"Cant restore now"  message:@"You must first completely exit BitCoin. Click on Home button once, wait, then double click on it. Do a long press on the BitCoin icon AT THE BOTTOM of the screen and delete it. Try again to click on the wallet.dat file." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        } else {
+            alert = [[UIAlertView alloc] initWithTitle:@"Wallet restore"  message:@"Your current wallet on the App will be erased. Any bitcoin balance you have on it will be forever lost unless you have made another backup of it first. Do you want to continue?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
+        }
+		[alert show];
+		[alert release];
+    } else
+        [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:URL.absoluteString]];
     return YES;
 }
 
@@ -206,5 +254,14 @@ extern int bitcoinmain(int argc, char* argv[]);
 {
 }
 */
+#pragma mark -
+#pragma UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([alertView cancelButtonIndex] != buttonIndex) {
+        [self restoreBackup];
+    } 
+    [self startDaemon];
+}
 
 @end

@@ -7,4 +7,5 @@
 //
 
 NSString *applicationDocumentsDirectory();
+NSString* walletPath();
 NSString* backupwalletPath();

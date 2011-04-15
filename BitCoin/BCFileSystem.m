@@ -15,7 +15,11 @@ NSString *applicationDocumentsDirectory()
     NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
     return basePath;
 }
-
+NSString* walletPath()
+{
+    NSString* documentsDir=applicationDocumentsDirectory();
+    return [documentsDir stringByAppendingPathComponent:@"wallet.dat"];
+}
 NSString* backupwalletPath()
 {
     NSString* documentsDir=applicationDocumentsDirectory();
