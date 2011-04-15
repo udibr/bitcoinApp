@@ -69,6 +69,8 @@
 		54C6107513569C3D0017C275 /* BackupDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C6107413569C3C0017C275 /* BackupDataSource.m */; };
 		54C610771356A6060017C275 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C610761356A6060017C275 /* back.png */; };
 		54EC01E7134E9CE400FB5100 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54EC01E6134E9CE400FB5100 /* Entitlements.plist */; };
+		54EC37601358C9B6009E563A /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC375F1358C9B4009E563A /* ContactUsViewController.m */; };
+		54EC37681358CB97009E563A /* Em.png in Resources */ = {isa = PBXBuildFile; fileRef = 54EC37671358CB96009E563A /* Em.png */; };
 		54F3C5331305E86500E6C3BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5321305E86500E6C3BA /* UIKit.framework */; };
 		54F3C5351305E86500E6C3BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5341305E86500E6C3BA /* Foundation.framework */; };
 		54F3C5371305E86500E6C3BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5361305E86500E6C3BA /* CoreGraphics.framework */; };
@@ -435,6 +437,9 @@
 		54C610761356A6060017C275 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = "../../../../../../Dropbox/BitCoin Icons/back.png"; sourceTree = "<group>"; };
 		54EC00DC134E7ACB00FB5100 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		54EC01E6134E9CE400FB5100 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = SOURCE_ROOT; };
+		54EC375E1358C9B3009E563A /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
+		54EC375F1358C9B4009E563A /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUsViewController.m; sourceTree = "<group>"; };
+		54EC37671358CB96009E563A /* Em.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Em.png; sourceTree = "<group>"; };
 		54F3C52E1305E86500E6C3BA /* BitCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F3C5321305E86500E6C3BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		54F3C5341305E86500E6C3BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -905,6 +910,8 @@
 				54C6106B135694530017C275 /* BackupViewController.m */,
 				54C6107313569C3C0017C275 /* BackupDataSource.h */,
 				54C6107413569C3C0017C275 /* BackupDataSource.m */,
+				54EC375E1358C9B3009E563A /* ContactUsViewController.h */,
+				54EC375F1358C9B4009E563A /* ContactUsViewController.m */,
 				5435560A1353B71B008BBB86 /* ConsoleViewController.h */,
 				5435560B1353B71B008BBB86 /* ConsoleViewController.m */,
 				54517790135118840069E5A7 /* TTRequestLoader+BC.m */,
@@ -925,6 +932,7 @@
 				545DD0DB13564E3B00AB23D2 /* back@2x.png */,
 				548FB7861352AB6B004581B3 /* IconB@2x.png */,
 				548FB7841352AB5E004581B3 /* IconB.png */,
+				54EC37671358CB96009E563A /* Em.png */,
 				548FB7881352AB88004581B3 /* Send.png */,
 				548FB7891352AB88004581B3 /* Balance.png */,
 				548FB78A1352AB88004581B3 /* HowTo.png */,
@@ -1187,6 +1195,7 @@
 				548FB79C1352AB88004581B3 /* Balance@2x.png in Resources */,
 				548FB79D1352AB88004581B3 /* HowTo@2x.png in Resources */,
 				54C610771356A6060017C275 /* back.png in Resources */,
+				54EC37681358CB97009E563A /* Em.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1228,6 +1237,7 @@
 				54C6106C135694540017C275 /* BackupViewController.m in Sources */,
 				54C6107213569A1D0017C275 /* BCFileSystem.m in Sources */,
 				54C6107513569C3D0017C275 /* BackupDataSource.m in Sources */,
+				54EC37601358C9B6009E563A /* ContactUsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
