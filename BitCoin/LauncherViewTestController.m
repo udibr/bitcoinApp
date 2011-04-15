@@ -59,9 +59,12 @@
      [[[TTLauncherItem alloc] initWithTitle:@"Console"
                                       image:@"bundle://Icon.png"
                                         URL:@"bitcoin://console" canDelete:NO] autorelease], 
-     [[[TTLauncherItem alloc] initWithTitle:@"About"
+     [[[TTLauncherItem alloc] initWithTitle:@"Help"
                                       image:@"bundle://HowTo@2x.png"
                                         URL:@"bitcoin://about" canDelete:YES] autorelease], 
+     [[[TTLauncherItem alloc] initWithTitle:@"Feedback"
+                                      image:@"bundle://Em.png"
+                                        URL:@"bitcoin://contactus" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"License"
                                       image:@"bundle://license@2x.png"
                                         URL:@"bitcoin://page/license" canDelete:NO] autorelease], 

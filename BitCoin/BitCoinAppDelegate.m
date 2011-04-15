@@ -18,6 +18,7 @@
 #import "StyleSheet.h"
 #import "BackupViewController.h"
 #import "BCFileSystem.h"
+#import "ContactUsViewController.h"
 extern int bitcoinmain(int argc, char* argv[]);
 
 @implementation BitCoinAppDelegate
@@ -149,6 +150,7 @@ extern int bitcoinmain(int argc, char* argv[]);
 	[map from:@"bitcoin://console" toViewController:[ConsoleViewController class]];
     [map from:@"bitcoin://launcher" toSharedViewController: [LauncherViewTestController class]];
     [map from:@"bitcoin://page/(initWithPage:)" toViewController: [PageViewController class]];
+    [map from:@"bitcoin://contactus" toViewController: [ContactUsViewController class]];
 
     
     
