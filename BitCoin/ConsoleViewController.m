@@ -45,11 +45,11 @@
     self.dataSource = [TTSectionedDataSource dataSourceWithObjects:
                        @"",
                        //[TTTableGrayTextItem itemWithText:@"Enter command:"],
-                       [TTTableButton itemWithText:@"help" URL:@"bitcoin://rpccommand/help"],
-                       [TTTableButton itemWithText:@"getinfo" URL:@"bitcoin://rpccommand/getinfo"],
-                       [TTTableButton itemWithText:@"getaddressesbyaccount %20" URL:@"bitcoin://rpccommand/getaccountaddress/%20"],
-                       [TTTableButton itemWithText:@"listtransactions %20 5" URL:@"bitcoin://rpccommand/listtransactions/%20/5"],
-                       [TTTableButton itemWithText:@"stop" URL:@"bitcoin://rpccommand/stop"],
+                       [TTTableButton itemWithText:@"help" URL:@"bitcoin://rpccommand/0/help"],
+                       [TTTableButton itemWithText:@"getinfo" URL:@"bitcoin://rpccommand/1/getinfo"],
+                       [TTTableButton itemWithText:@"getaddressesbyaccount %20" URL:@"bitcoin://rpccommand/1/getaccountaddress/%20"],
+                       [TTTableButton itemWithText:@"listtransactions %20 5" URL:@"bitcoin://rpccommand/1/listtransactions/%20/5"],
+                       [TTTableButton itemWithText:@"stop" URL:@"bitcoin://rpccommand/0/stop"],
                        [TTTableControlItem itemWithCaption:@">"
                                                    control:_cmdField],
                        nil];
@@ -62,7 +62,10 @@
         return;
     
     NSArray* commandLine = [_cmdField.text componentsSeparatedByString:@" "];
-    NSString* url=@"bitcoin://rpccommand";
+    if (![commandLine count]) {
+        return;
+    }
+    NSString* url=@"bitcoin://rpccommand/0";
     for (NSString *s in commandLine) {
         if ([s length])
             url = [url stringByAppendingFormat:@"/%@",s];

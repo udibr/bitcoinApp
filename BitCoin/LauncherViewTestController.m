@@ -43,13 +43,13 @@
     [NSArray arrayWithObjects:
     // [[[TTLauncherItem alloc] initWithTitle:@"Accounts"
     //                                  image:@"bundle://Icon.png"
-    //                                    URL:@"bitcoin://rpccommand/listaccounts" canDelete:NO] autorelease],
+    //                                    URL:@"bitcoin://rpccommand/1/listaccounts" canDelete:NO] autorelease],
      [[[TTLauncherItem alloc] initWithTitle:@"My Address"
                                       image:@"bundle://Address@2x.png"
-                                        URL:@"bitcoin://rpccommand/getaccountaddress/%20" canDelete:NO] autorelease], 
+                                        URL:@"bitcoin://rpccommand/1/getaccountaddress/%20" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Balance"
                                       image:@"bundle://Balance@2x.png"
-                                        URL:@"bitcoin://rpccommand/listaccounts" canDelete:NO] autorelease],//getbalance 
+                                        URL:@"bitcoin://rpccommand/1/listaccounts" canDelete:NO] autorelease],//getbalance 
      [[[TTLauncherItem alloc] initWithTitle:@"Send"
                                       image:@"bundle://Send@2x.png"
                                         URL:@"bitcoin://sendto" canDelete:NO] autorelease], 

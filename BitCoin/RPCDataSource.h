@@ -10,6 +10,7 @@
 
 @interface RPCDataSource : TTListDataSource {
 	NSTimer *reloadTimer;
+    BOOL repeatCmd;
 }
-- (id)initWithItemCommand:(NSString*)command params:(NSArray*)params;
+- (id)initWithItemRepeat:(BOOL)repeat command:(NSString*)command params:(NSArray*)params;
 @end

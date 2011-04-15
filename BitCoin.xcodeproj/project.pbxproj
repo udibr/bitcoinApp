@@ -27,6 +27,9 @@
 		5452D9AC134FE90C0004206C /* BCTableTextItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5452D9AB134FE90C0004206C /* BCTableTextItemCell.m */; };
 		5452D9AF134FF4730004206C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5452D9AE134FF4730004206C /* AboutViewController.m */; };
 		5452D9B4135000590004206C /* SendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5452D9B2135000580004206C /* SendViewController.m */; };
+		5458BD8313567E42004722BC /* StyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5458BD8213567E42004722BC /* StyleSheet.m */; };
+		5458BD8513567F54004722BC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5458BD8413567F54004722BC /* libz.dylib */; };
+		545DD0DF1356785B00AB23D2 /* Unzip.m in Sources */ = {isa = PBXBuildFile; fileRef = 545DD0DE1356785900AB23D2 /* Unzip.m */; };
 		5474AEF1134AAF5C007A5ACB /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AEF0134AAF5B007A5ACB /* boost.framework */; };
 		5474AFA7134B5AF3007A5ACB /* libdb_cxx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA6134B5AF3007A5ACB /* libdb_cxx.a */; };
 		5474AFAA134B5CB0007A5ACB /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA8134B5CAF007A5ACB /* libcrypto.a */; };
@@ -44,8 +47,6 @@
 		548FB79B1352AB88004581B3 /* Address@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB78F1352AB88004581B3 /* Address@2x.png */; };
 		548FB79C1352AB88004581B3 /* Balance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7901352AB88004581B3 /* Balance@2x.png */; };
 		548FB79D1352AB88004581B3 /* HowTo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7911352AB88004581B3 /* HowTo@2x.png */; };
-		548FB79E1352AB88004581B3 /* IconA.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7921352AB88004581B3 /* IconA.png */; };
-		548FB79F1352AB88004581B3 /* IconA@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7931352AB88004581B3 /* IconA@2x.png */; };
 		54B9E9AA134E5A9A00C02E09 /* cpu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54B9E90A134E5A9A00C02E09 /* cpu.cpp */; };
 		54B9E9AE134E5A9A00C02E09 /* sha.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54B9E915134E5A9A00C02E09 /* sha.cpp */; };
 		54B9E9AF134E5A9A00C02E09 /* db.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54B9E91A134E5A9A00C02E09 /* db.cpp */; };
@@ -62,8 +63,11 @@
 		54C1FC80134CF8A200D9830E /* RPCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C1FC7F134CF8A200D9830E /* RPCDataSource.m */; };
 		54C1FC83134CFE9600D9830E /* RPCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C1FC82134CFE9500D9830E /* RPCModel.m */; };
 		54C1FCF0134D149000D9830E /* LauncherViewTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C1FCEF134D149000D9830E /* LauncherViewTestController.m */; };
-		54C1FCF8134D1BA700D9830E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C1FCF7134D1BA600D9830E /* Icon.png */; };
-		54C1FCFA134D1BB600D9830E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C1FCF9134D1BB500D9830E /* Icon@2x.png */; };
+		54C6106C135694540017C275 /* BackupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C6106B135694530017C275 /* BackupViewController.m */; };
+		54C6106E1356960C0017C275 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C6106D1356960B0017C275 /* MessageUI.framework */; };
+		54C6107213569A1D0017C275 /* BCFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C6107113569A1D0017C275 /* BCFileSystem.m */; };
+		54C6107513569C3D0017C275 /* BackupDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C6107413569C3C0017C275 /* BackupDataSource.m */; };
+		54C610771356A6060017C275 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C610761356A6060017C275 /* back.png */; };
 		54EC01E7134E9CE400FB5100 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54EC01E6134E9CE400FB5100 /* Entitlements.plist */; };
 		54F3C5331305E86500E6C3BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5321305E86500E6C3BA /* UIKit.framework */; };
 		54F3C5351305E86500E6C3BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5341305E86500E6C3BA /* Foundation.framework */; };
@@ -279,6 +283,12 @@
 		5452D9AE134FF4730004206C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		5452D9B2135000580004206C /* SendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendViewController.m; sourceTree = "<group>"; };
 		5452D9B3135000590004206C /* SendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendViewController.h; sourceTree = "<group>"; };
+		5458BD8113567E42004722BC /* StyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleSheet.h; sourceTree = "<group>"; };
+		5458BD8213567E42004722BC /* StyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleSheet.m; sourceTree = "<group>"; };
+		5458BD8413567F54004722BC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		545DD0DB13564E3B00AB23D2 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		545DD0DD1356785900AB23D2 /* Unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unzip.h; sourceTree = "<group>"; };
+		545DD0DE1356785900AB23D2 /* Unzip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Unzip.m; sourceTree = "<group>"; };
 		5464D442134E6523003059DE /* build-iOS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "build-iOS.txt"; sourceTree = "<group>"; };
 		5474AE90134A7F8B007A5ACB /* bitcoinScreenShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoinScreenShot.png; sourceTree = "<group>"; };
 		5474AE91134A7F8B007A5ACB /* bitcoin512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoin512.png; sourceTree = "<group>"; };
@@ -415,6 +425,14 @@
 		54C1FCEF134D149000D9830E /* LauncherViewTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherViewTestController.m; sourceTree = "<group>"; };
 		54C1FCF7134D1BA600D9830E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		54C1FCF9134D1BB500D9830E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		54C6106A135694530017C275 /* BackupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackupViewController.h; sourceTree = "<group>"; };
+		54C6106B135694530017C275 /* BackupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackupViewController.m; sourceTree = "<group>"; };
+		54C6106D1356960B0017C275 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		54C6107013569A1D0017C275 /* BCFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCFileSystem.h; sourceTree = "<group>"; };
+		54C6107113569A1D0017C275 /* BCFileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCFileSystem.m; sourceTree = "<group>"; };
+		54C6107313569C3C0017C275 /* BackupDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackupDataSource.h; sourceTree = "<group>"; };
+		54C6107413569C3C0017C275 /* BackupDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackupDataSource.m; sourceTree = "<group>"; };
+		54C610761356A6060017C275 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = "../../../../../../Dropbox/BitCoin Icons/back.png"; sourceTree = "<group>"; };
 		54EC00DC134E7ACB00FB5100 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		54EC01E6134E9CE400FB5100 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = SOURCE_ROOT; };
 		54F3C52E1305E86500E6C3BA /* BitCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -436,6 +454,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54C6106E1356960C0017C275 /* MessageUI.framework in Frameworks */,
+				5458BD8513567F54004722BC /* libz.dylib in Frameworks */,
 				3206A0F794A6D7A3F259DBF5 /* libextThree20JSON+SBJSON.a in Frameworks */,
 				3201088596B4756681693705 /* libThree20UICommon.a in Frameworks */,
 				320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */,
@@ -804,6 +824,17 @@
 			path = xpm;
 			sourceTree = "<group>";
 		};
+		54C6106F135699FA0017C275 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				545DD0DD1356785900AB23D2 /* Unzip.h */,
+				545DD0DE1356785900AB23D2 /* Unzip.m */,
+				54C6107013569A1D0017C275 /* BCFileSystem.h */,
+				54C6107113569A1D0017C275 /* BCFileSystem.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		54F3C5231305E86500E6C3BA = {
 			isa = PBXGroup;
 			children = (
@@ -827,6 +858,7 @@
 		54F3C5311305E86500E6C3BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5458BD8413567F54004722BC /* libz.dylib */,
 				5474AFA8134B5CAF007A5ACB /* libcrypto.a */,
 				5474AFA9134B5CAF007A5ACB /* libssl.a */,
 				5474AFA6134B5AF3007A5ACB /* libdb_cxx.a */,
@@ -843,6 +875,7 @@
 				54F3C5321305E86500E6C3BA /* UIKit.framework */,
 				54F3C5341305E86500E6C3BA /* Foundation.framework */,
 				54F3C5361305E86500E6C3BA /* CoreGraphics.framework */,
+				54C6106D1356960B0017C275 /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -868,11 +901,18 @@
 				5452D912134FE5270004206C /* UILabel+Clipboard.m */,
 				5452D9B3135000590004206C /* SendViewController.h */,
 				5452D9B2135000580004206C /* SendViewController.m */,
+				54C6106A135694530017C275 /* BackupViewController.h */,
+				54C6106B135694530017C275 /* BackupViewController.m */,
+				54C6107313569C3C0017C275 /* BackupDataSource.h */,
+				54C6107413569C3C0017C275 /* BackupDataSource.m */,
 				5435560A1353B71B008BBB86 /* ConsoleViewController.h */,
 				5435560B1353B71B008BBB86 /* ConsoleViewController.m */,
 				54517790135118840069E5A7 /* TTRequestLoader+BC.m */,
 				545178D71351430D0069E5A7 /* PageViewController.h */,
 				545178D81351430E0069E5A7 /* PageViewController.m */,
+				5458BD8113567E42004722BC /* StyleSheet.h */,
+				5458BD8213567E42004722BC /* StyleSheet.m */,
+				54C6106F135699FA0017C275 /* Helper */,
 				54F3C5391305E86500E6C3BA /* Supporting Files */,
 			);
 			path = BitCoin;
@@ -881,6 +921,8 @@
 		54F3C5391305E86500E6C3BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				54C610761356A6060017C275 /* back.png */,
+				545DD0DB13564E3B00AB23D2 /* back@2x.png */,
 				548FB7861352AB6B004581B3 /* IconB@2x.png */,
 				548FB7841352AB5E004581B3 /* IconB.png */,
 				548FB7881352AB88004581B3 /* Send.png */,
@@ -1129,8 +1171,6 @@
 				320B6C86F11D9990244A9731 /* Three20.bundle in Resources */,
 				54F3C53D1305E86500E6C3BA /* InfoPlist.strings in Resources */,
 				5474D278134BC748007A5ACB /* bitcoin.conf in Resources */,
-				54C1FCF8134D1BA700D9830E /* Icon.png in Resources */,
-				54C1FCFA134D1BB600D9830E /* Icon@2x.png in Resources */,
 				54EC01E7134E9CE400FB5100 /* Entitlements.plist in Resources */,
 				545178CC135136780069E5A7 /* whatsnew.html in Resources */,
 				545178D6135140750069E5A7 /* license.html in Resources */,
@@ -1146,8 +1186,7 @@
 				548FB79B1352AB88004581B3 /* Address@2x.png in Resources */,
 				548FB79C1352AB88004581B3 /* Balance@2x.png in Resources */,
 				548FB79D1352AB88004581B3 /* HowTo@2x.png in Resources */,
-				548FB79E1352AB88004581B3 /* IconA.png in Resources */,
-				548FB79F1352AB88004581B3 /* IconA@2x.png in Resources */,
+				54C610771356A6060017C275 /* back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1184,6 +1223,11 @@
 				54517791135118850069E5A7 /* TTRequestLoader+BC.m in Sources */,
 				545178D91351430E0069E5A7 /* PageViewController.m in Sources */,
 				5435560C1353B71C008BBB86 /* ConsoleViewController.m in Sources */,
+				545DD0DF1356785B00AB23D2 /* Unzip.m in Sources */,
+				5458BD8313567E42004722BC /* StyleSheet.m in Sources */,
+				54C6106C135694540017C275 /* BackupViewController.m in Sources */,
+				54C6107213569A1D0017C275 /* BCFileSystem.m in Sources */,
+				54C6107513569C3D0017C275 /* BackupDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

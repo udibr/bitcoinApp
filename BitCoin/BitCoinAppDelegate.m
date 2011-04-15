@@ -135,10 +135,10 @@ extern int bitcoinmain(int argc, char* argv[]);
     
     // Any URL that doesn't match will fall back on this one, and open in the web browser
     [map from:@"*" toViewController:[TTWebController class]];
-	[map from:@"bitcoin://rpccommand/(initWithCommand:)" toViewController:[RPCCommandViewController class]];
-	[map from:@"bitcoin://rpccommand/(initWithCommand:)/(param1:)" toViewController:[RPCCommandViewController class]];
-	[map from:@"bitcoin://rpccommand/(initWithCommand:)/(param1:)/(param2:)" toViewController:[RPCCommandViewController class]];
-	[map from:@"bitcoin://rpccommand/(initWithCommand:)/(param1:)/(param2:)/(param3:)" toViewController:[RPCCommandViewController class]];
+	[map from:@"bitcoin://rpccommand/(initWithRepeat:)/(command:)" toViewController:[RPCCommandViewController class]];
+	[map from:@"bitcoin://rpccommand/(initWithRepeat:)/(command:)/(param1:)" toViewController:[RPCCommandViewController class]];
+	[map from:@"bitcoin://rpccommand/(initWithRepeat:)/(command:)/(param1:)/(param2:)" toViewController:[RPCCommandViewController class]];
+	[map from:@"bitcoin://rpccommand/(initWithRepeat:)/(command:)/(param1:)/(param2:)/(param3:)" toViewController:[RPCCommandViewController class]];
 #ifdef MODALSEND     
 	[map from:@"bitcoin://sendto" toModalViewController:[SendViewController class]];
 #else

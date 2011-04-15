@@ -12,16 +12,18 @@ extern int bitcoinmain(int argc, char* argv[]);
 @implementation RPCCommandViewController
 @synthesize command = _command;
 @synthesize params = _params;
--(id)initWithCommand:(NSString*)command
+-(id)initWithRepeat:(BOOL)repeat command:(NSString*)command
 {
     self = [self init];
-    if (self)
+    if (self) {
+        repeatCmd = repeat;
         self.command = command;
+    }
     return  self;
 }
--(id)initWithCommand:(NSString*)command param1:(NSString*)param1
+-(id)initWithRepeat:(BOOL)repeat command:(NSString*)command param1:(NSString*)param1
 {
-    self = [self initWithCommand:command];
+    self = [self initWithRepeat:repeat command:command];
     if (self) {
         if ([param1 isEqualToString:@" "])
             param1 = @"";
@@ -29,9 +31,9 @@ extern int bitcoinmain(int argc, char* argv[]);
     }
     return self; 
 }
--(id)initWithCommand:(NSString*)command param1:(NSString*)param1 param2:(NSString*)param2
+-(id)initWithRepeat:(BOOL)repeat command:(NSString*)command param1:(NSString*)param1 param2:(NSString*)param2
 {
-    self = [self initWithCommand:command];
+    self = [self initWithRepeat:repeat command:command];
     if (self) {
         if ([param1 isEqualToString:@" "])
             param1 = @"";
@@ -41,9 +43,9 @@ extern int bitcoinmain(int argc, char* argv[]);
     }
     return self; 
 }
--(id)initWithCommand:(NSString*)command param1:(NSString*)param1 param2:(NSString*)param2 param3:(NSString*)param3
+-(id)initWithRepeat:(BOOL)repeat command:(NSString*)command param1:(NSString*)param1 param2:(NSString*)param2 param3:(NSString*)param3
 {
-    self = [self initWithCommand:command];
+    self = [self initWithRepeat:repeat command:command];
     if (self) {
         if ([param1 isEqualToString:@" "])
             param1 = @"";
@@ -65,7 +67,7 @@ extern int bitcoinmain(int argc, char* argv[]);
 }
 
 - (void)createModel {
-	self.dataSource = [[[RPCDataSource alloc] initWithItemCommand:self.command params:self.params] autorelease];
+	self.dataSource = [[[RPCDataSource alloc] initWithItemRepeat:repeatCmd command:self.command params:self.params] autorelease];
 }
 - (id<UITableViewDelegate>)createDelegate {
 	return [[[TTTableViewDragRefreshDelegate alloc] initWithController:self] autorelease];

@@ -18,10 +18,11 @@
 @implementation RPCDataSource
 @synthesize reloadTimer;
 
-- (id)initWithItemCommand:(NSString*)command params:(NSArray*)params
+- (id)initWithItemRepeat:(BOOL)repeat command:(NSString*)command params:(NSArray*)params
 {
     self = [super init];
 	if (self) {
+        repeatCmd = repeat;
         self.items =  [[NSMutableArray alloc] init];
         _model = [[RPCModel alloc] initWithCommand:command params:params];
         [_model.delegates addObject:self];
@@ -51,6 +52,7 @@
 
 -(void)reloadModel
 {
+    reloadTimer = nil;//necessary because repeats:NO in startReloads
     [self.model cancel];
     [self.model load:TTURLRequestCachePolicyDefault more:NO];
 }
@@ -62,7 +64,7 @@
 
 - (void)startReload:(NSTimeInterval)animationInterval
 {
-	self.reloadTimer = [NSTimer scheduledTimerWithTimeInterval:animationInterval target:self selector:@selector(reloadModel) userInfo:nil repeats:YES];
+	self.reloadTimer = [NSTimer scheduledTimerWithTimeInterval:animationInterval target:self selector:@selector(reloadModel) userInfo:nil repeats:NO];
 }
 
 - (void)didEnterBackgroundNotification:(void*)object {
@@ -137,6 +139,7 @@
 }
 - (void)modelDidFinishLoad:(id<TTModel>)model
 {
-    [self startReload:2.];
+    if (repeatCmd)
+        [self startReload:2.];
 }
 @end
