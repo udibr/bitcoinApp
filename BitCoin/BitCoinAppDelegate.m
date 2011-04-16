@@ -31,7 +31,7 @@ extern int bitcoinmain(int argc, char* argv[]);
 //http://stackoverflow.com/questions/2094376/create-subfolder-in-nsdocumentdirectory
 //NSDocumentDirectory - Analogous to you own Documents folder, the contents of this folder is backed up when you synch the device.
 //NSCachesDirectory - This one resides in /Library/Caches/ and is not backed up when synching the device.
--(void)startDaemon
+-(void)startDaemon:(BOOL)rescan
 {
     if (serialQueue) {
         TTDPRINT(@"daemon already running");
@@ -66,6 +66,7 @@ extern int bitcoinmain(int argc, char* argv[]);
                 Unzip(storedBlkPath, blkPath);
                 Unzip(storedBlk1Path, blk1Path);
             });
+            rescan = YES;
         }
     }
     
@@ -76,14 +77,18 @@ extern int bitcoinmain(int argc, char* argv[]);
 #define MAXARGC    30
         int argc=0;
         char *argv[MAXARGC];
-        argv[0] = "bitcoind";
+        argv[argc] = "bitcoind";
         argc++;
-        argv[1] = (char*)[[NSString stringWithFormat:@"-datadir=%@",documentsDir] cString];
+        argv[argc] = (char*)[[NSString stringWithFormat:@"-datadir=%@",documentsDir] cString];
         argc++;
-        argv[2] = (char*)[[NSString stringWithFormat:@"-conf=%@",confPath] cString];
+        argv[argc] = (char*)[[NSString stringWithFormat:@"-conf=%@",confPath] cString];
         argc++;
-        argv[3] = "-printtoconsole";
+        argv[argc] = "-printtoconsole";
         argc++;
+        if (rescan) {
+            argv[argc] = "-rescan";
+            argc++;
+        }
         TTDPRINT(@"starting bitcoin thread");
         
         bitcoinmain(argc,argv);
@@ -100,7 +105,7 @@ extern int bitcoinmain(int argc, char* argv[]);
     return YES;
 }
 
-- (void)restoreBackup
+- (BOOL)restoreBackup
 {
     NSFileManager *fileMgr = [NSFileManager defaultManager];
     NSString* backupPath = [backupURL path];
@@ -116,7 +121,9 @@ extern int bitcoinmain(int argc, char* argv[]);
                                               otherButtonTitles:nil];
 		[alert show];
 		[alert release];
+        return NO;
     }
+    return YES;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -124,7 +131,7 @@ extern int bitcoinmain(int argc, char* argv[]);
     self.backupURL = [launchOptions objectForKey:UIApplicationLaunchOptionsURLKey];
     if (self.backupURL && [self isBackupURL:backupURL]) {
     } else
-        [self startDaemon]; // will be called in didBecomeActive   
+        [self startDaemon:NO]; // will be called in didBecomeActive   
     
 	// set stylesheet
 	[TTStyleSheet setGlobalStyleSheet:[[[StyleSheet alloc] init] autorelease]];
@@ -226,7 +233,7 @@ extern int bitcoinmain(int argc, char* argv[]);
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
-  //  [self startDaemon];
+  //  [self startDaemon:NO];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -267,10 +274,11 @@ extern int bitcoinmain(int argc, char* argv[]);
 #pragma UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    BOOL rescan = NO;
     if ([alertView cancelButtonIndex] != buttonIndex) {
-        [self restoreBackup];
+        rescan = [self restoreBackup];
     } 
-    [self startDaemon];
+    [self startDaemon:rescan];
 }
 
 @end
