@@ -70,7 +70,10 @@
                                         URL:@"bitcoin://contactus" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"License"
                                       image:@"bundle://license@2x.png"
-                                        URL:@"bitcoin://page/license" canDelete:NO] autorelease], 
+                                        URL:@"bitcoin://page/license" canDelete:NO] autorelease],
+     [[[TTLauncherItem alloc] initWithTitle:@"Please Donate"
+                                      image:@"bundle://Icon.png"
+                                        URL:@"bitcoin://sendto/1JsHXZRoqoPkwpZajy1VmnSmmvxqy1eux2" canDelete:YES] autorelease], 
       nil],
       nil
     ];
