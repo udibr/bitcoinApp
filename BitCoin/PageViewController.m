@@ -12,6 +12,7 @@
 @implementation PageViewController
 - (id)initWithPage:(NSString*)page
 {
+    //dont set title. Instead the HTML title of the page is used
     return [self initWithNavigatorURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:page ofType:@"html"]] query:nil];
 }
 - (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request

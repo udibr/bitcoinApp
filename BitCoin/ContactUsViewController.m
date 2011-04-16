@@ -9,6 +9,15 @@
 #import "ContactUsViewController.h"
 
 @implementation ContactUsViewController
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+	if ([super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        self.title = @"Contact Us";
+        return self;
+	}
+	
+	return nil;
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

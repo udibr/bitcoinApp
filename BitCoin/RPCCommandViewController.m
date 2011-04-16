@@ -18,6 +18,8 @@ extern int bitcoinmain(int argc, char* argv[]);
     if (self) {
         repeatCmd = repeat;
         self.command = command;
+        self.title = command;
+
     }
     return  self;
 }

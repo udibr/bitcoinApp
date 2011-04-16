@@ -12,6 +12,15 @@
 
 
 @implementation BackupViewController
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+	if ([super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        self.title = @"Backup";
+        return self;
+	}
+	
+	return nil;
+}
+
 -(void)dealloc
 {
     [self.dataSource cancel];

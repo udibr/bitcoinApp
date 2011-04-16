@@ -7,7 +7,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	if ([super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        self.title = @"Node";
+        self.title = @"Connect to Node";
 		firstTimeToAppear=YES;
 		self.variableHeightRows = YES;
         //        self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
