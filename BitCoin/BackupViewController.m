@@ -22,7 +22,7 @@
     NSString* backupPath = [documentsDir stringByAppendingPathComponent:@"backupwallet.dat"];
 
     NSArray* params = [NSArray arrayWithObject:backupPath];
-	self.dataSource = [[[BackupDataSource alloc] initWithItemCommand:@"backupwallet" params:params] autorelease];
+	self.dataSource = [[[BackupDataSource alloc] initWithItemRepeat:NO command:@"backupwallet" params:params] autorelease];
    //[self.dataSource.model.delegates addObject:self];
 }
 

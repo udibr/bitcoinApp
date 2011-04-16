@@ -60,7 +60,7 @@ extern int bitcoinmain(int argc, char* argv[]);
 
 -(void)dealloc
 {
-    [self.dataSource cancel];
+   // [self.dataSource cancel]; // this causes a crash in TTModelViewController dealloc (maybe this releases _model and then try to remove delegate
     self.params = nil;
     self.command = nil;
     [super dealloc];

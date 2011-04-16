@@ -71,6 +71,11 @@
 		54EC01E7134E9CE400FB5100 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54EC01E6134E9CE400FB5100 /* Entitlements.plist */; };
 		54EC37601358C9B6009E563A /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC375F1358C9B4009E563A /* ContactUsViewController.m */; };
 		54EC37681358CB97009E563A /* Em.png in Resources */ = {isa = PBXBuildFile; fileRef = 54EC37671358CB96009E563A /* Em.png */; };
+		54EC38171358D5A3009E563A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C1FCF7134D1BA600D9830E /* Icon.png */; };
+		54EC38CE1358E2B0009E563A /* BitCoinLoginDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC38CA1358E2B0009E563A /* BitCoinLoginDataSource.m */; };
+		54EC38CF1358E2B0009E563A /* BitCoinLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC38CC1358E2B0009E563A /* BitCoinLoginViewController.m */; };
+		54EC38D21358ED00009E563A /* BitCoinSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC38D11358ED00009E563A /* BitCoinSettings.m */; };
+		54EC38D61358F93F009E563A /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC38D51358F93E009E563A /* NSString+URLEncoding.m */; };
 		54F3C5331305E86500E6C3BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5321305E86500E6C3BA /* UIKit.framework */; };
 		54F3C5351305E86500E6C3BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5341305E86500E6C3BA /* Foundation.framework */; };
 		54F3C5371305E86500E6C3BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5361305E86500E6C3BA /* CoreGraphics.framework */; };
@@ -440,6 +445,15 @@
 		54EC375E1358C9B3009E563A /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
 		54EC375F1358C9B4009E563A /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUsViewController.m; sourceTree = "<group>"; };
 		54EC37671358CB96009E563A /* Em.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Em.png; sourceTree = "<group>"; };
+		54EC38C91358E2B0009E563A /* BitCoinLoginDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitCoinLoginDataSource.h; sourceTree = "<group>"; };
+		54EC38CA1358E2B0009E563A /* BitCoinLoginDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitCoinLoginDataSource.m; sourceTree = "<group>"; };
+		54EC38CB1358E2B0009E563A /* BitCoinLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitCoinLoginViewController.h; sourceTree = "<group>"; };
+		54EC38CC1358E2B0009E563A /* BitCoinLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitCoinLoginViewController.m; sourceTree = "<group>"; };
+		54EC38D01358ED00009E563A /* BitCoinSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitCoinSettings.h; sourceTree = "<group>"; };
+		54EC38D11358ED00009E563A /* BitCoinSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitCoinSettings.m; sourceTree = "<group>"; };
+		54EC38D31358ED1B009E563A /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		54EC38D41358F93E009E563A /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		54EC38D51358F93E009E563A /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 		54F3C52E1305E86500E6C3BA /* BitCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F3C5321305E86500E6C3BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		54F3C5341305E86500E6C3BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -832,12 +846,28 @@
 		54C6106F135699FA0017C275 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				54EC38D41358F93E009E563A /* NSString+URLEncoding.h */,
+				54EC38D51358F93E009E563A /* NSString+URLEncoding.m */,
+				54EC38D31358ED1B009E563A /* SynthesizeSingleton.h */,
+				54EC38D01358ED00009E563A /* BitCoinSettings.h */,
+				54EC38D11358ED00009E563A /* BitCoinSettings.m */,
 				545DD0DD1356785900AB23D2 /* Unzip.h */,
 				545DD0DE1356785900AB23D2 /* Unzip.m */,
 				54C6107013569A1D0017C275 /* BCFileSystem.h */,
 				54C6107113569A1D0017C275 /* BCFileSystem.m */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		54EC38C61358E16A009E563A /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				54EC38C91358E2B0009E563A /* BitCoinLoginDataSource.h */,
+				54EC38CA1358E2B0009E563A /* BitCoinLoginDataSource.m */,
+				54EC38CB1358E2B0009E563A /* BitCoinLoginViewController.h */,
+				54EC38CC1358E2B0009E563A /* BitCoinLoginViewController.m */,
+			);
+			name = Remote;
 			sourceTree = "<group>";
 		};
 		54F3C5231305E86500E6C3BA = {
@@ -888,6 +918,7 @@
 		54F3C5381305E86500E6C3BA /* BitCoin */ = {
 			isa = PBXGroup;
 			children = (
+				54EC38C61358E16A009E563A /* Remote */,
 				5452D9AD134FF4720004206C /* AboutViewController.h */,
 				5452D9AE134FF4730004206C /* AboutViewController.m */,
 				54F3C5411305E86500E6C3BA /* BitCoinAppDelegate.h */,
@@ -1175,6 +1206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54EC38171358D5A3009E563A /* Icon.png in Resources */,
 				54517978135156D10069E5A7 /* howto.html in Resources */,
 				320B6C86F11D9990244A9731 /* Three20.bundle in Resources */,
 				54F3C53D1305E86500E6C3BA /* InfoPlist.strings in Resources */,
@@ -1238,6 +1270,10 @@
 				54C6107213569A1D0017C275 /* BCFileSystem.m in Sources */,
 				54C6107513569C3D0017C275 /* BackupDataSource.m in Sources */,
 				54EC37601358C9B6009E563A /* ContactUsViewController.m in Sources */,
+				54EC38CE1358E2B0009E563A /* BitCoinLoginDataSource.m in Sources */,
+				54EC38CF1358E2B0009E563A /* BitCoinLoginViewController.m in Sources */,
+				54EC38D21358ED00009E563A /* BitCoinSettings.m in Sources */,
+				54EC38D61358F93F009E563A /* NSString+URLEncoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

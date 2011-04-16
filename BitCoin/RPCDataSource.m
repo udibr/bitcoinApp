@@ -38,6 +38,8 @@
 }
 //UIApplicationWillEnterForegroundNotification
 - (void)dealloc {
+    [_model.delegates removeObject:self];
+
     [[NSNotificationCenter defaultCenter]
      removeObserver: self
      name: UIApplicationDidEnterBackgroundNotification
@@ -72,9 +74,9 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (id<TTModel>)model {
-	return _model;
-}
+//- (id<TTModel>)model { // already implemented in TTTableViewDataSource
+//	return _model;
+//}
 
 - (void)cancel {
     self.reloadTimer = nil;
