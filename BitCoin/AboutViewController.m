@@ -36,6 +36,9 @@
                       // [TTTableTextItem itemWithText:path],
                        [TTTableButton itemWithText:@"More on BitCoin" URL:@"http://www.bitcoin.org"],
                        [TTTableButton itemWithText:@"More from Symfi" URL:@"http://www.symfi.mobi"],
+#if TARGET_IPHONE_SIMULATOR
+                       [TTTableButton itemWithText:applicationDocumentsDirectory()],
+#endif
                        nil];
 }
 @end

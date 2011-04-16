@@ -7,6 +7,7 @@
 #import "SendViewController.h"
 #import "extThree20JSON/NSObject+YAJL.h"
 #import "extThree20JSON/extThree20JSON.h"
+#import "BitCoinSettings.h"
 
 @implementation SendViewController
 @synthesize toField = _toField;
@@ -47,7 +48,7 @@
     if (!_amountField.text || [_amountField.text isEqual:[NSNull null]] || [_amountField.text isEqualToString:@""])
          return;
     
-    TTURLRequest* _request = [TTURLRequest requestWithURL:@"http://get:smart@127.0.0.1:8332" delegate:self];
+    TTURLRequest* _request = [TTURLRequest requestWithURL:GlobalSettings.url delegate:self];
     
     NSString *request_body = [NSString stringWithFormat:@"{\"jsonrpc\": \"1.0\", \"id\":\"send\", \"method\": \"sendtoaddress\", \"params\": [\"%@\", %.2f] }",_toField.text,[_amountField.text floatValue]];
     TTDPRINT(@"sending %@", request_body);

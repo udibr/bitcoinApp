@@ -19,6 +19,7 @@
 #import "BackupViewController.h"
 #import "BCFileSystem.h"
 #import "ContactUsViewController.h"
+#import "BitCoinLoginViewController.h"
 extern int bitcoinmain(int argc, char* argv[]);
 
 @implementation BitCoinAppDelegate
@@ -44,6 +45,10 @@ extern int bitcoinmain(int argc, char* argv[]);
     // On first run, copy blocks stored in the package
     NSString *storedBlkPath = [[NSBundle mainBundle] pathForResource:@"blkindex.dat" ofType:@"gz"];
     NSString *storedBlk1Path = [[NSBundle mainBundle] pathForResource:@"blk0001.dat" ofType:@"gz"];
+#if TARGET_IPHONE_SIMULATOR
+    storedBlkPath = @"/tmp/blkindex.dat.gz";
+    storedBlk1Path = @"/tmp/blk0001.dat.gz";
+#endif
     if (storedBlkPath && storedBlk1Path) {
         NSString* blkPath = [documentsDir stringByAppendingPathComponent:@"blkindex.dat"];
         NSString* blk1Path = [documentsDir stringByAppendingPathComponent:@"blk0001.dat"];
@@ -151,8 +156,10 @@ extern int bitcoinmain(int argc, char* argv[]);
     [map from:@"bitcoin://launcher" toSharedViewController: [LauncherViewTestController class]];
     [map from:@"bitcoin://page/(initWithPage:)" toViewController: [PageViewController class]];
     [map from:@"bitcoin://contactus" toViewController: [ContactUsViewController class]];
+	[map from:@"bitcoin://login" toViewController:[BitCoinLoginViewController class]];
+	//[map from:@"bitcoin://login/(server:)/(user:)/(password:)" parent:@"bitcoin://launcher" toSharedViewController:[BitCoinLoginViewController class]];
+	//[map from:@"bitcoin://logout" parent:@"bitcoin://launcher" toSharedViewController:[BitCoinLoginViewController class] selector:@selector(logout)];
 
-    
     
     self.model = [[RPCModel alloc] initWithCommand:@"stop" params:nil];
     [self.model.delegates addObject:self];

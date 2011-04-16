@@ -6,6 +6,7 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 #import "extThree20JSON/extThree20JSON.h"
+#import "BitCoinSettings.h"
 
 #import "RPCModel.h"
 
@@ -71,7 +72,7 @@
 	_isLoading = YES;
 	_isLoaded = NO;
 
-    self.request = [TTURLRequest requestWithURL:@"http://get:smart@127.0.0.1:8332" delegate:self];
+    self.request = [TTURLRequest requestWithURL:GlobalSettings.url delegate:self];
     
     NSString *params = @"";
     for (id v in self.params) {

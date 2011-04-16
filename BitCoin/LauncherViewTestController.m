@@ -59,6 +59,9 @@
      [[[TTLauncherItem alloc] initWithTitle:@"Console"
                                       image:@"bundle://Icon.png"
                                         URL:@"bitcoin://console" canDelete:NO] autorelease], 
+     [[[TTLauncherItem alloc] initWithTitle:@"Remote"
+                                      image:@"bundle://Icon.png"
+                                        URL:@"bitcoin://login" canDelete:YES] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Help"
                                       image:@"bundle://HowTo@2x.png"
                                         URL:@"bitcoin://about" canDelete:YES] autorelease], 
