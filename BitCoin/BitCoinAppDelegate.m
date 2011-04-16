@@ -20,6 +20,7 @@
 #import "BCFileSystem.h"
 #import "ContactUsViewController.h"
 #import "BitCoinLoginViewController.h"
+#import "MyAddressViewController.h"
 extern int bitcoinmain(int argc, char* argv[]);
 
 @implementation BitCoinAppDelegate
@@ -166,6 +167,7 @@ extern int bitcoinmain(int argc, char* argv[]);
 	[map from:@"bitcoin://login" toViewController:[BitCoinLoginViewController class]];
 	//[map from:@"bitcoin://login/(server:)/(user:)/(password:)" parent:@"bitcoin://launcher" toSharedViewController:[BitCoinLoginViewController class]];
 	//[map from:@"bitcoin://logout" parent:@"bitcoin://launcher" toSharedViewController:[BitCoinLoginViewController class] selector:@selector(logout)];
+	[map from:@"bitcoin://myaddress" toViewController:[MyAddressViewController class]];
 
     
     self.model = [[RPCModel alloc] initWithCommand:@"stop" params:nil];

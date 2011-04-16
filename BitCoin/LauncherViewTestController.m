@@ -46,7 +46,7 @@
     //                                    URL:@"bitcoin://rpccommand/1/listaccounts" canDelete:NO] autorelease],
      [[[TTLauncherItem alloc] initWithTitle:@"My Address"
                                       image:@"bundle://Address@2x.png"
-                                        URL:@"bitcoin://rpccommand/1/getaccountaddress/%20" canDelete:NO] autorelease], 
+                                        URL:@"bitcoin://myaddress" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Balance"
                                       image:@"bundle://Balance@2x.png"
                                         URL:@"bitcoin://rpccommand/1/listaccounts" canDelete:NO] autorelease],//getbalance 
