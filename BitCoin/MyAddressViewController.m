@@ -68,6 +68,7 @@
   	[mailCtrl setSubject:@"My BitCoin Address"];
     
     NSString* msg = [NSString stringWithFormat:@"My BitCoin Address is %@",address];
+    msg=[msg stringByAppendingFormat:@"\n<div><a href=\"bitcoin://sendto/%@\">Use this link</a> on an iPhone (iPad, iPod Touch) with BitCoin App installed.</div>", address];
 	[mailCtrl setMessageBody:msg isHTML:YES];
     
 	[self presentModalViewController:mailCtrl animated:YES];

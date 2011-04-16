@@ -12,6 +12,7 @@
 @implementation SendViewController
 @synthesize toField = _toField;
 @synthesize amountField = _amountField;
+@synthesize toaddress;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ([super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         self.title = @"Send";
@@ -33,11 +34,20 @@
     
     return nil;
 }
+-(id)initWithAddress:(NSString*)to
+{
+    self = [self init];
+    if (self) {
+        self.toaddress=to;
+    }
+    return self; 
+}
 
 - (void)dealloc {
     [[TTNavigator navigator].URLMap removeURL:@"tt://send"];
     self.toField = nil;
     self.amountField = nil;
+    self.toaddress=nil;
     [super dealloc];
 }
 
@@ -67,6 +77,9 @@
 - (void)createModel {
     self.toField = [[[UITextField alloc] init] autorelease];
     _toField.placeholder = @"1JsHXZRoqoPkwpZajy1VmnSmmvxqy1eux2";
+    if (self.toaddress) {
+        _toField.text = toaddress;
+    }
     _toField.keyboardType = UIKeyboardTypeDefault;
     _toField.returnKeyType = UIReturnKeyNext;
     _toField.autocorrectionType = UITextAutocorrectionTypeNo;
@@ -77,6 +90,9 @@
     
     self.amountField = [[[UITextField alloc] init] autorelease];
     _amountField.placeholder = @"0.99";
+    if (amount>0.) {
+        _amountField.text = [NSString stringWithFormat:@"%.2f",amount];
+    }
     _amountField.keyboardType = UIKeyboardTypeDefault;
     _amountField.returnKeyType = UIReturnKeyNext;
     _amountField.autocorrectionType = UITextAutocorrectionTypeNo;

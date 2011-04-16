@@ -158,6 +158,8 @@ extern int bitcoinmain(int argc, char* argv[]);
 #else
 	[map from:@"bitcoin://sendto" toViewController:[SendViewController class]];
 #endif
+	[map from:@"bitcoin://sendto/(initWithAddress:)" toViewController:[SendViewController class]];
+	[map from:@"bitcoin://sendto/(initWithAddress:)/(amount:)" toViewController:[SendViewController class]];
 	[map from:@"bitcoin://backup" toViewController:[BackupViewController class]];
 	[map from:@"bitcoin://about" toViewController:[AboutViewController class]];
 	[map from:@"bitcoin://console" toViewController:[ConsoleViewController class]];

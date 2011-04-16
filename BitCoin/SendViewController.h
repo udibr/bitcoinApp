@@ -10,8 +10,11 @@
 {
     UITextField* _toField;
     UITextField* _amountField;
+    NSString* toaddress;
+    float   amount;
 }
 @property (nonatomic, retain) UITextField* toField;
 @property (nonatomic, retain) UITextField* amountField;
+@property (nonatomic, retain) NSString* toaddress;
 
 @end
