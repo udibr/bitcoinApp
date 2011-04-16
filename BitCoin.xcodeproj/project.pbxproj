@@ -76,6 +76,7 @@
 		54EC38CF1358E2B0009E563A /* BitCoinLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC38CC1358E2B0009E563A /* BitCoinLoginViewController.m */; };
 		54EC38D21358ED00009E563A /* BitCoinSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC38D11358ED00009E563A /* BitCoinSettings.m */; };
 		54EC38D61358F93F009E563A /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC38D51358F93E009E563A /* NSString+URLEncoding.m */; };
+		54EC3B65135A1C66009E563A /* MyAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC3B64135A1C63009E563A /* MyAddressViewController.m */; };
 		54F3C5331305E86500E6C3BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5321305E86500E6C3BA /* UIKit.framework */; };
 		54F3C5351305E86500E6C3BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5341305E86500E6C3BA /* Foundation.framework */; };
 		54F3C5371305E86500E6C3BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5361305E86500E6C3BA /* CoreGraphics.framework */; };
@@ -454,6 +455,8 @@
 		54EC38D31358ED1B009E563A /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		54EC38D41358F93E009E563A /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
 		54EC38D51358F93E009E563A /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		54EC3B63135A1C60009E563A /* MyAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAddressViewController.h; sourceTree = "<group>"; };
+		54EC3B64135A1C63009E563A /* MyAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAddressViewController.m; sourceTree = "<group>"; };
 		54F3C52E1305E86500E6C3BA /* BitCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F3C5321305E86500E6C3BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		54F3C5341305E86500E6C3BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -846,6 +849,8 @@
 		54C6106F135699FA0017C275 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				5458BD8113567E42004722BC /* StyleSheet.h */,
+				5458BD8213567E42004722BC /* StyleSheet.m */,
 				54EC38D41358F93E009E563A /* NSString+URLEncoding.h */,
 				54EC38D51358F93E009E563A /* NSString+URLEncoding.m */,
 				54EC38D31358ED1B009E563A /* SynthesizeSingleton.h */,
@@ -948,8 +953,8 @@
 				54517790135118840069E5A7 /* TTRequestLoader+BC.m */,
 				545178D71351430D0069E5A7 /* PageViewController.h */,
 				545178D81351430E0069E5A7 /* PageViewController.m */,
-				5458BD8113567E42004722BC /* StyleSheet.h */,
-				5458BD8213567E42004722BC /* StyleSheet.m */,
+				54EC3B63135A1C60009E563A /* MyAddressViewController.h */,
+				54EC3B64135A1C63009E563A /* MyAddressViewController.m */,
 				54C6106F135699FA0017C275 /* Helper */,
 				54F3C5391305E86500E6C3BA /* Supporting Files */,
 			);
@@ -1274,6 +1279,7 @@
 				54EC38CF1358E2B0009E563A /* BitCoinLoginViewController.m in Sources */,
 				54EC38D21358ED00009E563A /* BitCoinSettings.m in Sources */,
 				54EC38D61358F93F009E563A /* NSString+URLEncoding.m in Sources */,
+				54EC3B65135A1C66009E563A /* MyAddressViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
