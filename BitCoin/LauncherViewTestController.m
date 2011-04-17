@@ -54,13 +54,13 @@
                                       image:@"bundle://Send@2x.png"
                                         URL:@"bitcoin://sendto" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Backup"
-                                      image:@"bundle://Icon.png"
+                                      image:@"bundle://backup@2x.png"
                                         URL:@"bitcoin://backup" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Console"
-                                      image:@"bundle://Icon.png"
+                                      image:@"bundle://Console@2x.png"
                                         URL:@"bitcoin://console" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Remote"
-                                      image:@"bundle://Icon.png"
+                                      image:@"bundle://Remote@2x.png"
                                         URL:@"bitcoin://login" canDelete:YES] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Help"
                                       image:@"bundle://HowTo@2x.png"
@@ -72,7 +72,7 @@
                                       image:@"bundle://license@2x.png"
                                         URL:@"bitcoin://page/license" canDelete:NO] autorelease],
      [[[TTLauncherItem alloc] initWithTitle:@"Please Donate"
-                                      image:@"bundle://Icon.png"
+                                      image:@"bundle://Donate@2x.png"
                                         URL:@"bitcoin://sendto/1JsHXZRoqoPkwpZajy1VmnSmmvxqy1eux2" canDelete:YES] autorelease], 
       nil],
       nil
