@@ -35,6 +35,10 @@
 		5474AFAA134B5CB0007A5ACB /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA8134B5CAF007A5ACB /* libcrypto.a */; };
 		5474AFAB134B5CB0007A5ACB /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA9134B5CAF007A5ACB /* libssl.a */; };
 		5474D278134BC748007A5ACB /* bitcoin.conf in Resources */ = {isa = PBXBuildFile; fileRef = 5474D277134BC748007A5ACB /* bitcoin.conf */; };
+		548D6853135B82C000143ACA /* Console@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D684F135B82C000143ACA /* Console@2x.png */; };
+		548D6854135B82C000143ACA /* backup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D6850135B82C000143ACA /* backup@2x.png */; };
+		548D6855135B82C000143ACA /* Donate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D6851135B82C000143ACA /* Donate@2x.png */; };
+		548D6856135B82C000143ACA /* Remote@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D6852135B82C000143ACA /* Remote@2x.png */; };
 		548FB7851352AB5E004581B3 /* IconB.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7841352AB5E004581B3 /* IconB.png */; };
 		548FB7871352AB6B004581B3 /* IconB@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7861352AB6B004581B3 /* IconB@2x.png */; };
 		548FB7941352AB88004581B3 /* Send.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7881352AB88004581B3 /* Send.png */; };
@@ -306,6 +310,11 @@
 		5474AFA8134B5CAF007A5ACB /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../openssl/lib/libcrypto.a; sourceTree = "<group>"; };
 		5474AFA9134B5CAF007A5ACB /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../openssl/lib/libssl.a; sourceTree = "<group>"; };
 		5474D277134BC748007A5ACB /* bitcoin.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bitcoin.conf; sourceTree = "<group>"; };
+		548D684F135B82C000143ACA /* Console@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Console@2x.png"; sourceTree = "<group>"; };
+		548D6850135B82C000143ACA /* backup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backup@2x.png"; sourceTree = "<group>"; };
+		548D6851135B82C000143ACA /* Donate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Donate@2x.png"; sourceTree = "<group>"; };
+		548D6852135B82C000143ACA /* Remote@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Remote@2x.png"; sourceTree = "<group>"; };
+		548D6857135B842A00143ACA /* BitCoin_Icon_512.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BitCoin_Icon_512.jpg; sourceTree = "<group>"; };
 		548FB7841352AB5E004581B3 /* IconB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IconB.png; path = ../IconB.png; sourceTree = "<group>"; };
 		548FB7861352AB6B004581B3 /* IconB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IconB@2x.png"; path = "../IconB@2x.png"; sourceTree = "<group>"; };
 		548FB7881352AB88004581B3 /* Send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Send.png; sourceTree = "<group>"; };
@@ -964,6 +973,11 @@
 		54F3C5391305E86500E6C3BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				548D6857135B842A00143ACA /* BitCoin_Icon_512.jpg */,
+				548D684F135B82C000143ACA /* Console@2x.png */,
+				548D6850135B82C000143ACA /* backup@2x.png */,
+				548D6851135B82C000143ACA /* Donate@2x.png */,
+				548D6852135B82C000143ACA /* Remote@2x.png */,
 				54C610761356A6060017C275 /* back.png */,
 				545DD0DB13564E3B00AB23D2 /* back@2x.png */,
 				548FB7861352AB6B004581B3 /* IconB@2x.png */,
@@ -1233,6 +1247,10 @@
 				548FB79D1352AB88004581B3 /* HowTo@2x.png in Resources */,
 				54C610771356A6060017C275 /* back.png in Resources */,
 				54EC37681358CB97009E563A /* Em.png in Resources */,
+				548D6853135B82C000143ACA /* Console@2x.png in Resources */,
+				548D6854135B82C000143ACA /* backup@2x.png in Resources */,
+				548D6855135B82C000143ACA /* Donate@2x.png in Resources */,
+				548D6856135B82C000143ACA /* Remote@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
