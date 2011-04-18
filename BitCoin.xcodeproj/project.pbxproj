@@ -39,6 +39,7 @@
 		548D6854135B82C000143ACA /* backup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D6850135B82C000143ACA /* backup@2x.png */; };
 		548D6855135B82C000143ACA /* Donate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D6851135B82C000143ACA /* Donate@2x.png */; };
 		548D6856135B82C000143ACA /* Remote@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D6852135B82C000143ACA /* Remote@2x.png */; };
+		548D685D135B84E000143ACA /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 548D685C135B84E000143ACA /* credits.html */; };
 		548FB7851352AB5E004581B3 /* IconB.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7841352AB5E004581B3 /* IconB.png */; };
 		548FB7871352AB6B004581B3 /* IconB@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7861352AB6B004581B3 /* IconB@2x.png */; };
 		548FB7941352AB88004581B3 /* Send.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7881352AB88004581B3 /* Send.png */; };
@@ -315,6 +316,7 @@
 		548D6851135B82C000143ACA /* Donate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Donate@2x.png"; sourceTree = "<group>"; };
 		548D6852135B82C000143ACA /* Remote@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Remote@2x.png"; sourceTree = "<group>"; };
 		548D6857135B842A00143ACA /* BitCoin_Icon_512.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BitCoin_Icon_512.jpg; sourceTree = "<group>"; };
+		548D685C135B84E000143ACA /* credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = credits.html; sourceTree = "<group>"; };
 		548FB7841352AB5E004581B3 /* IconB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IconB.png; path = ../IconB.png; sourceTree = "<group>"; };
 		548FB7861352AB6B004581B3 /* IconB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IconB@2x.png"; path = "../IconB@2x.png"; sourceTree = "<group>"; };
 		548FB7881352AB88004581B3 /* Send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Send.png; sourceTree = "<group>"; };
@@ -580,6 +582,58 @@
 				5435BE67134C936800E52D30 /* UIUnitTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		548D6859135B846500143ACA /* Artwork */ = {
+			isa = PBXGroup;
+			children = (
+				548D6857135B842A00143ACA /* BitCoin_Icon_512.jpg */,
+			);
+			name = Artwork;
+			sourceTree = "<group>";
+		};
+		548D685A135B847900143ACA /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				548D684F135B82C000143ACA /* Console@2x.png */,
+				548D6850135B82C000143ACA /* backup@2x.png */,
+				548D6851135B82C000143ACA /* Donate@2x.png */,
+				548D6852135B82C000143ACA /* Remote@2x.png */,
+				54C610761356A6060017C275 /* back.png */,
+				545DD0DB13564E3B00AB23D2 /* back@2x.png */,
+				548FB7861352AB6B004581B3 /* IconB@2x.png */,
+				548FB7841352AB5E004581B3 /* IconB.png */,
+				54EC37671358CB96009E563A /* Em.png */,
+				548FB7881352AB88004581B3 /* Send.png */,
+				548FB7891352AB88004581B3 /* Balance.png */,
+				548FB78A1352AB88004581B3 /* HowTo.png */,
+				548FB78B1352AB88004581B3 /* license.png */,
+				548FB78C1352AB88004581B3 /* Address.png */,
+				548FB78D1352AB88004581B3 /* license@2x.png */,
+				548FB78E1352AB88004581B3 /* Send@2x.png */,
+				548FB78F1352AB88004581B3 /* Address@2x.png */,
+				548FB7901352AB88004581B3 /* Balance@2x.png */,
+				548FB7911352AB88004581B3 /* HowTo@2x.png */,
+				548FB7921352AB88004581B3 /* IconA.png */,
+				548FB7931352AB88004581B3 /* IconA@2x.png */,
+				54C1FCF9134D1BB500D9830E /* Icon@2x.png */,
+				54C1FCF7134D1BA600D9830E /* Icon.png */,
+				5474AE90134A7F8B007A5ACB /* bitcoinScreenShot.png */,
+				5474AE91134A7F8B007A5ACB /* bitcoin512.png */,
+				5474AE92134A7F8B007A5ACB /* bitcoin530.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		548D685B135B84B200143ACA /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				545178CB135136780069E5A7 /* whatsnew.html */,
+				545178D5135140740069E5A7 /* license.html */,
+				54517976135155D00069E5A7 /* howto.html */,
+				548D685C135B84E000143ACA /* credits.html */,
+			);
+			name = Pages;
 			sourceTree = "<group>";
 		};
 		54B9E8D1134E5A9A00C02E09 /* bitcoin.org */ = {
@@ -973,43 +1027,16 @@
 		54F3C5391305E86500E6C3BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				548D6857135B842A00143ACA /* BitCoin_Icon_512.jpg */,
-				548D684F135B82C000143ACA /* Console@2x.png */,
-				548D6850135B82C000143ACA /* backup@2x.png */,
-				548D6851135B82C000143ACA /* Donate@2x.png */,
-				548D6852135B82C000143ACA /* Remote@2x.png */,
-				54C610761356A6060017C275 /* back.png */,
-				545DD0DB13564E3B00AB23D2 /* back@2x.png */,
-				548FB7861352AB6B004581B3 /* IconB@2x.png */,
-				548FB7841352AB5E004581B3 /* IconB.png */,
-				54EC37671358CB96009E563A /* Em.png */,
-				548FB7881352AB88004581B3 /* Send.png */,
-				548FB7891352AB88004581B3 /* Balance.png */,
-				548FB78A1352AB88004581B3 /* HowTo.png */,
-				548FB78B1352AB88004581B3 /* license.png */,
-				548FB78C1352AB88004581B3 /* Address.png */,
-				548FB78D1352AB88004581B3 /* license@2x.png */,
-				548FB78E1352AB88004581B3 /* Send@2x.png */,
-				548FB78F1352AB88004581B3 /* Address@2x.png */,
-				548FB7901352AB88004581B3 /* Balance@2x.png */,
-				548FB7911352AB88004581B3 /* HowTo@2x.png */,
-				548FB7921352AB88004581B3 /* IconA.png */,
-				548FB7931352AB88004581B3 /* IconA@2x.png */,
-				54C1FCF9134D1BB500D9830E /* Icon@2x.png */,
-				54C1FCF7134D1BA600D9830E /* Icon.png */,
+				548D685B135B84B200143ACA /* Pages */,
+				548D685A135B847900143ACA /* Icons */,
+				548D6859135B846500143ACA /* Artwork */,
 				320B6C86F11D9990244A9730 /* Three20.bundle */,
-				5474AE90134A7F8B007A5ACB /* bitcoinScreenShot.png */,
-				5474AE91134A7F8B007A5ACB /* bitcoin512.png */,
-				5474AE92134A7F8B007A5ACB /* bitcoin530.png */,
 				54F3C53A1305E86500E6C3BA /* BitCoin-Info.plist */,
 				54F3C53B1305E86500E6C3BA /* InfoPlist.strings */,
 				54F3C53E1305E86500E6C3BA /* BitCoin-Prefix.pch */,
 				54F3C53F1305E86500E6C3BA /* main.m */,
 				5474D277134BC748007A5ACB /* bitcoin.conf */,
 				54EC01E6134E9CE400FB5100 /* Entitlements.plist */,
-				545178CB135136780069E5A7 /* whatsnew.html */,
-				545178D5135140740069E5A7 /* license.html */,
-				54517976135155D00069E5A7 /* howto.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1251,6 +1278,7 @@
 				548D6854135B82C000143ACA /* backup@2x.png in Resources */,
 				548D6855135B82C000143ACA /* Donate@2x.png in Resources */,
 				548D6856135B82C000143ACA /* Remote@2x.png in Resources */,
+				548D685D135B84E000143ACA /* credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

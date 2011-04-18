@@ -26,6 +26,8 @@ extern int bitcoinmain(int argc, char* argv[]);
 @implementation BitCoinAppDelegate
 @synthesize model;
 @synthesize backupURL;
+@synthesize daemonRunning;
+@synthesize backgroundTaskIdentifier;
 /**
  Returns the path to the application's documents directory.
  */
@@ -34,13 +36,11 @@ extern int bitcoinmain(int argc, char* argv[]);
 //NSCachesDirectory - This one resides in /Library/Caches/ and is not backed up when synching the device.
 -(void)startDaemon:(BOOL)rescan
 {
-    if (serialQueue) {
-        TTDPRINT(@"daemon already running");
-        return;
+    if (!serialQueue) {
+        // start bitcoin daemon on a different thread
+        serialQueue = dispatch_queue_create("BITCOIND",NULL);
     }
-    // start bitcoin daemon on a different thread
-    serialQueue = dispatch_queue_create("BITCOIND",NULL);
-
+    
     NSString* documentsDir=applicationDocumentsDirectory();
     
     // On first run, copy blocks stored in the package
@@ -72,6 +72,7 @@ extern int bitcoinmain(int argc, char* argv[]);
     }
     
     // run the bitcoin daemon
+    self.daemonRunning = kDaemonRunning;
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"bitcoin" ofType:@"conf"]; // resourcePath];
     dispatch_async(serialQueue,^{
         //dup2(fd1, stderr);
@@ -86,6 +87,8 @@ extern int bitcoinmain(int argc, char* argv[]);
         argc++;
         argv[argc] = "-printtoconsole";
         argc++;
+        argv[argc] = "-nolisten";
+        argc++;
         if (rescan) {
             argv[argc] = "-rescan";
             argc++;
@@ -93,6 +96,16 @@ extern int bitcoinmain(int argc, char* argv[]);
         TTDPRINT(@"starting bitcoin thread");
         
         bitcoinmain(argc,argv);
+        
+        //If we are running in the background and managed to stop the daemon then notify OS that it can kill the App.
+        if (backgroundTaskIdentifier != UIBackgroundTaskInvalid) {
+            [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTaskIdentifier];
+        } else if (self.daemonRunning == kDaemonRestart) {
+            dispatch_async(dispatch_get_main_queue(),^{
+                [self startDaemon:NO];
+            });           
+        }
+        self.daemonRunning = kDaemonNotRunning;
     });    
 }
 
@@ -129,6 +142,10 @@ extern int bitcoinmain(int argc, char* argv[]);
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // we started "fresh", no daemon running and no background process taking place
+    self.backgroundTaskIdentifier = UIBackgroundTaskInvalid;
+    self.daemonRunning = kDaemonNotRunning;
+    
     self.backupURL = [launchOptions objectForKey:UIApplicationLaunchOptionsURLKey];
     if (self.backupURL && [self isBackupURL:backupURL]) {
     } else
@@ -171,7 +188,7 @@ extern int bitcoinmain(int argc, char* argv[]);
 	//[map from:@"bitcoin://logout" parent:@"bitcoin://launcher" toSharedViewController:[BitCoinLoginViewController class] selector:@selector(logout)];
 	[map from:@"bitcoin://myaddress" toViewController:[MyAddressViewController class]];
 
-    
+    // Build an RPC client to send a stop command to the daemon
     self.model = [[RPCModel alloc] initWithCommand:@"stop" params:nil];
     [self.model.delegates addObject:self];
 
@@ -222,7 +239,13 @@ extern int bitcoinmain(int argc, char* argv[]);
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
-   // [self.model load:TTURLRequestCachePolicyDefault more:NO];
+    if (self.daemonRunning != kDaemonRunning)
+        return;
+    self.backgroundTaskIdentifier = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+            //self.daemonRunning = kDaemonStopped;
+            self.backgroundTaskIdentifier = UIBackgroundTaskInvalid;
+        }];
+    //[self applicationWillTerminate:application];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -230,6 +253,13 @@ extern int bitcoinmain(int argc, char* argv[]);
     /*
      Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
      */
+    self.backgroundTaskIdentifier = UIBackgroundTaskInvalid; // No need to end background task (if started).
+    if (self.daemonRunning == kDaemonNotRunning) { // If we full stopped the daemon then restart it
+        //[self startDaemon:NO];
+    } else if(self.daemonRunning == kDaemonStopped) {
+        //self.daemonRunning = kDaemonRestart;
+    }
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -237,7 +267,6 @@ extern int bitcoinmain(int argc, char* argv[]);
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
-  //  [self startDaemon:NO];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -247,7 +276,8 @@ extern int bitcoinmain(int argc, char* argv[]);
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
-   // [self.model load:TTURLRequestCachePolicyDefault more:NO];
+    self.daemonRunning = kDaemonStopped;
+    [self.model load:TTURLRequestCachePolicyDefault more:NO];
 }
 
 - (void)dealloc
@@ -257,6 +287,7 @@ extern int bitcoinmain(int argc, char* argv[]);
 		serialQueue=NULL;
 	}
 
+    [self.model.delegates removeObject:self];
     self.model = nil;
     [super dealloc];
 }
