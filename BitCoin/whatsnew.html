@@ -7,129 +7,13 @@
 <div style="font-size:50px">
 This is an experimental software; you can lose bitcoins as a result. By using this software you agree that the authors or any other copyright holders of this software are not responsible for any loss of bitcoins or any other damage. By using this software you agree to its license. Use it at your own risk.
     It is suggested to keep the minimal amount possible of bitcoins in the App at any given time and backup your wallet to a safe place. In addition there is no warning if a fee (0.01BC) will be added to some transactions.
-<h3>0.0.16</h3>
+<h3>Known issues</h3>
 <ul>
-    <li>daemon runs with -nolisten</li>
-    <li>Credits</li>
-    <li>Icons</li>
-</ul>
-<h3>0.0.15</h3>
-<ul>
-    <li>My Address: email your address. The email includes a link that will open the BitCoin App on the device on which the email is read (assuming the App is already installed.) The App will start from the Send page with the address already entered</li>
-    <li>Rescan the block chain for missing wallet transactions after wallet restore (otherwise you dont see its balance.)</li>
-    <li>Title to all pages</li>
-    <li>Donate - thanks in advance</li>
-</ul>
-<h3>0.0.14</h3>
-<ul>
-    <li>bugfix: Backup crash</li>
-    <li>bugfix: crash when starting App inside one of the screens and doing going back</li>
-</ul>
-<h3>0.0.13</h3>
-<ul>
-    <li>Remote: connect to a node (i.e., bitcoin server/daemon) running on a different remote machine</li>
-</ul>
-<h3>0.0.12</h3>
-<ul>
-    <li>Wallet restore: see howto for instructions</li>
-    <li>Console: dont perform auto-repeat, every 2sec, on commands: help,stop,manual.
-    <li>Feedback</li>
-</ul>
-<h3>0.0.11</h3>
-<ul>
-    <li>Backup: send an email with your wallet.dat as attachment - this is a very insecure way to backup</li>
-    <li>Launch screen:velvet background/white text</li>
-</ul>
-<h3>0.0.10</h3>
-<ul>
-    <li>Console: Manually enter RPC command lines for bitcoin server. Status and Transactions moved to be live examples</li>
-    <li>Send: Enter moves you from field to field. Dont use modal screen</li>
-    <li>What's new and How To moved to About</li>
-    <li>Remove glossy effect from icon. Change background to gray</li>
-    <li>Balance: list accounts/balance</li>
-</ul>
-<h3>0.0.9</h3>
-<ul>
-    <li>New Icons - Thanks Addy</li>
-</ul>
-<h3>0.0.8</h3>
-<ul>
-    <li>How To</li>
-</ul>
-<h3>0.0.7</h3>
-<ul>
-    <li>Info,Address,Balance: when bitcoin is starting change message from Error to wait
-    <ul>
-        <li>perform an automatic refresh every 1 sec</li>
-        <li>when bitcoin is answering (in info,address,balance) do an auto refresh every 2 sec.</li>
-    </ul>
-    </li>
-    <li>Send
-    <ul>
-        <li>In case of an error show descriptive message</li>
-        <li>If send is OK, return to launcher screen</li>
-    </ul>
-    <li>About: link to bitcoin.org</li>
-    <li>Transactions
-    <ul>
-        <li>show last 10 transactions as raw text</li>
-    </ul>
-    </li>
-        <li>Whats New</li>
-    <li>License
-    <ul>
-        <li>show once at start</li>
-    </ul>
-    </li>
-</ul>
-<h3>0.0.6</h3>
-<ul>
-    <li>fix crash in iPhone 3G</li>
-</ul>
-<h3>0.0.5</h3>
-<ul>
-    <li>support iOS 4.0 and higher</li>
-</ul>
-<h3>0.0.4</h3>
-<ul>
-    <li>About</li>
-    <ul>
-        <li>version #</li>
-        <li>link to www.symfi.mobi</li>
-    </ul>
-    </li>
-    <li>Send To
-    <ul>
-        <li>to address</li>
-        <li>amount</li>
-    </ul>
-    </li>
-    <li>Balance</li>
-    <li>Info: bugfix, restore title of each line</li>
-</ul>
-<h3>0.0.3</h3>
-<ul>
-    <li>Address command, shows the current address of the "" account.
-    <ul>
-        <li>you can copy-paste the address</li>
-    </ul>
-    </li>
-</ul>
-<h3>0.0.2</h3>
-<ul>
-    <li>1st testflight verison</li>
-</ul>
-<h3>0.0.1</h3>
-<ul>
-    <li>entire bitcoind runs on a separate thread inside an App.</li>
-    <li>The App acts as a client and communicates using the regular RPC-JSON with the bitcoind.</li>
-    <li>client implemented using Three20:
-    <ul>
-        <li>on the info page if you drag the table all the way down you can force it to refresh its content</li>
-        <li>every bitcoind command appears as an icon on the launcher screen</li>
-        <li>For now the only command on the client side is "getinfo".</li>
-    </ul>
-</li>
+    <li>No warning if a small fee (0.01BC) is added to some (complex) transactions</li>
+    <li>Local node takes a long time to start (up to few minutes) so be patient</li>
+    <li>If you stop the local node (Console/stop) you can't restart it. The only way to restart, is to completely exit the App (also from the background) and then start it again. Note that it will automatically restart in this case, so if you want to stop it again you will have to repeat the Console/stop command</li>
+    <li>Local node does not accept incoming connections (-nolisten). Also you cant connect to it using HTTP-JSON-RPC from a different machine.</li>
+    <li>Backup with email does not work when connected to a remote node</li>
 </ul>
 </div>
     </body>

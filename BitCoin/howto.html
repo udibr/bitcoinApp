@@ -10,21 +10,23 @@ This is an experimental software; you can lose bitcoins as a result. By using th
 </p>
 <p>
 This App allows you to use virtual currency in <a href="http://www.bitcoin.org/">BitCoin peer-to-peer network</a>.
-In the network all nodes (your device included) have similar functionality. You can check how many other nodes you are connected to in the Console/getinfo page. It takes some time for the App to find its neighbors so be patient.
+The network is made of nodes that have similar functionality. Your App is running a local node that connects to others in the network. You can check how many other nodes, your local node is connected to, in the Console/getinfo page. It takes some time for your local node to find its neighbors so be patient.
 </p>
 <p>
-In the Console/getinfo page you will also notice the amount of blocks currently downloaded by the App. Blocks contain information on all transactions ever made so the amount is substantial (around 118,000 at the time of writing this or 200MB.) The App should download all past blocks before you can start receiving new blocks, that may contain bitcoins directed to you. This can take several hours, but its done only once and you can stop and continue later. There is some delay even after downloading all past blocks, as new blocks are generated about every 10min.
+In the Console/getinfo page you will also notice the amount of blocks already downloaded by the local node. Blocks contains information on all transactions ever made in the bitcoin network, so the amount is substantial (around <a href="http://blockexplorer.com/">120,000</a> at the time of writing this or 200MB of storage on yor device.) The local node should download all past blocks before it can examine new blocks, that may contain transactions of bitcoins directed to you. The first download can take several hours, but its done only once and you can stop and continue later. It is recomneded to charge your device while this is taking place. There is some delay even after downloading all past blocks, as new blocks are generated, by the network, at about every 10min.
+</p>
+    <p>
+    Your local node contains your own private <a href="https://en.bitcoin.it/wiki/Wallet">wallet</a>. As with physical money, if anything happens to your wallet (stolen, hardware, software or accident), the entire amount stored in it (as given in the Balance page) will be forever lost, or used by others, so be careful. One option is to install and run bitcoin on your desktop and to send money to or from it to your App keeping a minimal balance on the App at any given time.
+    A second option, is to use the Backup button to email the wallet to a safe location (anyone that can access the email will be able to spend its bitcoins.) At a latter time you can send the email back to a device on which this App is installed, open the email and tap on the wallet.dat attachment. Select "Open in BitCoin" and follow the instructions. It is recommended to repeat the backup whenever the address changes.
+    </p>
+<p>
+    In transactions, bitcoins (and cents of) are carried from one <a href="https://en.bitcoin.it/wiki/Address">address</a> to another. Your address is given in the My Address page, use it to receive bitcoins. You can copy-paste in the usualy way.  For example, try getting a tiny amount from the <a href="http://freebitcoins.appspot.com/">Bitcoin Faucet</a> or you can buy coins in one of the <a href="https://en.bitcoin.it/wiki/Category:Exchanges">exchanges</a>; another option is to <a href="https://en.bitcoin.it/wiki/Category:Mining">mine</a> for bitcoings on your desktop. In addition, you can ask for bitcoins from someone else running this App by emailing him. Use the email button from the My Address page, the email will include a link that will open the BitCoin App on the device on which the email is read (assuming the App is already installed there.)
 </p>
 <p>
-    In transactions, bitcoins (and cents of) are carried from one address to another. Your address is given in the My Address page and you can copy-past it to an email or a web site. You can send bitcoins only after you have enough bit coins shown in the Balance page. You can get a tiny amount from the <a href="http://freebitcoins.appspot.com/">Bitcoin Faucet</a> or you can buy coins in one of the exchanges; another option is to mine for bitcoings on your desktop.
+In order to send bitcoins you need enough amount shown in the Balance page. When sending, enter the address to which you want to send and the amount. This page opens automatically, with the correct address, if you click on an email sent from this App running on another device.
 </p>
 <p>
-When sending, enter the address to which you want to send and the amount.
-</p>
-<p>
-Your app contains your own private wallet. As with physical money, if anything happens to your wallet (hardware, software or accident), the entire amount stored in it (as given in the Balance page) will be lost. So be careful. One option is to install and run bitcoin on your desktop and to send money to or from it to your App keeping a minimal balance on the App at any time.
-    A second option, is to use the Backup button to email the wallet to a safe location. At a latter time you can send the email back to a device on which this App is installed, open the email and tap on the wallet.dat attachment. Select Open in "BitCoin" and follow the instructions.
-</p>
+    You can decide to connect to a remote node, running on a different machine instead of your local node. When running remotly, all information displayed by this App relates to the remote node. For this to work the remote machine needs to be configured to be <a href="https://en.bitcoin.it/wiki/API_reference_(JSON-RPC)">HTTP-RPC-JSON</a> server and allow access to your client. You can switch back to using the local node, running on your App, but if its not needed you can stop it (and save battery) using Console/stop.
 </div>
 </body>
 </html>
