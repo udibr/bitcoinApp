@@ -49,7 +49,7 @@
                                         URL:@"bitcoin://myaddress" canDelete:NO] autorelease], 
      [[[TTLauncherItem alloc] initWithTitle:@"Balance"
                                       image:@"bundle://Balance@2x.png"
-                                        URL:@"bitcoin://rpccommand/1/listaccounts" canDelete:NO] autorelease],//getbalance 
+                                        URL:@"bitcoin://rpccommand/1/getbalance" canDelete:NO] autorelease],//getbalance 
      [[[TTLauncherItem alloc] initWithTitle:@"Send"
                                       image:@"bundle://Send@2x.png"
                                         URL:@"bitcoin://sendto" canDelete:NO] autorelease], 
