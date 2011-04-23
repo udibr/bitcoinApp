@@ -111,10 +111,9 @@
 - (void)requestDidFinishLoad:(TTURLRequest*)request
 {
     self.request = nil;
-    NSLog(@"Finished load");
     TTURLJSONResponse* response = request.response;
     NSDictionary *rootObject = response.rootObject;
-    
+    TTDPRINT(@"rootObject %@", rootObject);
     NSDictionary *result = [rootObject objectForKey:@"result"];
     if (!result) {
         [self failedToLoad];

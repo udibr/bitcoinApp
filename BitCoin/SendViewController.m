@@ -142,9 +142,14 @@
 #pragma mark TTURLRequestDelegate
 - (void)requestDidFinishLoad:(TTURLRequest*)request {
 	TTURLJSONResponse* response = request.response;
-    NSDictionary *results = response.rootObject;
+    id results = response.rootObject;
     TTDPRINT(@"result of send %@", results);
-    [self succeeded];
+    if ([results isKindOfClass:[NSString class]] && [results length]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"  message:results delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    } else
+        [self cancel:nil];
 }
 
 - (void)request:(TTURLRequest *)request didFailLoadWithError:(NSError *)error {

@@ -1,0 +1,6 @@
+features
+* give the as-of date of the balance which is the date of the last received block
+* give more help on this problem
+
+bugs
+* autorefresh does not work when returning from background.
