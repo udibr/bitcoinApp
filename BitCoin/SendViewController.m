@@ -8,11 +8,13 @@
 #import "extThree20JSON/NSObject+YAJL.h"
 #import "extThree20JSON/extThree20JSON.h"
 #import "BitCoinSettings.h"
+#import "ProgressAlert.h"
 
 @implementation SendViewController
 @synthesize toField = _toField;
 @synthesize amountField = _amountField;
 @synthesize toaddress;
+@synthesize progressAlert;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ([super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         self.title = @"Send";
@@ -44,6 +46,7 @@
 }
 
 - (void)dealloc {
+    self.progressAlert = nil;
     [[TTNavigator navigator].URLMap removeURL:@"tt://send"];
     self.toField = nil;
     self.amountField = nil;
@@ -72,6 +75,7 @@
     
     _request.response = [[[TTURLJSONResponse alloc] init] autorelease]; //TTURLDataResponse
     [_request send];
+    self.progressAlert = [[ProgressAlert alloc] initWithMessage:@"Sending..." withActivity:NO];
 }
 
 - (void)createModel {
@@ -126,7 +130,11 @@
 {
     if (!message)
         message = @"Try again or cancel";
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"  message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    NSString* title=@"Error";
+    if ([message hasPrefix:@"The transaction was"]) {
+        title = @"Warning";
+    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title  message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
     [alert release];
 }
@@ -136,23 +144,33 @@
 }
 
 #pragma mark -
+#pragma mark posting
+-(void)dismissProgressAlert
+{
+    if (self.progressAlert)
+        [self.progressAlert.progressAlert dismissWithClickedButtonIndex:0 animated:YES];
+    self.progressAlert = nil;
+}
+-(void)pauseProgressAlert
+{
+    [self.progressAlert dismiss];
+}
+
+#pragma mark -
 #pragma mark UITextFieldDelegate methods
 
 #pragma mark -
 #pragma mark TTURLRequestDelegate
 - (void)requestDidFinishLoad:(TTURLRequest*)request {
+    [self dismissProgressAlert];
 	TTURLJSONResponse* response = request.response;
-    id results = response.rootObject;
+    NSDictionary *results = response.rootObject;
     TTDPRINT(@"result of send %@", results);
-    if ([results isKindOfClass:[NSString class]] && [results length]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"  message:results delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        [alert release];
-    } else
-        [self cancel:nil];
+    [self succeeded];
 }
 
 - (void)request:(TTURLRequest *)request didFailLoadWithError:(NSError *)error {
+    [self dismissProgressAlert];
     TTDPRINT(@"%@", [error localizedDescription]);
 	TTURLJSONResponse* response = request.response;
     NSDictionary *results = response.rootObject;    
@@ -177,5 +195,4 @@
     }
     return YES;
 }
-
 @end
