@@ -35,6 +35,8 @@
 		5474AFAA134B5CB0007A5ACB /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA8134B5CAF007A5ACB /* libcrypto.a */; };
 		5474AFAB134B5CB0007A5ACB /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA9134B5CAF007A5ACB /* libssl.a */; };
 		5474D278134BC748007A5ACB /* bitcoin.conf in Resources */ = {isa = PBXBuildFile; fileRef = 5474D277134BC748007A5ACB /* bitcoin.conf */; };
+		548501BA1363A16A00F33F6B /* BalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 548501B91363A16A00F33F6B /* BalanceViewController.m */; };
+		548501BD1363A18100F33F6B /* BalanceDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 548501BC1363A18100F33F6B /* BalanceDataSource.m */; };
 		548D6853135B82C000143ACA /* Console@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D684F135B82C000143ACA /* Console@2x.png */; };
 		548D6854135B82C000143ACA /* backup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D6850135B82C000143ACA /* backup@2x.png */; };
 		548D6855135B82C000143ACA /* Donate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D6851135B82C000143ACA /* Donate@2x.png */; };
@@ -51,6 +53,10 @@
 		548FB79B1352AB88004581B3 /* Address@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB78F1352AB88004581B3 /* Address@2x.png */; };
 		548FB79C1352AB88004581B3 /* Balance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7901352AB88004581B3 /* Balance@2x.png */; };
 		548FB79D1352AB88004581B3 /* HowTo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7911352AB88004581B3 /* HowTo@2x.png */; };
+		54947D64136348FD004BACA6 /* build-iOS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54947D63136348FC004BACA6 /* build-iOS.txt */; };
+		54947D6C13634C75004BACA6 /* ui.rc in Resources */ = {isa = PBXBuildFile; fileRef = 54947D6813634C75004BACA6 /* ui.rc */; };
+		54947E1D13636740004BACA6 /* ProgressAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 54947E1C13636740004BACA6 /* ProgressAlert.m */; };
+		54B8981913625292004F575D /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 54B8981813625292004F575D /* TODO */; };
 		54B9E9AA134E5A9A00C02E09 /* cpu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54B9E90A134E5A9A00C02E09 /* cpu.cpp */; };
 		54B9E9AE134E5A9A00C02E09 /* sha.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54B9E915134E5A9A00C02E09 /* sha.cpp */; };
 		54B9E9AF134E5A9A00C02E09 /* db.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54B9E91A134E5A9A00C02E09 /* db.cpp */; };
@@ -314,6 +320,10 @@
 		5474AFA8134B5CAF007A5ACB /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../openssl/lib/libcrypto.a; sourceTree = "<group>"; };
 		5474AFA9134B5CAF007A5ACB /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../openssl/lib/libssl.a; sourceTree = "<group>"; };
 		5474D277134BC748007A5ACB /* bitcoin.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bitcoin.conf; sourceTree = "<group>"; };
+		548501B81363A16A00F33F6B /* BalanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceViewController.h; sourceTree = "<group>"; };
+		548501B91363A16A00F33F6B /* BalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceViewController.m; sourceTree = "<group>"; };
+		548501BB1363A18100F33F6B /* BalanceDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceDataSource.h; sourceTree = "<group>"; };
+		548501BC1363A18100F33F6B /* BalanceDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceDataSource.m; sourceTree = "<group>"; };
 		548D684F135B82C000143ACA /* Console@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Console@2x.png"; sourceTree = "<group>"; };
 		548D6850135B82C000143ACA /* backup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backup@2x.png"; sourceTree = "<group>"; };
 		548D6851135B82C000143ACA /* Donate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Donate@2x.png"; sourceTree = "<group>"; };
@@ -334,6 +344,15 @@
 		548FB7911352AB88004581B3 /* HowTo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HowTo@2x.png"; sourceTree = "<group>"; };
 		548FB7921352AB88004581B3 /* IconA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconA.png; sourceTree = "<group>"; };
 		548FB7931352AB88004581B3 /* IconA@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconA@2x.png"; sourceTree = "<group>"; };
+		54947D63136348FC004BACA6 /* build-iOS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "build-iOS.txt"; sourceTree = "<group>"; };
+		54947D6513634C75004BACA6 /* ui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ui.cpp; sourceTree = "<group>"; };
+		54947D6613634C75004BACA6 /* uibase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uibase.h; sourceTree = "<group>"; };
+		54947D6713634C75004BACA6 /* uibase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uibase.cpp; sourceTree = "<group>"; };
+		54947D6813634C75004BACA6 /* ui.rc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ui.rc; sourceTree = "<group>"; };
+		54947D6913634C75004BACA6 /* ui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
+		54947E1B13636740004BACA6 /* ProgressAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressAlert.h; sourceTree = "<group>"; };
+		54947E1C13636740004BACA6 /* ProgressAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressAlert.m; sourceTree = "<group>"; };
+		54B8981813625292004F575D /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		54B9E900134E5A9A00C02E09 /* base58.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base58.h; sourceTree = "<group>"; };
 		54B9E901134E5A9A00C02E09 /* bignum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bignum.h; sourceTree = "<group>"; };
 		54B9E902134E5A9A00C02E09 /* build-msw.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "build-msw.txt"; sourceTree = "<group>"; };
@@ -662,6 +681,7 @@
 		54B9E8D1134E5A9A00C02E09 /* bitcoin.org */ = {
 			isa = PBXGroup;
 			children = (
+				5464D442134E6523003059DE /* build-iOS.txt */,
 				54B9E900134E5A9A00C02E09 /* base58.h */,
 				54B9E901134E5A9A00C02E09 /* bignum.h */,
 				54B9E902134E5A9A00C02E09 /* build-msw.txt */,
@@ -690,6 +710,11 @@
 				54B9E955134E5A9A00C02E09 /* net.cpp */,
 				54B9E956134E5A9A00C02E09 /* net.h */,
 				54B9E957134E5A9A00C02E09 /* noui.h */,
+				54947D6513634C75004BACA6 /* ui.cpp */,
+				54947D6613634C75004BACA6 /* uibase.h */,
+				54947D6713634C75004BACA6 /* uibase.cpp */,
+				54947D6813634C75004BACA6 /* ui.rc */,
+				54947D6913634C75004BACA6 /* ui.h */,
 				54B9E95C134E5A9A00C02E09 /* rc */,
 				54B9E96A134E5A9A00C02E09 /* README.md */,
 				54B9E96B134E5A9A00C02E09 /* rpc.cpp */,
@@ -935,6 +960,8 @@
 		54C6106F135699FA0017C275 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				54947E1B13636740004BACA6 /* ProgressAlert.h */,
+				54947E1C13636740004BACA6 /* ProgressAlert.m */,
 				5458BD8113567E42004722BC /* StyleSheet.h */,
 				5458BD8213567E42004722BC /* StyleSheet.m */,
 				54EC38D41358F93E009E563A /* NSString+URLEncoding.h */,
@@ -964,8 +991,9 @@
 		54F3C5231305E86500E6C3BA = {
 			isa = PBXGroup;
 			children = (
+				54B8981813625292004F575D /* TODO */,
 				54EC00DC134E7ACB00FB5100 /* README */,
-				5464D442134E6523003059DE /* build-iOS.txt */,
+				54947D63136348FC004BACA6 /* build-iOS.txt */,
 				54B9E8D1134E5A9A00C02E09 /* bitcoin.org */,
 				54F3C5381305E86500E6C3BA /* BitCoin */,
 				54F3C5311305E86500E6C3BA /* Frameworks */,
@@ -1041,6 +1069,10 @@
 				545178D81351430E0069E5A7 /* PageViewController.m */,
 				54EC3B63135A1C60009E563A /* MyAddressViewController.h */,
 				54EC3B64135A1C63009E563A /* MyAddressViewController.m */,
+				548501B81363A16A00F33F6B /* BalanceViewController.h */,
+				548501B91363A16A00F33F6B /* BalanceViewController.m */,
+				548501BB1363A18100F33F6B /* BalanceDataSource.h */,
+				548501BC1363A18100F33F6B /* BalanceDataSource.m */,
 				54C6106F135699FA0017C275 /* Helper */,
 				54F3C5391305E86500E6C3BA /* Supporting Files */,
 			);
@@ -1305,6 +1337,9 @@
 				54ECC9E3135C8CFC00D008FC /* DefaultPlain.png in Resources */,
 				54ECCA67135CB46200D008FC /* Default.png in Resources */,
 				54ECCA69135CB47D00D008FC /* Default@2x.png in Resources */,
+				54B8981913625292004F575D /* TODO in Resources */,
+				54947D64136348FD004BACA6 /* build-iOS.txt in Resources */,
+				54947D6C13634C75004BACA6 /* ui.rc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1352,6 +1387,9 @@
 				54EC38D21358ED00009E563A /* BitCoinSettings.m in Sources */,
 				54EC38D61358F93F009E563A /* NSString+URLEncoding.m in Sources */,
 				54EC3B65135A1C66009E563A /* MyAddressViewController.m in Sources */,
+				54947E1D13636740004BACA6 /* ProgressAlert.m in Sources */,
+				548501BA1363A16A00F33F6B /* BalanceViewController.m in Sources */,
+				548501BD1363A18100F33F6B /* BalanceDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

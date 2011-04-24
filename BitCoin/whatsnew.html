@@ -6,10 +6,9 @@
     <body>
 <div style="font-size:50px">
 This is an experimental software; you can lose bitcoins as a result. By using this software you agree that the authors or any other copyright holders of this software are not responsible for any loss of bitcoins or any other damage. By using this software you agree to its license. Use it at your own risk.
-    It is suggested to keep the minimal amount possible of bitcoins in the App at any given time and backup your wallet to a safe place. In addition there is no warning if a fee (0.01BC) will be added to some transactions.
+    It is suggested to keep the minimal amount possible of bitcoins in the App at any given time and backup your wallet to a safe place. In addition there is no advance warning if a fee (0.01BC) will be added to some transactions.
 <h3>Known issues</h3>
 <ul>
-    <li>No warning if a small fee (0.01BC) is added to some (complex) transactions</li>
     <li>Local node takes a long time to start (up to few minutes) so be patient</li>
     <li>If you stop the local node (Console/stop) you can't restart it. The only way to restart, is to completely exit the App (also from the background) and then start it again. Note that it will automatically restart in this case, so if you want to stop it again you will have to repeat the Console/stop command</li>
     <li>Local node does not accept incoming connections (-nolisten). Also you cant connect to it using HTTP-JSON-RPC from a different machine.</li>
@@ -17,9 +16,10 @@ This is an experimental software; you can lose bitcoins as a result. By using th
 </ul>
     <h3>1.0.3</h3>
     <ul>
-        <li>Balance: Show the latest block number and its creation date from which the balance was taken. Fix title</li>
-        <li>Warn if sending caused a fee to be added. Happens when the transactions is complex</li>
-        <li>Show progress while sending</li>
+        <li>Balance: show the latest block number and its creation date from which the balance was taken</li>
+        <li>Balance: fix title</li>
+        <li>Send: warn if fee was added. Happens when the transactions is complex. Note that no advanced warning is given.</li>
+        <li>Send: show progress while sending</li>
     </ul>
     <h3>1.0.2</h3>
     <ul>
