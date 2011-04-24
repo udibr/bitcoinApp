@@ -21,6 +21,7 @@
 #import "ContactUsViewController.h"
 #import "BitCoinLoginViewController.h"
 #import "MyAddressViewController.h"
+#import "BalanceViewController.h"
 extern int bitcoinmain(int argc, char* argv[]);
 
 @implementation BitCoinAppDelegate
@@ -187,6 +188,7 @@ extern int bitcoinmain(int argc, char* argv[]);
 	//[map from:@"bitcoin://login/(server:)/(user:)/(password:)" parent:@"bitcoin://launcher" toSharedViewController:[BitCoinLoginViewController class]];
 	//[map from:@"bitcoin://logout" parent:@"bitcoin://launcher" toSharedViewController:[BitCoinLoginViewController class] selector:@selector(logout)];
 	[map from:@"bitcoin://myaddress" toViewController:[MyAddressViewController class]];
+	[map from:@"bitcoin://balance" toViewController:[BalanceViewController class]];
 
     // Build an RPC client to send a stop command to the daemon
     self.model = [[RPCModel alloc] initWithCommand:@"stop" params:nil];
