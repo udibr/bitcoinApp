@@ -9,6 +9,7 @@
 #import "BackupViewController.h"
 #import "BackupDataSource.h"
 #import "BCFileSystem.h"
+#import "BitCoinSettings.h"
 
 
 @implementation BackupViewController
@@ -38,6 +39,12 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    if (!GlobalSettings.local) {
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't backup"  message:@"You are connected to a remote node" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[alert show];
+		[alert release];
+		return;
+    }
     if  (![MFMailComposeViewController canSendMail]) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't send email"  message:@"Configure device" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alert show];
