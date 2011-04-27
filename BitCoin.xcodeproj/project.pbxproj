@@ -98,6 +98,9 @@
 		54F3C5401305E86500E6C3BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F3C53F1305E86500E6C3BA /* main.m */; };
 		54F3C5431305E86500E6C3BA /* BitCoinAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F3C5421305E86500E6C3BA /* BitCoinAppDelegate.m */; };
 		54F3C5491305E86500E6C3BA /* RPCCommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F3C5481305E86500E6C3BA /* RPCCommandViewController.m */; };
+		54F59F6313678150001EC5BC /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 54F59F6213678150001EC5BC /* Settings.bundle */; };
+		54F59F6613678695001EC5BC /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F59F6513678695001EC5BC /* PasswordViewController.m */; };
+		54F59F69136786A6001EC5BC /* PasswordDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F59F68136786A6001EC5BC /* PasswordDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -512,6 +515,11 @@
 		54F3C5421305E86500E6C3BA /* BitCoinAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitCoinAppDelegate.m; sourceTree = "<group>"; };
 		54F3C5471305E86500E6C3BA /* RPCCommandViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPCCommandViewController.h; sourceTree = "<group>"; };
 		54F3C5481305E86500E6C3BA /* RPCCommandViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPCCommandViewController.m; sourceTree = "<group>"; };
+		54F59F6213678150001EC5BC /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		54F59F6413678695001EC5BC /* PasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
+		54F59F6513678695001EC5BC /* PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
+		54F59F67136786A6001EC5BC /* PasswordDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordDataSource.h; sourceTree = "<group>"; };
+		54F59F68136786A6001EC5BC /* PasswordDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1037,6 +1045,8 @@
 		54F3C5381305E86500E6C3BA /* BitCoin */ = {
 			isa = PBXGroup;
 			children = (
+				54F59F54136780E8001EC5BC /* Password */,
+				54F59F4D13674FD7001EC5BC /* Backup */,
 				54EC38C61358E16A009E563A /* Remote */,
 				5452D9AD134FF4720004206C /* AboutViewController.h */,
 				5452D9AE134FF4730004206C /* AboutViewController.m */,
@@ -1056,10 +1066,6 @@
 				5452D912134FE5270004206C /* UILabel+Clipboard.m */,
 				5452D9B3135000590004206C /* SendViewController.h */,
 				5452D9B2135000580004206C /* SendViewController.m */,
-				54C6106A135694530017C275 /* BackupViewController.h */,
-				54C6106B135694530017C275 /* BackupViewController.m */,
-				54C6107313569C3C0017C275 /* BackupDataSource.h */,
-				54C6107413569C3C0017C275 /* BackupDataSource.m */,
 				54EC375E1358C9B3009E563A /* ContactUsViewController.h */,
 				54EC375F1358C9B4009E563A /* ContactUsViewController.m */,
 				5435560A1353B71B008BBB86 /* ConsoleViewController.h */,
@@ -1094,6 +1100,29 @@
 				54EC01E6134E9CE400FB5100 /* Entitlements.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		54F59F4D13674FD7001EC5BC /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				54C6106A135694530017C275 /* BackupViewController.h */,
+				54C6106B135694530017C275 /* BackupViewController.m */,
+				54C6107313569C3C0017C275 /* BackupDataSource.h */,
+				54C6107413569C3C0017C275 /* BackupDataSource.m */,
+			);
+			name = Backup;
+			sourceTree = "<group>";
+		};
+		54F59F54136780E8001EC5BC /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				54F59F6213678150001EC5BC /* Settings.bundle */,
+				54F59F6413678695001EC5BC /* PasswordViewController.h */,
+				54F59F6513678695001EC5BC /* PasswordViewController.m */,
+				54F59F67136786A6001EC5BC /* PasswordDataSource.h */,
+				54F59F68136786A6001EC5BC /* PasswordDataSource.m */,
+			);
+			name = Password;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1340,6 +1369,7 @@
 				54B8981913625292004F575D /* TODO in Resources */,
 				54947D64136348FD004BACA6 /* build-iOS.txt in Resources */,
 				54947D6C13634C75004BACA6 /* ui.rc in Resources */,
+				54F59F6313678150001EC5BC /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1390,6 +1420,8 @@
 				54947E1D13636740004BACA6 /* ProgressAlert.m in Sources */,
 				548501BA1363A16A00F33F6B /* BalanceViewController.m in Sources */,
 				548501BD1363A18100F33F6B /* BalanceDataSource.m in Sources */,
+				54F59F6613678695001EC5BC /* PasswordViewController.m in Sources */,
+				54F59F69136786A6001EC5BC /* PasswordDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
