@@ -6,6 +6,19 @@
 
 @implementation BitCoinSettings
 SYNTHESIZE_SINGLETON_FOR_CLASS(BitCoinSettings);
+- (BOOL)islock
+{
+	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+	NSNumber *s = [prefs objectForKey:@"islock"];
+    if (!s) return NO;//default
+	return [s boolValue];
+}
+- (NSString*)lockpassword
+{
+	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+	NSString *s = [prefs objectForKey:@"lockpassword"];	
+	return s;
+}
 
 - (NSString*)username
 {

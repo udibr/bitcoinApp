@@ -22,6 +22,8 @@
 #import "BitCoinLoginViewController.h"
 #import "MyAddressViewController.h"
 #import "BalanceViewController.h"
+#import "PasswordViewController.h"
+#import "BitCoinSettings.h"
 extern int bitcoinmain(int argc, char* argv[]);
 
 @implementation BitCoinAppDelegate
@@ -189,6 +191,7 @@ extern int bitcoinmain(int argc, char* argv[]);
 	//[map from:@"bitcoin://logout" parent:@"bitcoin://launcher" toSharedViewController:[BitCoinLoginViewController class] selector:@selector(logout)];
 	[map from:@"bitcoin://myaddress" toViewController:[MyAddressViewController class]];
 	[map from:@"bitcoin://balance" toViewController:[BalanceViewController class]];
+	[map from:@"bitcoin://password" toViewController:[PasswordViewController class]];
 
     // Build an RPC client to send a stop command to the daemon
     self.model = [[RPCModel alloc] initWithCommand:@"stop" params:nil];
@@ -206,6 +209,11 @@ extern int bitcoinmain(int argc, char* argv[]);
         [prefs synchronize];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW,0.01*1000000000),dispatch_get_main_queue(),^{
             [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:@"bitcoin://page/license"]];
+        });
+    }
+    if (GlobalSettings.islock) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW,0.01*1000000000),dispatch_get_main_queue(),^{
+            [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:@"bitcoin://password"]];
         });
     }
 

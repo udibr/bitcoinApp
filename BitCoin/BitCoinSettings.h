@@ -12,5 +12,7 @@
 @property(nonatomic, retain) NSString* server;
 @property(nonatomic) BOOL local;
 @property(nonatomic, readonly) NSString* url;
+@property(nonatomic, readonly) BOOL islock;
+@property(nonatomic, readonly) NSString* lockpassword;
 
 @end
