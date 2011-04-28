@@ -142,7 +142,14 @@ extern int bitcoinmain(int argc, char* argv[]);
     }
     return YES;
 }
-
+- (void)handlelock
+{
+    if (GlobalSettings.islock) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW,0.01*1000000000),dispatch_get_main_queue(),^{
+            [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:@"bitcoin://password"]];
+        });
+    }
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // we started "fresh", no daemon running and no background process taking place
@@ -211,12 +218,7 @@ extern int bitcoinmain(int argc, char* argv[]);
             [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:@"bitcoin://page/license"]];
         });
     }
-    if (GlobalSettings.islock) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW,0.01*1000000000),dispatch_get_main_queue(),^{
-            [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:@"bitcoin://password"]];
-        });
-    }
-
+    [self handlelock];
     return YES;
 }
 
@@ -263,6 +265,8 @@ extern int bitcoinmain(int argc, char* argv[]);
     /*
      Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
      */
+    [self handlelock];
+
     self.backgroundTaskIdentifier = UIBackgroundTaskInvalid; // No need to end background task (if started).
     if (self.daemonRunning == kDaemonNotRunning) { // If we full stopped the daemon then restart it
         //[self startDaemon:NO];
