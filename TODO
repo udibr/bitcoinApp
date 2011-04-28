@@ -1,6 +1,15 @@
 features
-* give the as-of date of the balance which is the date of the last received block
-* give more help on this problem
+* encrypt wallet
+* give current block number (http://blockexplorer.com/q/getblockcount)
+* find solution to long (8hr) of downloading all blocks on first time
+* find solution for slow start time of node (1-2 min)
+* find solution for node not responding once in a while after getting to steady state
+* show balance as a badge on launch pad
+* QR
+* SMS
+* generante new address button
+* use In App Purchase to sell bitcoins
+* upload (encrypted) wallet to a single backup-site
 
 bugs
 * autorefresh does not work when returning from background.

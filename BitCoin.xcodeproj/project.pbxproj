@@ -968,6 +968,11 @@
 		54C6106F135699FA0017C275 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				5452D9AA134FE90C0004206C /* BCTableTextItemCell.h */,
+				5452D9AB134FE90C0004206C /* BCTableTextItemCell.m */,
+				54517790135118840069E5A7 /* TTRequestLoader+BC.m */,
+				5452D911134FE5270004206C /* UILabel+Clipboard.h */,
+				5452D912134FE5270004206C /* UILabel+Clipboard.m */,
 				54947E1B13636740004BACA6 /* ProgressAlert.h */,
 				54947E1C13636740004BACA6 /* ProgressAlert.m */,
 				5458BD8113567E42004722BC /* StyleSheet.h */,
@@ -983,6 +988,52 @@
 				54C6107113569A1D0017C275 /* BCFileSystem.m */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		54CEA82A1368F1B5009570A4 /* RPC */ = {
+			isa = PBXGroup;
+			children = (
+				54F3C5471305E86500E6C3BA /* RPCCommandViewController.h */,
+				54F3C5481305E86500E6C3BA /* RPCCommandViewController.m */,
+				54C1FC7E134CF8A200D9830E /* RPCDataSource.h */,
+				54C1FC7F134CF8A200D9830E /* RPCDataSource.m */,
+				54C1FC81134CFE9500D9830E /* RPCModel.h */,
+				54C1FC82134CFE9500D9830E /* RPCModel.m */,
+			);
+			name = RPC;
+			sourceTree = "<group>";
+		};
+		54CEA82B1368F206009570A4 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				548501B81363A16A00F33F6B /* BalanceViewController.h */,
+				548501B91363A16A00F33F6B /* BalanceViewController.m */,
+				548501BB1363A18100F33F6B /* BalanceDataSource.h */,
+				548501BC1363A18100F33F6B /* BalanceDataSource.m */,
+			);
+			name = Balance;
+			sourceTree = "<group>";
+		};
+		54CEA82C1368F259009570A4 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				5452D9AD134FF4720004206C /* AboutViewController.h */,
+				5452D9AE134FF4730004206C /* AboutViewController.m */,
+				545178D71351430D0069E5A7 /* PageViewController.h */,
+				545178D81351430E0069E5A7 /* PageViewController.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		54CEA82D1368F275009570A4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				54F3C5411305E86500E6C3BA /* BitCoinAppDelegate.h */,
+				54F3C5421305E86500E6C3BA /* BitCoinAppDelegate.m */,
+				54C1FCEE134D149000D9830E /* LauncherViewTestController.h */,
+				54C1FCEF134D149000D9830E /* LauncherViewTestController.m */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 		54EC38C61358E16A009E563A /* Remote */ = {
@@ -1045,40 +1096,21 @@
 		54F3C5381305E86500E6C3BA /* BitCoin */ = {
 			isa = PBXGroup;
 			children = (
+				54CEA82D1368F275009570A4 /* Main */,
+				54CEA82C1368F259009570A4 /* About */,
+				54CEA82B1368F206009570A4 /* Balance */,
+				54CEA82A1368F1B5009570A4 /* RPC */,
 				54F59F54136780E8001EC5BC /* Password */,
 				54F59F4D13674FD7001EC5BC /* Backup */,
 				54EC38C61358E16A009E563A /* Remote */,
-				5452D9AD134FF4720004206C /* AboutViewController.h */,
-				5452D9AE134FF4730004206C /* AboutViewController.m */,
-				54F3C5411305E86500E6C3BA /* BitCoinAppDelegate.h */,
-				54F3C5421305E86500E6C3BA /* BitCoinAppDelegate.m */,
-				54C1FCEE134D149000D9830E /* LauncherViewTestController.h */,
-				54C1FCEF134D149000D9830E /* LauncherViewTestController.m */,
-				54F3C5471305E86500E6C3BA /* RPCCommandViewController.h */,
-				54F3C5481305E86500E6C3BA /* RPCCommandViewController.m */,
-				54C1FC7E134CF8A200D9830E /* RPCDataSource.h */,
-				54C1FC7F134CF8A200D9830E /* RPCDataSource.m */,
-				54C1FC81134CFE9500D9830E /* RPCModel.h */,
-				54C1FC82134CFE9500D9830E /* RPCModel.m */,
-				5452D9AA134FE90C0004206C /* BCTableTextItemCell.h */,
-				5452D9AB134FE90C0004206C /* BCTableTextItemCell.m */,
-				5452D911134FE5270004206C /* UILabel+Clipboard.h */,
-				5452D912134FE5270004206C /* UILabel+Clipboard.m */,
 				5452D9B3135000590004206C /* SendViewController.h */,
 				5452D9B2135000580004206C /* SendViewController.m */,
 				54EC375E1358C9B3009E563A /* ContactUsViewController.h */,
 				54EC375F1358C9B4009E563A /* ContactUsViewController.m */,
 				5435560A1353B71B008BBB86 /* ConsoleViewController.h */,
 				5435560B1353B71B008BBB86 /* ConsoleViewController.m */,
-				54517790135118840069E5A7 /* TTRequestLoader+BC.m */,
-				545178D71351430D0069E5A7 /* PageViewController.h */,
-				545178D81351430E0069E5A7 /* PageViewController.m */,
 				54EC3B63135A1C60009E563A /* MyAddressViewController.h */,
 				54EC3B64135A1C63009E563A /* MyAddressViewController.m */,
-				548501B81363A16A00F33F6B /* BalanceViewController.h */,
-				548501B91363A16A00F33F6B /* BalanceViewController.m */,
-				548501BB1363A18100F33F6B /* BalanceDataSource.h */,
-				548501BC1363A18100F33F6B /* BalanceDataSource.m */,
 				54C6106F135699FA0017C275 /* Helper */,
 				54F3C5391305E86500E6C3BA /* Supporting Files */,
 			);
