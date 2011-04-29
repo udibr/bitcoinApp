@@ -47,7 +47,7 @@
                        //[TTTableGrayTextItem itemWithText:@"Enter command:"],
                        [TTTableButton itemWithText:@"help" URL:@"bitcoin://rpccommand/0/help"],
                        [TTTableButton itemWithText:@"getinfo" URL:@"bitcoin://rpccommand/1/getinfo"],
-                       [TTTableButton itemWithText:@"getaddressesbyaccount %20" URL:@"bitcoin://rpccommand/1/getaccountaddress/%20"],
+                       [TTTableButton itemWithText:@"getaddressesbyaccount %20" URL:@"bitcoin://rpccommand/1/getaddressesbyaccount/%20"],
                        [TTTableButton itemWithText:@"listtransactions %20 5" URL:@"bitcoin://rpccommand/1/listtransactions/%20/5"],
                        [TTTableButton itemWithText:@"stop" URL:@"bitcoin://rpccommand/0/stop"],
                        [TTTableControlItem itemWithCaption:@">"
