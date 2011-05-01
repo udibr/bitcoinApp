@@ -55,9 +55,12 @@ extern int bitcoinmain(int argc, char* argv[]);
 #endif
     if (storedBlkPath && storedBlk1Path) {
         NSString* blkPath = [documentsDir stringByAppendingPathComponent:@"blkindex.dat"];
+        TTDPRINT(@"blkPath=%@", blkPath);
         NSString* blk1Path = [documentsDir stringByAppendingPathComponent:@"blk0001.dat"];
         NSFileManager *fileMgr = [NSFileManager defaultManager];
-        if (![fileMgr fileExistsAtPath:blkPath] &&
+        if ([fileMgr fileExistsAtPath:storedBlkPath] &&
+            [fileMgr fileExistsAtPath:storedBlk1Path] &&
+            ![fileMgr fileExistsAtPath:blkPath] &&
             ![fileMgr fileExistsAtPath:blk1Path]) {
 #if 0
             NSError* error;

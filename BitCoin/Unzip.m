@@ -20,9 +20,13 @@ void Unzip(NSString *zippedDBPath,NSString *unzippedDBPath)
     unsigned char buffer[CHUNK];
     int uncompressedLength;
     while ((uncompressedLength = gzread(file, buffer, CHUNK))) {
+        if (uncompressedLength < 0) {
+            NSLog(@"reading %@ failed",zippedDBPath);
+            break;
+        }
         // got data out of our file
         if(fwrite(buffer, 1, uncompressedLength, dest) != uncompressedLength || ferror(dest)) {
-            NSLog(@"error writing data");
+            NSLog(@"error writing data, %d", errno);
         }
     }
     fclose(dest);
