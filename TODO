@@ -1,15 +1,22 @@
 features
-* encrypt wallet
-* give current block number (http://blockexplorer.com/q/getblockcount)
-* find solution to long (8hr) of downloading all blocks on first time
-* find solution for slow start time of node (1-2 min)
-* find solution for node not responding once in a while after getting to steady state
-* show balance as a badge on launch pad
-* QR
-* SMS
+* Node:
+** find solution to long (8hr) of downloading all blocks on first time
+** find solution for slow start time of node (1-2 min)
+** find solution for node not responding once in a while after getting to steady state
+* balance:
+** give current block number (http://blockexplorer.com/q/getblockcount) - do we really need this? we have the time...
+** show balance as a badge on launch pad - do we want this? balance maybe out of date...
+** show balance and confirmation for each address
 * generante new address button
-* use In App Purchase to sell bitcoins
-* upload (encrypted) wallet to a single backup-site
+* list all address
+** how to get them? getaddressesbyaccount does not return all addresses, how to get all accounts? are there addresses without any account?ß
+** clicking on an address allow you to copy or email/SMS/QR it.
+* wallet:
+** encrypt wallet
+** upload (encrypted) wallet to a single backup-site
+* App:
+** use In App Purchase to sell bitcoins
 
 bugs
-* autorefresh does not work when returning from background.
+* Assertion failed: (_Unwind_SjLj_Resume() can't return), function _Unwind_SjLj_Resume, file /SourceCache/libunwind/libunwind-24.1/src/Unwind-sjlj.c, line 326.
+* Only glitch I had: when I launched the app for the 1st time, I noticed that on the Balance tab the block count seemed to get stuck at 1500. I let it sit for a minute or two and nothing happened. Once I quit the app and re-ran it, I saw the network activity icon appear in the top bar and block count started incrementing as blocks were processed. Then it stopped again at 3625. I rolled up to force an "update" and network activity resumed but not the block count.

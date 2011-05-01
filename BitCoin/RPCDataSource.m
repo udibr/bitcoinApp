@@ -29,8 +29,13 @@
         
         [[NSNotificationCenter defaultCenter]
          addObserver: self
-         selector: @selector(didEnterBackgroundNotification:)
-         name: UIApplicationDidEnterBackgroundNotification
+         selector: @selector(willResignActiveNotification:)
+         name: UIApplicationWillResignActiveNotification
+         object: nil];
+        [[NSNotificationCenter defaultCenter]
+         addObserver: self
+         selector: @selector(didBecomeActiveNotification:)
+         name: UIApplicationDidBecomeActiveNotification
          object: nil];
 	}
 	
@@ -42,9 +47,13 @@
 
     [[NSNotificationCenter defaultCenter]
      removeObserver: self
-     name: UIApplicationDidEnterBackgroundNotification
+     name: UIApplicationWillResignActiveNotification
      object: nil];
-
+    [[NSNotificationCenter defaultCenter]
+     removeObserver: self
+     name: UIApplicationDidBecomeActiveNotification
+     object: nil];
+    
     self.reloadTimer = nil;
     
     self.items = nil;
@@ -69,8 +78,12 @@
 	self.reloadTimer = [NSTimer scheduledTimerWithTimeInterval:animationInterval target:self selector:@selector(reloadModel) userInfo:nil repeats:NO];
 }
 
-- (void)didEnterBackgroundNotification:(void*)object {
+- (void)willResignActiveNotification:(void*)object {
     [self cancel];
+}
+-(void)didBecomeActiveNotification:(NSNotification*)notification
+{
+    [self reloadModel];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
