@@ -9,6 +9,7 @@
 #import "MyAddressViewController.h"
 #import "RPCModel.h"
 #import "AddAddressModel.h"
+#import "RPCDataSource.h"
 #define kAccountName    @""
 
 @implementation MyAddressViewController
@@ -44,6 +45,10 @@
 {
     [super viewWillDisappear:animated];
     [self.addRequest cancel];
+}
+- (void)createModel {
+    [super createModel];
+    ((RPCDataSource*)self.dataSource).myMenu = YES;
 }
 #pragma mark -
 #pragma mark tap-menu

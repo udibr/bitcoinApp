@@ -9,6 +9,7 @@
 #import "RPCDataSource.h"
 #import "RPCModel.h"
 #import "BCTableTextItemCell.h"
+#import "BCTableCaptionItemCell.h"
 
 @interface RPCDataSource ()
 @property (nonatomic, assign) NSTimer *reloadTimer;
@@ -17,7 +18,7 @@
 
 @implementation RPCDataSource
 @synthesize reloadTimer;
-
+@synthesize myMenu;
 - (id)initWithItemRepeat:(BOOL)repeat command:(NSString*)command params:(NSArray*)params
 {
     self = [super init];
@@ -98,41 +99,89 @@
 }
 
 - (void)tableViewDidLoadModel:(UITableView*)tableView {
+    NSMutableArray *sections = [[NSMutableArray alloc] init];
     NSMutableArray* items = [[NSMutableArray alloc] init];
+    
     id results = [(RPCModel*)_model results];
     if ([results isKindOfClass:[NSDictionary class]]) {
+        NSMutableArray *section = [[NSMutableArray alloc] init];
+        
         for (NSString *key in [results keyEnumerator]) {
             NSString *value = [[results valueForKeyPath:key] description];
             TTTableCaptionItem *r = [TTTableCaptionItem itemWithText:value caption:key];
             
-            [items addObject:r];
+            [section addObject:r];
         }
+        
+        [sections addObject:@""];
+        [items addObject:section];
+        TT_RELEASE_SAFELY(section);        
     } else if ([results isKindOfClass:[NSArray class]]) {
+        BOOL isDictionary = YES;
         for (id item in results) {
-            TTTableTextItem *r = [TTTableTextItem itemWithText:[item description]];
-            [items addObject:r];
+            if (![item isKindOfClass:[NSDictionary class]]) {
+                isDictionary = NO;
+                break;
+            }
+        }
+        
+        if (isDictionary) {
+            for (id item in results) {
+                NSMutableArray *section = [[NSMutableArray alloc] init];
+                
+                for (NSString *key in [item keyEnumerator]) {
+                    NSString *value = [[item valueForKeyPath:key] description];
+                    TTTableCaptionItem *r = [TTTableCaptionItem itemWithText:value caption:key];
+                    
+                    [section addObject:r];
+                }
+                
+                [sections addObject:@" "];
+                [items addObject:section];
+                TT_RELEASE_SAFELY(section);
+            }
+        } else {
+            NSMutableArray *section = [[NSMutableArray alloc] init];
+            
+            for (id item in results) {
+                TTTableTextItem *r = [TTTableTextItem itemWithText:[item description]];
+                [section addObject:r];
+            }
+            
+            [sections addObject:@""];
+            [items addObject:section];
+            TT_RELEASE_SAFELY(section);
         }
     } else {
+        NSMutableArray *section = [[NSMutableArray alloc] init];
+        
         TTTableTextItem *r = [TTTableTextItem itemWithText:[results description]];
-        [items addObject:r];
+        [section addObject:r];
+        
+        [sections addObject:@""];
+        [items addObject:section];
+        TT_RELEASE_SAFELY(section);
     }
     
-	self.items = items;
-	
+    self.sections = sections;
+    TT_RELEASE_SAFELY(sections);
+	self.items = items;	
 	TT_RELEASE_SAFELY(items);
 }
-#if 0
-- (Class)tableView:(UITableView*)tableView cellClassForObject:(id) object {
-	
-    if ([object isKindOfClass:[TTTableCaptionItem class]]) {
-	} else if ([object isKindOfClass:[TTTableTextItem class]]) {
-        return [BCTableTextItemCell class];
+
+- (Class)tableView:(UITableView*)tableView cellClassForObject:(id) object
+{	
+    if (!myMenu) {
+        if ([object isMemberOfClass:[TTTableCaptionItem class]])
+            return [BCTableCaptionItemCell class];
+        if ([object isMemberOfClass:[TTTableTextItem class]])
+            return [BCTableTextItemCell class];
 	}
 	
 	return [super tableView:tableView
 	     cellClassForObject:object];
 }
-#endif
+
 - (NSString*)titleForError:(NSError*)error
 {
     if ([error.domain isEqual:@"NSURLErrorDomain"] && error.code == -1004) {

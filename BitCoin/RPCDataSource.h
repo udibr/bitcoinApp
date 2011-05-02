@@ -8,9 +8,11 @@
 
 #import "Three20/Three20.h"
 
-@interface RPCDataSource : TTListDataSource {
+@interface RPCDataSource : TTSectionedDataSource {
 	NSTimer *reloadTimer;
     BOOL repeatCmd;
+    BOOL myMenu;
 }
+@property (nonatomic) BOOL myMenu;
 - (id)initWithItemRepeat:(BOOL)repeat command:(NSString*)command params:(NSArray*)params;
 @end
