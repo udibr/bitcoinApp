@@ -94,6 +94,7 @@
 - (void)modelDidFinishLoad:(id<TTModel>)model
 {
     if ([model isKindOfClass:[AddAddressModel class]]) {
+        TTDPRINT(@"Add result %@", ((AddAddressModel*)model).results);
         self.addRequest = nil;
         [self reload];
         self.navigationItem.rightBarButtonItem.enabled = YES;
