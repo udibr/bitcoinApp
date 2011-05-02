@@ -107,6 +107,11 @@
             
             [items addObject:r];
         }
+    } else if ([results isKindOfClass:[NSArray class]]) {
+        for (id item in results) {
+            TTTableTextItem *r = [TTTableTextItem itemWithText:[item description]];
+            [items addObject:r];
+        }
     } else {
         TTTableTextItem *r = [TTTableTextItem itemWithText:[results description]];
         [items addObject:r];
