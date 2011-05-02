@@ -18,6 +18,8 @@
 		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
 		5435560C1353B71C008BBB86 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435560B1353B71B008BBB86 /* ConsoleViewController.m */; };
+		543F578D136E4E1500526F88 /* backup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D6850135B82C000143ACA /* backup@2x.png */; };
+		543F5790136E597200526F88 /* AddAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 543F578F136E597200526F88 /* AddAddressModel.m */; };
 		54517791135118850069E5A7 /* TTRequestLoader+BC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54517790135118840069E5A7 /* TTRequestLoader+BC.m */; };
 		545178CC135136780069E5A7 /* whatsnew.html in Resources */ = {isa = PBXBuildFile; fileRef = 545178CB135136780069E5A7 /* whatsnew.html */; };
 		545178D6135140750069E5A7 /* license.html in Resources */ = {isa = PBXBuildFile; fileRef = 545178D5135140740069E5A7 /* license.html */; };
@@ -35,10 +37,10 @@
 		5474AFAA134B5CB0007A5ACB /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA8134B5CAF007A5ACB /* libcrypto.a */; };
 		5474AFAB134B5CB0007A5ACB /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5474AFA9134B5CAF007A5ACB /* libssl.a */; };
 		5474D278134BC748007A5ACB /* bitcoin.conf in Resources */ = {isa = PBXBuildFile; fileRef = 5474D277134BC748007A5ACB /* bitcoin.conf */; };
+		5480CD201369F44400D2FFE9 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5480CD1F1369F44400D2FFE9 /* back.png */; };
 		548501BA1363A16A00F33F6B /* BalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 548501B91363A16A00F33F6B /* BalanceViewController.m */; };
 		548501BD1363A18100F33F6B /* BalanceDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 548501BC1363A18100F33F6B /* BalanceDataSource.m */; };
 		548D6853135B82C000143ACA /* Console@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D684F135B82C000143ACA /* Console@2x.png */; };
-		548D6854135B82C000143ACA /* backup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D6850135B82C000143ACA /* backup@2x.png */; };
 		548D6855135B82C000143ACA /* Donate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D6851135B82C000143ACA /* Donate@2x.png */; };
 		548D6856135B82C000143ACA /* Remote@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D6852135B82C000143ACA /* Remote@2x.png */; };
 		548D685D135B84E000143ACA /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 548D685C135B84E000143ACA /* credits.html */; };
@@ -53,10 +55,7 @@
 		548FB79B1352AB88004581B3 /* Address@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB78F1352AB88004581B3 /* Address@2x.png */; };
 		548FB79C1352AB88004581B3 /* Balance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7901352AB88004581B3 /* Balance@2x.png */; };
 		548FB79D1352AB88004581B3 /* HowTo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FB7911352AB88004581B3 /* HowTo@2x.png */; };
-		54947D64136348FD004BACA6 /* build-iOS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54947D63136348FC004BACA6 /* build-iOS.txt */; };
-		54947D6C13634C75004BACA6 /* ui.rc in Resources */ = {isa = PBXBuildFile; fileRef = 54947D6813634C75004BACA6 /* ui.rc */; };
 		54947E1D13636740004BACA6 /* ProgressAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 54947E1C13636740004BACA6 /* ProgressAlert.m */; };
-		54B8981913625292004F575D /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 54B8981813625292004F575D /* TODO */; };
 		54B9E9AA134E5A9A00C02E09 /* cpu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54B9E90A134E5A9A00C02E09 /* cpu.cpp */; };
 		54B9E9AE134E5A9A00C02E09 /* sha.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54B9E915134E5A9A00C02E09 /* sha.cpp */; };
 		54B9E9AF134E5A9A00C02E09 /* db.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54B9E91A134E5A9A00C02E09 /* db.cpp */; };
@@ -77,7 +76,7 @@
 		54C6106E1356960C0017C275 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C6106D1356960B0017C275 /* MessageUI.framework */; };
 		54C6107213569A1D0017C275 /* BCFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C6107113569A1D0017C275 /* BCFileSystem.m */; };
 		54C6107513569C3D0017C275 /* BackupDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C6107413569C3C0017C275 /* BackupDataSource.m */; };
-		54C610771356A6060017C275 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C610761356A6060017C275 /* back.png */; };
+		54D4E56F136ED3BD00ECD0EE /* BCTableCaptionItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D4E56E136ED3BD00ECD0EE /* BCTableCaptionItemCell.m */; };
 		54EC01E7134E9CE400FB5100 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54EC01E6134E9CE400FB5100 /* Entitlements.plist */; };
 		54EC37601358C9B6009E563A /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC375F1358C9B4009E563A /* ContactUsViewController.m */; };
 		54EC37681358CB97009E563A /* Em.png in Resources */ = {isa = PBXBuildFile; fileRef = 54EC37671358CB96009E563A /* Em.png */; };
@@ -87,8 +86,6 @@
 		54EC38D21358ED00009E563A /* BitCoinSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC38D11358ED00009E563A /* BitCoinSettings.m */; };
 		54EC38D61358F93F009E563A /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC38D51358F93E009E563A /* NSString+URLEncoding.m */; };
 		54EC3B65135A1C66009E563A /* MyAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC3B64135A1C63009E563A /* MyAddressViewController.m */; };
-		54ECC9D5135C8A1C00D008FC /* DefaultPlain@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54ECC9D4135C8A1C00D008FC /* DefaultPlain@2x.png */; };
-		54ECC9E3135C8CFC00D008FC /* DefaultPlain.png in Resources */ = {isa = PBXBuildFile; fileRef = 54ECC9E2135C8CFC00D008FC /* DefaultPlain.png */; };
 		54ECCA67135CB46200D008FC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 54ECCA66135CB46200D008FC /* Default.png */; };
 		54ECCA69135CB47D00D008FC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54ECCA68135CB47D00D008FC /* Default@2x.png */; };
 		54F3C5331305E86500E6C3BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F3C5321305E86500E6C3BA /* UIKit.framework */; };
@@ -294,6 +291,9 @@
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5435560A1353B71B008BBB86 /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
 		5435560B1353B71B008BBB86 /* ConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleViewController.m; sourceTree = "<group>"; };
+		543F576D136E1A9800526F88 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		543F578E136E597200526F88 /* AddAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAddressModel.h; sourceTree = "<group>"; };
+		543F578F136E597200526F88 /* AddAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAddressModel.m; sourceTree = "<group>"; };
 		54517790135118840069E5A7 /* TTRequestLoader+BC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TTRequestLoader+BC.m"; sourceTree = "<group>"; };
 		545178CB135136780069E5A7 /* whatsnew.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = whatsnew.html; sourceTree = "<group>"; };
 		545178D5135140740069E5A7 /* license.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = license.html; sourceTree = "<group>"; };
@@ -323,6 +323,7 @@
 		5474AFA8134B5CAF007A5ACB /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../openssl/lib/libcrypto.a; sourceTree = "<group>"; };
 		5474AFA9134B5CAF007A5ACB /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../openssl/lib/libssl.a; sourceTree = "<group>"; };
 		5474D277134BC748007A5ACB /* bitcoin.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bitcoin.conf; sourceTree = "<group>"; };
+		5480CD1F1369F44400D2FFE9 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		548501B81363A16A00F33F6B /* BalanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceViewController.h; sourceTree = "<group>"; };
 		548501B91363A16A00F33F6B /* BalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceViewController.m; sourceTree = "<group>"; };
 		548501BB1363A18100F33F6B /* BalanceDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceDataSource.h; sourceTree = "<group>"; };
@@ -476,7 +477,8 @@
 		54C6107113569A1D0017C275 /* BCFileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCFileSystem.m; sourceTree = "<group>"; };
 		54C6107313569C3C0017C275 /* BackupDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackupDataSource.h; sourceTree = "<group>"; };
 		54C6107413569C3C0017C275 /* BackupDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackupDataSource.m; sourceTree = "<group>"; };
-		54C610761356A6060017C275 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = "../../../../../../Dropbox/BitCoin Icons/back.png"; sourceTree = "<group>"; };
+		54D4E56D136ED3BD00ECD0EE /* BCTableCaptionItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTableCaptionItemCell.h; sourceTree = "<group>"; };
+		54D4E56E136ED3BD00ECD0EE /* BCTableCaptionItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTableCaptionItemCell.m; sourceTree = "<group>"; };
 		54EC00DC134E7ACB00FB5100 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		54EC01E6134E9CE400FB5100 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = SOURCE_ROOT; };
 		54EC375E1358C9B3009E563A /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
@@ -624,6 +626,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		543F576E136E33F600526F88 /* MyAddress */ = {
+			isa = PBXGroup;
+			children = (
+				54EC3B63135A1C60009E563A /* MyAddressViewController.h */,
+				54EC3B64135A1C63009E563A /* MyAddressViewController.m */,
+				543F578E136E597200526F88 /* AddAddressModel.h */,
+				543F578F136E597200526F88 /* AddAddressModel.m */,
+			);
+			name = MyAddress;
+			sourceTree = "<group>";
+		};
 		548D6859135B846500143ACA /* Artwork */ = {
 			isa = PBXGroup;
 			children = (
@@ -649,8 +662,8 @@
 				548D6850135B82C000143ACA /* backup@2x.png */,
 				548D6851135B82C000143ACA /* Donate@2x.png */,
 				548D6852135B82C000143ACA /* Remote@2x.png */,
-				54C610761356A6060017C275 /* back.png */,
 				545DD0DB13564E3B00AB23D2 /* back@2x.png */,
+				5480CD1F1369F44400D2FFE9 /* back.png */,
 				548FB7861352AB6B004581B3 /* IconB@2x.png */,
 				548FB7841352AB5E004581B3 /* IconB.png */,
 				54EC37671358CB96009E563A /* Em.png */,
@@ -970,6 +983,8 @@
 			children = (
 				5452D9AA134FE90C0004206C /* BCTableTextItemCell.h */,
 				5452D9AB134FE90C0004206C /* BCTableTextItemCell.m */,
+				54D4E56D136ED3BD00ECD0EE /* BCTableCaptionItemCell.h */,
+				54D4E56E136ED3BD00ECD0EE /* BCTableCaptionItemCell.m */,
 				54517790135118840069E5A7 /* TTRequestLoader+BC.m */,
 				5452D911134FE5270004206C /* UILabel+Clipboard.h */,
 				5452D912134FE5270004206C /* UILabel+Clipboard.m */,
@@ -986,6 +1001,7 @@
 				545DD0DE1356785900AB23D2 /* Unzip.m */,
 				54C6107013569A1D0017C275 /* BCFileSystem.h */,
 				54C6107113569A1D0017C275 /* BCFileSystem.m */,
+				543F576D136E1A9800526F88 /* Constants.h */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -1034,6 +1050,15 @@
 				54C1FCEF134D149000D9830E /* LauncherViewTestController.m */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		54D4E61E136EF98500ECD0EE /* Console */ = {
+			isa = PBXGroup;
+			children = (
+				5435560A1353B71B008BBB86 /* ConsoleViewController.h */,
+				5435560B1353B71B008BBB86 /* ConsoleViewController.m */,
+			);
+			name = Console;
 			sourceTree = "<group>";
 		};
 		54EC38C61358E16A009E563A /* Remote */ = {
@@ -1103,14 +1128,12 @@
 				54F59F54136780E8001EC5BC /* Password */,
 				54F59F4D13674FD7001EC5BC /* Backup */,
 				54EC38C61358E16A009E563A /* Remote */,
-				5452D9B3135000590004206C /* SendViewController.h */,
+				543F576E136E33F600526F88 /* MyAddress */,
 				5452D9B2135000580004206C /* SendViewController.m */,
+				5452D9B3135000590004206C /* SendViewController.h */,
 				54EC375E1358C9B3009E563A /* ContactUsViewController.h */,
 				54EC375F1358C9B4009E563A /* ContactUsViewController.m */,
-				5435560A1353B71B008BBB86 /* ConsoleViewController.h */,
-				5435560B1353B71B008BBB86 /* ConsoleViewController.m */,
-				54EC3B63135A1C60009E563A /* MyAddressViewController.h */,
-				54EC3B64135A1C63009E563A /* MyAddressViewController.m */,
+				54D4E61E136EF98500ECD0EE /* Console */,
 				54C6106F135699FA0017C275 /* Helper */,
 				54F3C5391305E86500E6C3BA /* Supporting Files */,
 			);
@@ -1368,6 +1391,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				543F578D136E4E1500526F88 /* backup@2x.png in Resources */,
 				54EC38171358D5A3009E563A /* Icon.png in Resources */,
 				54517978135156D10069E5A7 /* howto.html in Resources */,
 				320B6C86F11D9990244A9731 /* Three20.bundle in Resources */,
@@ -1387,21 +1411,15 @@
 				548FB79B1352AB88004581B3 /* Address@2x.png in Resources */,
 				548FB79C1352AB88004581B3 /* Balance@2x.png in Resources */,
 				548FB79D1352AB88004581B3 /* HowTo@2x.png in Resources */,
-				54C610771356A6060017C275 /* back.png in Resources */,
 				54EC37681358CB97009E563A /* Em.png in Resources */,
 				548D6853135B82C000143ACA /* Console@2x.png in Resources */,
-				548D6854135B82C000143ACA /* backup@2x.png in Resources */,
 				548D6855135B82C000143ACA /* Donate@2x.png in Resources */,
 				548D6856135B82C000143ACA /* Remote@2x.png in Resources */,
 				548D685D135B84E000143ACA /* credits.html in Resources */,
-				54ECC9D5135C8A1C00D008FC /* DefaultPlain@2x.png in Resources */,
-				54ECC9E3135C8CFC00D008FC /* DefaultPlain.png in Resources */,
 				54ECCA67135CB46200D008FC /* Default.png in Resources */,
 				54ECCA69135CB47D00D008FC /* Default@2x.png in Resources */,
-				54B8981913625292004F575D /* TODO in Resources */,
-				54947D64136348FD004BACA6 /* build-iOS.txt in Resources */,
-				54947D6C13634C75004BACA6 /* ui.rc in Resources */,
 				54F59F6313678150001EC5BC /* Settings.bundle in Resources */,
+				5480CD201369F44400D2FFE9 /* back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1454,6 +1472,8 @@
 				548501BD1363A18100F33F6B /* BalanceDataSource.m in Sources */,
 				54F59F6613678695001EC5BC /* PasswordViewController.m in Sources */,
 				54F59F69136786A6001EC5BC /* PasswordDataSource.m in Sources */,
+				543F5790136E597200526F88 /* AddAddressModel.m in Sources */,
+				54D4E56F136ED3BD00ECD0EE /* BCTableCaptionItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
