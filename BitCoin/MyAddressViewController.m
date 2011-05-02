@@ -34,21 +34,39 @@
 {
     [super viewDidLoad];
      // Configure the send button.
+#if 0
      UIBarButtonItem *sendButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendActions:)];
     sendButton.enabled = NO;
      self.navigationItem.rightBarButtonItem = sendButton;
      [sendButton release];
+#endif
 }
-- (void)modelDidFinishLoad:(id<TTModel>)model
+- (BOOL) canBecomeFirstResponder
 {
-    if ([model isKindOfClass:[RPCModel class]]) {
-        id results = [(RPCModel*)model results];
-        if ([results isKindOfClass:[NSString class]]) {
-            self.address = results;
-            self.navigationItem.rightBarButtonItem.enabled = YES;
-        }
-    }
-    [super modelDidFinishLoad:model];
+    return YES;
+}
+- (BOOL) canPerformAction: (SEL) action withSender: (id) sender
+{
+    return (action == @selector(copy:)) || (action == @selector(emailBitCoin:));
+}
+- (void) copy:(id)sender {
+    UIPasteboard *pboard = [UIPasteboard generalPasteboard];
+    pboard.string = self.address;  
+}
+- (void) emailBitCoin:(id)sender {
+    [self sendActions:sender];
+}
+- (void)didSelectObject:(id)object atIndexPath:(NSIndexPath*)indexPath
+{
+    TTTableTextItemCell *cell = (TTTableTextItemCell*)[self.dataSource tableView:self.tableView cellForRowAtIndexPath:indexPath];
+    self.address = cell.textLabel.text;
+
+    [self becomeFirstResponder];
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    menu.menuItems = [NSArray arrayWithObject:[[[UIMenuItem alloc] initWithTitle:@"email" action:@selector(emailBitCoin:)] autorelease]];
+    CGRect frame = [self.tableView rectForRowAtIndexPath:indexPath];
+    [menu setTargetRect:frame inView:_tableView];
+    [menu setMenuVisible:YES animated:YES];
 }
 - (IBAction)sendActions:(id)sender
 {

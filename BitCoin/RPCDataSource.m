@@ -116,7 +116,7 @@
 	
 	TT_RELEASE_SAFELY(items);
 }
-
+#if 0
 - (Class)tableView:(UITableView*)tableView cellClassForObject:(id) object {
 	
     if ([object isKindOfClass:[TTTableCaptionItem class]]) {
@@ -127,7 +127,7 @@
 	return [super tableView:tableView
 	     cellClassForObject:object];
 }
-
+#endif
 - (NSString*)titleForError:(NSError*)error
 {
     if ([error.domain isEqual:@"NSURLErrorDomain"] && error.code == -1004) {

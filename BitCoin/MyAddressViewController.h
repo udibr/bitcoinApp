@@ -15,5 +15,5 @@
     NSString *address;
 }
 @property (nonatomic, retain) NSString *address;
-
+- (IBAction)sendActions:(id)sender;
 @end
