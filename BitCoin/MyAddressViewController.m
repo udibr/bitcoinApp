@@ -40,6 +40,13 @@
      self.navigationItem.rightBarButtonItem = rButton;
      [rButton release];
 }
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.addRequest cancel];
+}
+#pragma mark -
+#pragma mark tap-menu
 - (BOOL) canBecomeFirstResponder
 {
     return YES;
@@ -91,14 +98,16 @@
 - (void)model:(id<TTModel>)model didFailLoadWithError:(NSError*)error
 {
     if ([model isKindOfClass:[AddAddressModel class]]) {
-        [self modelDidFinishLoad:model];
+        self.addRequest = nil;
+        self.navigationItem.rightBarButtonItem.enabled = YES;
     } else
         [super model:model didFailLoadWithError:error];
 }
 - (void)modelDidCancelLoad:(id<TTModel>)model
 {
     if ([model isKindOfClass:[AddAddressModel class]]) {
-        [self modelDidFinishLoad:model];
+        self.addRequest = nil;
+        self.navigationItem.rightBarButtonItem.enabled = YES;
     } else
         [super modelDidCancelLoad:model];
 }
