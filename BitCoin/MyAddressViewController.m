@@ -8,16 +8,17 @@
 
 #import "MyAddressViewController.h"
 #import "RPCModel.h"
-
+#import "AddAddressModel.h"
 #define kAccountName    @""
 
 @implementation MyAddressViewController
 @synthesize address;
+@synthesize addRequest;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	if ([super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         self.title = @"My Address";
         repeatCmd = NO;
-        self.command = @"getaccountaddress";
+        self.command = @"getaddressesbyaccount"; // @"getaccountaddress";
         self.params = [NSArray arrayWithObject:kAccountName];
 
         return self;
@@ -34,12 +35,10 @@
 {
     [super viewDidLoad];
      // Configure the send button.
-#if 0
-     UIBarButtonItem *sendButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendActions:)];
-    sendButton.enabled = NO;
-     self.navigationItem.rightBarButtonItem = sendButton;
-     [sendButton release];
-#endif
+     UIBarButtonItem *rButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addActions:)];
+    //rButton.enabled = NO;
+     self.navigationItem.rightBarButtonItem = rButton;
+     [rButton release];
 }
 - (BOOL) canBecomeFirstResponder
 {
@@ -68,6 +67,43 @@
     [menu setTargetRect:frame inView:_tableView];
     [menu setMenuVisible:YES animated:YES];
 }
+#pragma mark -
+#pragma mark add
+- (IBAction)addActions:(id)sender
+{
+    //stop pulling address list
+    [self.dataSource cancel];
+    
+    self.addRequest =  [[[AddAddressModel alloc] initWithCommand:@"getnewaddress" params:[NSArray arrayWithObject:kAccountName]] autorelease];
+    [self.addRequest.delegates addObject:self];
+    [addRequest load:TTURLRequestCachePolicyDefault more:NO];
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+}
+- (void)modelDidFinishLoad:(id<TTModel>)model
+{
+    if ([model isKindOfClass:[AddAddressModel class]]) {
+        self.addRequest = nil;
+        [self reload];
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+    } else
+        [super modelDidFinishLoad:model];
+}
+- (void)model:(id<TTModel>)model didFailLoadWithError:(NSError*)error
+{
+    if ([model isKindOfClass:[AddAddressModel class]]) {
+        [self modelDidFinishLoad:model];
+    } else
+        [super model:model didFailLoadWithError:error];
+}
+- (void)modelDidCancelLoad:(id<TTModel>)model
+{
+    if ([model isKindOfClass:[AddAddressModel class]]) {
+        [self modelDidFinishLoad:model];
+    } else
+        [super modelDidCancelLoad:model];
+}
+#pragma mark -
+#pragma mark send
 - (IBAction)sendActions:(id)sender
 {
     if (!address) {

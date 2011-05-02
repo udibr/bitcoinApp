@@ -99,8 +99,6 @@
     
     _request.response = [[[TTURLJSONResponse alloc] init] autorelease]; //TTURLDataResponse
     
-    //_request.userInfo = @"rpc";
-    
     [_request send]; //sendSynchronously];
 }
 /**

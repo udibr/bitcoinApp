@@ -9,11 +9,13 @@
 #import <MessageUI/MessageUI.h>
 #import "RPCCommandViewController.h"
 
-
+@class AddAddressModel;
 @interface MyAddressViewController : RPCCommandViewController <MFMailComposeViewControllerDelegate>
 {
     NSString *address;
+    AddAddressModel* addRequest;
 }
 @property (nonatomic, retain) NSString *address;
+@property (nonatomic, retain) AddAddressModel* addRequest;
 - (IBAction)sendActions:(id)sender;
 @end
