@@ -9,6 +9,7 @@
 #import "ConsoleViewController.h"
 #import "extThree20JSON/NSObject+YAJL.h"
 #import "extThree20JSON/extThree20JSON.h"
+#import "NSString+URLEncoding.h"
 
 @implementation ConsoleViewController
 @synthesize cmdField = _cmdField;
@@ -47,8 +48,8 @@
                        //[TTTableGrayTextItem itemWithText:@"Enter command:"],
                        [TTTableButton itemWithText:@"help" URL:@"bitcoin://rpccommand/0/help"],
                        [TTTableButton itemWithText:@"getinfo" URL:@"bitcoin://rpccommand/1/getinfo"],
-                       [TTTableButton itemWithText:@"getaccountaddress %20" URL:@"bitcoin://rpccommand/1/getaccountaddress/%20"],
-                       [TTTableButton itemWithText:@"listtransactions %20 5" URL:@"bitcoin://rpccommand/1/listtransactions/%20/5"],
+                       [TTTableButton itemWithText:@"getaccountaddress \"\"" URL:@"bitcoin://rpccommand/1/getaccountaddress/%20"],
+                       [TTTableButton itemWithText:@"listtransactions \"\" 5" URL:@"bitcoin://rpccommand/1/listtransactions/%20/5"],
                        [TTTableButton itemWithText:@"stop" URL:@"bitcoin://rpccommand/0/stop"],
                        [TTTableControlItem itemWithCaption:@">"
                                                    control:_cmdField],
@@ -61,14 +62,60 @@
     if (!_cmdField.text || [_cmdField.text isEqual:[NSNull null]] || [_cmdField.text isEqualToString:@""])
         return;
     
-    NSArray* commandLine = [_cmdField.text componentsSeparatedByString:@" "];
+    
+    NSString *text = _cmdField.text;
+    // Parse text to array of elements including quotes and back-slash
+    NSMutableArray* commandLine = [[NSMutableArray alloc] init]; // [_cmdField.text componentsSeparatedByString:@" "];
+    unsigned int state = 0;
+    NSString* element = @"";
+    NSCharacterSet *whitespaces = [NSCharacterSet whitespaceCharacterSet];
+
+    for (int i = 0; i < [text length]; i++) {
+        unichar c = [text characterAtIndex:i];
+        //skip whiete space before element
+        if (state==0 && [whitespaces characterIsMember:c]) {
+            continue;
+        }
+        //handle element with quotes
+        if (state==0 && c=='"') {
+            state=2;
+            continue;
+        }
+        //end of elemnt
+        if ((state==2 && c=='"') || (state && !(state&2) && !(state&4) && [whitespaces characterIsMember:c])) {
+            state=0;
+            [commandLine addObject:element];
+            element = @"";
+            continue;
+        }
+        //handle element without quotes
+        if (state==0) {
+            state=1;
+        }
+        //halde back-slash
+        if (!(state&4) && c=='\\') {
+            state|=4;
+            continue;
+        }
+        element = [element stringByAppendingString:[NSString stringWithCharacters:&c length:1]];
+        //reset back-slash
+        if (state&4) {
+            state-=4;
+        }
+    }
+    if (state) {
+        [commandLine addObject:element];        
+    }
+    
+    
     if (![commandLine count]) {
         return;
     }
     NSString* url=@"bitcoin://rpccommand/0";
     for (NSString *s in commandLine) {
-        if ([s length])
-            url = [url stringByAppendingFormat:@"/%@",s];
+        if (![s length])
+            s=@" ";
+        url = [url stringByAppendingFormat:@"/%@",[s URLEncodedString]];
     }
     TTDPRINT(@"Launching %@", url);
     // give time for the keyboard to close
