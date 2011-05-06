@@ -350,7 +350,6 @@
 		548FB7911352AB88004581B3 /* HowTo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HowTo@2x.png"; sourceTree = "<group>"; };
 		548FB7921352AB88004581B3 /* IconA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconA.png; sourceTree = "<group>"; };
 		548FB7931352AB88004581B3 /* IconA@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconA@2x.png"; sourceTree = "<group>"; };
-		54947D63136348FC004BACA6 /* build-iOS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "build-iOS.txt"; sourceTree = "<group>"; };
 		54947D6513634C75004BACA6 /* ui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ui.cpp; sourceTree = "<group>"; };
 		54947D6613634C75004BACA6 /* uibase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uibase.h; sourceTree = "<group>"; };
 		54947D6713634C75004BACA6 /* uibase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uibase.cpp; sourceTree = "<group>"; };
@@ -1079,7 +1078,6 @@
 			children = (
 				54B8981813625292004F575D /* TODO */,
 				54EC00DC134E7ACB00FB5100 /* README */,
-				54947D63136348FC004BACA6 /* build-iOS.txt */,
 				54B9E8D1134E5A9A00C02E09 /* bitcoin.org */,
 				54F3C5381305E86500E6C3BA /* BitCoin */,
 				54F3C5311305E86500E6C3BA /* Frameworks */,
