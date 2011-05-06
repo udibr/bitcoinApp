@@ -14,7 +14,7 @@
 		// server field
 		_serverField = [[UITextField alloc] init];
 		_serverField.placeholder = @"127.0.0.1:8331";
-		_serverField.keyboardType = UIKeyboardTypeEmailAddress;
+		_serverField.keyboardType = UIKeyboardTypeURL;
 		_serverField.returnKeyType = UIReturnKeyNext;
 		_serverField.autocorrectionType = UITextAutocorrectionTypeNo;
 		_serverField.autocapitalizationType = UITextAutocapitalizationTypeNone;
