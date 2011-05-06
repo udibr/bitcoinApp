@@ -46,6 +46,21 @@ extern int bitcoinmain(int argc, char* argv[]);
     
     NSString* documentsDir=applicationDocumentsDirectory();
     
+    NSString *storedDBconfPath = [[NSBundle mainBundle] pathForResource:@"DB_CONFIG" ofType:@""];
+    if (storedDBconfPath) {
+        NSString* dbconfPath = [documentsDir stringByAppendingPathComponent:@"DB_CONFIG"];
+        NSFileManager *fileMgr = [NSFileManager defaultManager];
+        if ([fileMgr fileExistsAtPath:storedDBconfPath]) {
+            NSError* error;
+            if ([fileMgr fileExistsAtPath:dbconfPath]) {
+                if ([fileMgr removeItemAtPath:dbconfPath error:&error] != YES)
+                    TTDPRINT(@"Unable to remove DB_CONFIG: %@", [error localizedDescription]);
+            }
+            if ([fileMgr copyItemAtPath:storedDBconfPath toPath:dbconfPath error:&error] != YES)
+                TTDPRINT(@"Unable to copy DB_CONFIG: %@", [error localizedDescription]);
+        }
+    }
+    
     // On first run, copy blocks stored in the package
     NSString *storedBlkPath = [[NSBundle mainBundle] pathForResource:@"blkindex.dat" ofType:@"gz"];
     NSString *storedBlk1Path = [[NSBundle mainBundle] pathForResource:@"blk0001.dat" ofType:@"gz"];

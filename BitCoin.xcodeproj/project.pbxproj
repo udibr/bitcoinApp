@@ -18,6 +18,7 @@
 		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
 		5435560C1353B71C008BBB86 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435560B1353B71B008BBB86 /* ConsoleViewController.m */; };
+		543A916B136F6C88003971CA /* DB_CONFIG in Resources */ = {isa = PBXBuildFile; fileRef = 543A916A136F6C88003971CA /* DB_CONFIG */; };
 		543F578D136E4E1500526F88 /* backup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 548D6850135B82C000143ACA /* backup@2x.png */; };
 		543F5790136E597200526F88 /* AddAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 543F578F136E597200526F88 /* AddAddressModel.m */; };
 		54517791135118850069E5A7 /* TTRequestLoader+BC.m in Sources */ = {isa = PBXBuildFile; fileRef = 54517790135118840069E5A7 /* TTRequestLoader+BC.m */; };
@@ -291,6 +292,7 @@
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5435560A1353B71B008BBB86 /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
 		5435560B1353B71B008BBB86 /* ConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleViewController.m; sourceTree = "<group>"; };
+		543A916A136F6C88003971CA /* DB_CONFIG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DB_CONFIG; sourceTree = "<group>"; };
 		543F576D136E1A9800526F88 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		543F578E136E597200526F88 /* AddAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAddressModel.h; sourceTree = "<group>"; };
 		543F578F136E597200526F88 /* AddAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAddressModel.m; sourceTree = "<group>"; };
@@ -1152,6 +1154,7 @@
 				54F3C53E1305E86500E6C3BA /* BitCoin-Prefix.pch */,
 				54F3C53F1305E86500E6C3BA /* main.m */,
 				5474D277134BC748007A5ACB /* bitcoin.conf */,
+				543A916A136F6C88003971CA /* DB_CONFIG */,
 				54EC01E6134E9CE400FB5100 /* Entitlements.plist */,
 			);
 			name = "Supporting Files";
@@ -1420,6 +1423,7 @@
 				54ECCA69135CB47D00D008FC /* Default@2x.png in Resources */,
 				54F59F6313678150001EC5BC /* Settings.bundle in Resources */,
 				5480CD201369F44400D2FFE9 /* back.png in Resources */,
+				543A916B136F6C88003971CA /* DB_CONFIG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
