@@ -33,7 +33,7 @@
 
 - (void)server:(NSString*)server user:(NSString*)user password:(NSString*)password
 {
-    GlobalSettings.server = [server URLDecodedString];
+    GlobalSettings.server = [[server stringByReplacingOccurrencesOfString:@"bitcoinpercent" withString:@"%"] URLDecodedString];
     GlobalSettings.username = [user URLDecodedString];
     GlobalSettings.password = [password URLDecodedString];
     GlobalSettings.local = NO;

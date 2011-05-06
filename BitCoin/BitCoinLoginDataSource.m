@@ -93,7 +93,7 @@
         [alert release];
     } else {
         NSString* url = @"bitcoin://login";
-        url = [url stringByAppendingFormat:@"/%@",[_serverField.text URLEncodedString]];
+        url = [url stringByAppendingFormat:@"/%@",[[_serverField.text URLEncodedString] stringByReplacingOccurrencesOfString:@"%" withString:@"bitcoinpercent"]];
         url = [url stringByAppendingFormat:@"/%@",[_usernameField.text URLEncodedString]];
         url = [url stringByAppendingFormat:@"/%@",[_passwordField.text URLEncodedString]];
         _passwordField.text = @"";

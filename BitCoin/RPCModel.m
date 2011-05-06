@@ -121,8 +121,16 @@
 }
 - (void)request:(TTURLRequest*)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge*)challenge
 {
+    //http://stackoverflow.com/questions/933331/how-to-use-nsurlconnection-to-connect-with-ssl-for-an-untrusted-cert/2033823#2033823
+    // the other part is in TTRequestLoader+BC.m
+    [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
+    
+    [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
+#if 0
     self.request = nil;
     [self failedToLoad];
+//    [[challenge sender] cancelAuthenticationChallenge:challenge];
+#endif
 }
 
 /**

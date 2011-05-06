@@ -50,4 +50,11 @@
     TT_RELEASE_SAFELY(_connection);
 }
 
+#pragma mark -
+#pragma mark Connection Authentication Handling
+//Handling unsigned certificate http://stackoverflow.com/questions/933331/how-to-use-nsurlconnection-to-connect-with-ssl-for-an-untrusted-cert/2033823#2033823
+//the other part is in RPCModel.m
+- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
+    return [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust];
+}
 @end
