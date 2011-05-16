@@ -66,7 +66,7 @@ enum {AlertError, AlertValidation, AlertOK};
     TTURLRequest* _request = [TTURLRequest requestWithURL:GlobalSettings.url delegate:self];
     
     NSString* rpcmethod = check ? @"checksendtoaddress" : @"sendtoaddress";
-    NSString *request_body = [NSString stringWithFormat:@"{\"jsonrpc\": \"1.0\", \"id\":\"send\", \"method\": \"%@\", \"params\": [\"%@\", %.2f] }",rpcmethod,_toField.text,[_amountField.text floatValue]];
+    NSString *request_body = [NSString stringWithFormat:@"{\"jsonrpc\": \"1.0\", \"id\":\"send\", \"method\": \"%@\", \"params\": [\"%@\", %f] }",rpcmethod,_toField.text,[_amountField.text floatValue]];
     TTDPRINT(@"sending %@", request_body);
     _request.httpBody = [request_body dataUsingEncoding:NSUTF8StringEncoding]; // NSASCIIStringEncoding]; //
     
@@ -107,7 +107,7 @@ enum {AlertError, AlertValidation, AlertOK};
     self.amountField = [[[UITextField alloc] init] autorelease];
     _amountField.placeholder = @"0.99";
     if (amount>0.) {
-        _amountField.text = [NSString stringWithFormat:@"%.2f",amount];
+        _amountField.text = [NSString stringWithFormat:@"%f",amount];
     }
     _amountField.keyboardType = UIKeyboardTypeDecimalPad;
     _amountField.returnKeyType = UIReturnKeyNext;
