@@ -10,6 +10,7 @@
 #import "RPCModel.h"
 #import "BCTableTextItemCell.h"
 #import "BCTableCaptionItemCell.h"
+#import "Three20Core/NSDateAdditions.h"
 
 @interface RPCDataSource ()
 @property (nonatomic, assign) NSTimer *reloadTimer;
@@ -98,24 +99,34 @@
     [super cancel];
 }
 
+-(NSMutableArray*)sectionForResult:(NSDictionary*)result
+{
+    NSMutableArray *section = [[[NSMutableArray alloc] init] autorelease];
+    
+    for (NSString *key in [result keyEnumerator]) {
+        NSString *value = nil;
+        if ([key hasSuffix:@"time"]) {
+            NSNumber* t = [result valueForKeyPath:key];
+            NSDate* date = [NSDate dateWithTimeIntervalSince1970:[t doubleValue]];
+            value = [date formatShortTime];
+        } else
+            value = [[result valueForKeyPath:key] description];
+        TTTableCaptionItem *r = [TTTableCaptionItem itemWithText:value caption:key];
+        
+        [section addObject:r];
+    }
+    
+    return section;
+}
+
 - (void)tableViewDidLoadModel:(UITableView*)tableView {
     NSMutableArray *sections = [[NSMutableArray alloc] init];
     NSMutableArray* items = [[NSMutableArray alloc] init];
     
     id results = [(RPCModel*)_model results];
     if ([results isKindOfClass:[NSDictionary class]]) {
-        NSMutableArray *section = [[NSMutableArray alloc] init];
-        
-        for (NSString *key in [results keyEnumerator]) {
-            NSString *value = [[results valueForKeyPath:key] description];
-            TTTableCaptionItem *r = [TTTableCaptionItem itemWithText:value caption:key];
-            
-            [section addObject:r];
-        }
-        
         [sections addObject:@""];
-        [items addObject:section];
-        TT_RELEASE_SAFELY(section);        
+        [items addObject:[self sectionForResult:results]];
     } else if ([results isKindOfClass:[NSArray class]]) {
         BOOL isDictionary = YES;
         for (id item in results) {
@@ -126,19 +137,9 @@
         }
         
         if (isDictionary) {
-            for (id item in results) {
-                NSMutableArray *section = [[NSMutableArray alloc] init];
-                
-                for (NSString *key in [item keyEnumerator]) {
-                    NSString *value = [[item valueForKeyPath:key] description];
-                    TTTableCaptionItem *r = [TTTableCaptionItem itemWithText:value caption:key];
-                    
-                    [section addObject:r];
-                }
-                
+            for (id result in results) {                
                 [sections addObject:@" "];
-                [items addObject:section];
-                TT_RELEASE_SAFELY(section);
+                [items addObject:[self sectionForResult:result]];
             }
         } else {
             NSMutableArray *section = [[NSMutableArray alloc] init];
